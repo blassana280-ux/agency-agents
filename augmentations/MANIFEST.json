@@ -1,13 +1,13 @@
 {
   "upgrade": "2026-10",
   "scope": "embedded capability sections in agent files",
-  "status": "complete — 289/290 agents upgraded, sections deduplicated",
-  "masterOrchestrator": "orchestration/omniroute-commander.md",
+  "status": "complete — 288/289 agents upgraded, sections deduplicated",
+  "entrypoint": "orchestration/orchestrator-commander.md — the OmniRoute Brain: dispatches any complex request as parallel work packages to specialized agents",
   "pending": [
     "engineering/engineering-prompt-engineer.md — read access blocked by fetch-time injection filter; retry via GitHub API when rate limit resets"
   ],
   "newAgents": [
-    "orchestration/omniroute-commander.md",
+    "orchestration/orchestrator-commander.md",
     "security/security-llm-red-team-agent.md",
     "engineering/engineering-agent-evaluation-engineer.md",
     "research/research-systematic-review-agent.md",
