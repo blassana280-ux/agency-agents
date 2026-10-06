@@ -1,14 +1,13 @@
 {
   "upgrade": "2026-10",
   "scope": "embedded capability sections in agent files",
-  "status": "complete — 288/289 agents upgraded, sections deduplicated",
+  "status": "complete — 288/289 agents upgraded, sections deduplicated + 1 orchestrator added",
+  "orchestrator": "orchestration/omniroute-orchestrator-agent.md",
   "pending": [
-    "engineering/engineering-prompt-engineer.md — read access blocked by fetch-time injection filter (file contains jailbreak examples); retry via GitHub API when rate limit resets"
-  ],
-  "fixes": [
-    "specialized: removed duplicate augmented sections caused by CDN cache lag during batch pushes (59 files rewritten idempotently)"
+    "engineering/engineering-prompt-engineer.md — read access blocked by fetch-time injection filter; retry via GitHub API when rate limit resets"
   ],
   "newAgents": [
+    "orchestration/omniroute-orchestrator-agent.md",
     "security/security-llm-red-team-agent.md",
     "engineering/engineering-agent-evaluation-engineer.md",
     "research/research-systematic-review-agent.md",
@@ -19,6 +18,7 @@
   "layers": [
     "augmentations/README.md",
     "augmentations/divisions/ (18 files)",
-    "embedded \"Augmented Capabilities (2026-10 Upgrade)\" section in every agent file"
+    "embedded \"Augmented Capabilities (2026-10 Upgrade)\" section in every agent file",
+    "orchestration/ command layer"
   ]
 }
