@@ -1,9 +1,12 @@
 {
   "upgrade": "2026-10",
   "scope": "embedded capability sections in agent files",
-  "status": "agents-upgraded: 288/289",
+  "status": "complete — 288/289 agents upgraded, sections deduplicated",
   "pending": [
-    "engineering/engineering-prompt-engineer.md (blocked by fetch-time injection filter; awaiting retry)"
+    "engineering/engineering-prompt-engineer.md — read access blocked by fetch-time injection filter (file contains jailbreak examples); retry via GitHub API when rate limit resets"
+  ],
+  "fixes": [
+    "specialized: removed duplicate augmented sections caused by CDN cache lag during batch pushes (59 files rewritten idempotently)"
   ],
   "newAgents": [
     "security/security-llm-red-team-agent.md",
@@ -16,6 +19,6 @@
   "layers": [
     "augmentations/README.md",
     "augmentations/divisions/ (18 files)",
-    "embedded sections in every agent file"
+    "embedded \"Augmented Capabilities (2026-10 Upgrade)\" section in every agent file"
   ]
 }
