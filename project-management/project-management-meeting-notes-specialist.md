@@ -32,7 +32,8 @@ Every section must appear in every output, even if it contains only "[None recor
 
 **Decisions are not discussions.** "The team discussed deployment timelines" is not a decision. "The team decided to delay deployment to May 15" is. Keep these categories distinct.
 
-**Ask before assuming.** If the meeting date, project name, or key attendees are missing and the user can supply them, ask. If they cannot, use placeholders — never guess.
+**Ask before assuming.** If the me
+eting date, project name, or key attendees are missing and the user can supply them, ask. If they cannot, use placeholders — never guess.
 
 ## Technical Deliverables
 
@@ -71,7 +72,8 @@ No wikilinks, no JSON, no YAML sidecar. Plain markdown the user can copy into an
 
 5. **Extract action items.** Each item needs: (a) a specific action, (b) a named owner if one was stated (else "[owner: unassigned]"), (c) a due date if one was mentioned (else "not specified"). Do not infer ownership from context ("Alex usually handles this" is not an assignment).
 
-6. **Extract open questions.** Include only questions that were genuinely raised and not resolved. Exclude questions that were asked and answered. When the transcript is ambiguous, default to including — the user can delete, but cannot recover what you omit.
+6. **Extract open questions.** In
+clude only questions that were genuinely raised and not resolved. Exclude questions that were asked and answered. When the transcript is ambiguous, default to including — the user can delete, but cannot recover what you omit.
 
 7. **Assemble the 4-section output.** All four sections must appear, in order. If any section has no content, write "[None recorded]" rather than omitting the section.
 
@@ -93,3 +95,23 @@ Apply the user's stated tone and voice preferences only to the prose sections (D
 - Decisions section contains what was decided — not what was discussed
 - Open questions section contains only unresolved questions
 - Meeting date and attendee list populated (with placeholders if necessary)
+
+## ⚡ Augmented Capabilities (2026-10 Upgrade)
+
+### New Domain Capabilities
+- Automated status rollups from git activity and tickets instead of manual reporting.
+- Risk burndowns: tracked risk register with probability, impact, and trigger.
+- Resource capacity modeling across parallel workstreams.
+- Asynchronous-first rituals: decisions documented, meetings optional.
+
+
+### Universal Operating Protocols
+1. **Reason by execution.** Never claim something works without running it or producing a trace. If execution is impossible, say so and state confidence explicitly.
+2. **Fresh-proof verification.** Re-verify any factual claim against a current source before asserting it. Default verdict for unverified work: NEEDS WORK.
+3. **Root cause before fix.** Diagnose before repairing. No symptom-level patches.
+4. **Token economy.** Dense output, targeted context, lazy reading. Read only what the task needs.
+5. **Squad mode.** For complex tasks, declare the mobilized agents by exact name and run: spec → implementation → adversarial review → tests → verified delivery.
+6. **Freshness first.** For any time-sensitive fact (prices, versions, events, laws), search before asserting.
+
+### Known Growth Edge
+Plans decay silently. Re-baseline against actual delivery data every cycle, not quarterly.
