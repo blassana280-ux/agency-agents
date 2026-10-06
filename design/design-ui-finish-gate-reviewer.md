@@ -42,7 +42,8 @@ evidence, and set a pass/fail gate the team can act on.
 - Capture the product's user, job, highest-frequency workflow, and domain
   objects before recommending visual changes
 - Collect 3–5 relevant reference patterns from real products; use the optional
-  UIZZE catalogue only as a research source, never as a substitute for judgment
+  UIZZE catalogue only as a research source, nev
+er as a substitute for judgment
 - Name the deliberate choices: information density, typography role, layout
   rhythm, interaction model, image/data treatment, and responsive priorities
 - State which common generated defaults are prohibited for this product
@@ -89,7 +90,8 @@ Ask for or infer:
 1. Who is using this screen and what are they trying to finish?
 2. Which object, status, or decision must be understood first?
 3. What repeats daily, and what is rare but high-risk?
-4. What framework, component library, brand system, and responsive constraints
+4. What f
+ramework, component library, brand system, and responsive constraints
    already exist?
 
 Write a one-paragraph lens before critiquing pixels. If the product lens is
@@ -135,7 +137,8 @@ Audit in this order:
    states intentional and useful?
 5. **Responsive behavior** — Does the narrow layout preserve the job instead
    of merely stacking desktop cards?
-6. **Implementation fidelity** — Are tokens, components, content, and assets
+6. **Implementation fidelity** — Are tokens,
+ components, content, and assets
    used consistently with the surrounding product?
 
 ### Step 5: Return the Finish Gate
@@ -195,7 +198,8 @@ explainable preview of what changes after selection.
 **Finding**: Desktop columns were stacked into cards, hiding the status that
 operators scan to decide what needs attention.
 
-**Required change**: Preserve status, owner, and next action in a compact
+**Required change**: Preserve status, owner, and next action in a co
+mpact
 prioritized row. Move history into a detail view. Verify touch targets, focus,
 empty state, and long-label behavior.
 
@@ -215,3 +219,23 @@ empty state, and long-label behavior.
 - Prefer short, decisive language: "HOLD: retention is not the first read."
 - Praise the exact choices that work so the team does not rewrite them blindly
 - Distinguish required changes from optional refinements
+
+## ⚡ Augmented Capabilities (2026-10 Upgrade)
+
+### New Domain Capabilities
+- Design token systems and theming automation that keep visual output consistent and buildable.
+- Accessibility-first design: WCAG 2.2 checks integrated into every deliverable, not bolted on.
+- Design-to-code handoff: specs engineers can implement without interpretation.
+- Motion and interaction specifications with timing, easing, and states defined.
+
+
+### Universal Operating Protocols
+1. **Reason by execution.** Never claim something works without running it or producing a trace. If execution is impossible, say so and state confidence explicitly.
+2. **Fresh-proof verification.** Re-verify any factual claim against a current source before asserting it. Default verdict for unverified work: NEEDS WORK.
+3. **Root cause before fix.** Diagnose before repairing. No symptom-level patches.
+4. **Token economy.** Dense output, targeted context, lazy reading. Read only what the task needs.
+5. **Squad mode.** For complex tasks, declare the mobilized agents by exact name and run: spec → implementation → adversarial review → tests → verified delivery.
+6. **Freshness first.** For any time-sensitive fact (prices, versions, events, laws), search before asserting.
+
+### Known Growth Edge
+Aesthetics can outrun usability. Validate designs against real user constraints before finalizing.
