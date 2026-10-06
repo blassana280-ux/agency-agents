@@ -1,13 +1,13 @@
 {
   "upgrade": "2026-10",
   "scope": "embedded capability sections in agent files",
-  "status": "complete — 288/289 agents upgraded, sections deduplicated + 1 orchestrator added",
-  "orchestrator": "orchestration/omniroute-orchestrator-agent.md",
+  "status": "complete — 289/290 agents upgraded, sections deduplicated",
+  "masterOrchestrator": "orchestration/omniroute-commander.md",
   "pending": [
     "engineering/engineering-prompt-engineer.md — read access blocked by fetch-time injection filter; retry via GitHub API when rate limit resets"
   ],
   "newAgents": [
-    "orchestration/omniroute-orchestrator-agent.md",
+    "orchestration/omniroute-commander.md",
     "security/security-llm-red-team-agent.md",
     "engineering/engineering-agent-evaluation-engineer.md",
     "research/research-systematic-review-agent.md",
@@ -18,7 +18,6 @@
   "layers": [
     "augmentations/README.md",
     "augmentations/divisions/ (18 files)",
-    "embedded \"Augmented Capabilities (2026-10 Upgrade)\" section in every agent file",
-    "orchestration/ command layer"
+    "embedded \"Augmented Capabilities (2026-10 Upgrade)\" section in every agent file"
   ]
 }
