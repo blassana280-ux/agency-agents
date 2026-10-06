@@ -1,0 +1,85 @@
+{
+  "upgrade": "2026-10",
+  "divisions": [
+    {
+      "division": "academic",
+      "augmentation": "augmentations/divisions/academic.md"
+    },
+    {
+      "division": "design",
+      "augmentation": "augmentations/divisions/design.md"
+    },
+    {
+      "division": "engineering",
+      "augmentation": "augmentations/divisions/engineering.md"
+    },
+    {
+      "division": "finance",
+      "augmentation": "augmentations/divisions/finance.md"
+    },
+    {
+      "division": "game-development",
+      "augmentation": "augmentations/divisions/game-development.md"
+    },
+    {
+      "division": "gis",
+      "augmentation": "augmentations/divisions/gis.md"
+    },
+    {
+      "division": "healthcare",
+      "augmentation": "augmentations/divisions/healthcare.md"
+    },
+    {
+      "division": "marketing",
+      "augmentation": "augmentations/divisions/marketing.md"
+    },
+    {
+      "division": "paid-media",
+      "augmentation": "augmentations/divisions/paid-media.md"
+    },
+    {
+      "division": "product",
+      "augmentation": "augmentations/divisions/product.md"
+    },
+    {
+      "division": "project-management",
+      "augmentation": "augmentations/divisions/project-management.md"
+    },
+    {
+      "division": "research",
+      "augmentation": "augmentations/divisions/research.md"
+    },
+    {
+      "division": "sales",
+      "augmentation": "augmentations/divisions/sales.md"
+    },
+    {
+      "division": "security",
+      "augmentation": "augmentations/divisions/security.md"
+    },
+    {
+      "division": "spatial-computing",
+      "augmentation": "augmentations/divisions/spatial-computing.md"
+    },
+    {
+      "division": "specialized",
+      "augmentation": "augmentations/divisions/specialized.md"
+    },
+    {
+      "division": "support",
+      "augmentation": "augmentations/divisions/support.md"
+    },
+    {
+      "division": "testing",
+      "augmentation": "augmentations/divisions/testing.md"
+    }
+  ],
+  "newAgents": [
+    "security/security-llm-red-team-agent.md",
+    "engineering/engineering-agent-evaluation-engineer.md",
+    "research/research-systematic-review-agent.md",
+    "healthcare/healthcare-regulatory-affairs-agent.md",
+    "marketing/marketing-emerging-markets-growth-agent.md",
+    "finance/finance-ohada-compliance-agent.md"
+  ]
+}
