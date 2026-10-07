@@ -196,8 +196,16 @@ export class DataShapeClassifier {
     if (Array.isArray(data)) {
       if (data.length === 0) return 'leaf_item';
 
+      // Classify the whole sequence; a first-item guess can hide later content.
+      // Mixed scalars/mappings and nested sequences need structural rendering.
+      const allScalars = data.every(item => typeof item !== 'object' || item === null);
+      const allMappings = data.every(item =>
+        typeof item === 'object' && item !== null && !Array.isArray(item)
+      );
+      if (!allScalars && !allMappings) return 'block_group';
+
       // Sequence of Scalars
-      if (typeof data[0] !== 'object' || data[0] === null) {
+      if (allScalars) {
         const avgLength = data.reduce((acc, str) => acc + String(str).length, 0) / data.length;
         return avgLength <= 35 ? 'badge_list' : 'prose_flow';
       }

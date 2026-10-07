@@ -163,7 +163,7 @@ class SupportAnalytics:
         # Quality metrics
         self.metrics['first_contact_resolution_rate'] = (
             len(self.data[self.data['contacts_to_resolution'] == 1]) / 
-            len(self.data) * 100
+            len(self.data) * 100 if len(self.data) else None
         )
         
         self.metrics['customer_satisfaction_score'] = self.data['csat_score'].mean()
@@ -185,8 +185,19 @@ class SupportAnalytics:
     
     def identify_support_trends(self):
         """
-        Identify trends and patterns in support data
+        Compare calendar periods, preserving year boundaries and missing evidence.
         """
+        dated = self.data.dropna(subset=['created_date']).set_index('created_date').sort_index()
+
+        def compare_recent_periods(values, lower_is_better=False):
+            if len(values) < 2 or values.iloc[-2:].isna().any():
+                return 'insufficient_data'
+            previous, current = values.iloc[-2], values.iloc[-1]
+            if current == previous:
+                return 'stable'
+            improving = current < previous if lower_is_better else current > previous
+            return 'improving' if improving else 'declining'
+
         trends = {}
         
         # Ticket volume trends
@@ -207,7 +218,7 @@ class SupportAnalytics:
       trends['response_time_trend'] = 'improving' if weekly_response_time.iloc[-1] < weekly_response_time.iloc[-2] else 'declining'
         
         return trends
-    
+
     def generate_improvement_recommendations(self):
         """
         Generate specific recommendations based on support data analysis
@@ -225,7 +236,8 @@ class SupportAnalytics:
             })
         
         # First contact resolution recommendations
-        if self.metrics['first_contact_resolution_rate'] < 80:
+        if (self.metrics['first_contact_resolution_rate'] is not None and
+                self.metrics['first_contact_resolution_rate'] < 80):
             recommendations.append({
                 'area': 'Resolution Efficiency',
                 'issue': f"First contact resolution rate is {self.metrics['first_contact_resolution_rate']:.1f}%",
