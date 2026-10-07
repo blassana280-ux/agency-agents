@@ -1,4 +1,4 @@
-# repair-ci v4: lint-agents.yml applique via le connecteur (GITHUB_TOKEN ne peut pas pousser de fichiers workflow)
+# repair-ci v5: diagnostics etendus (hermes plugin, slug collisions, frontmatter, lint) dans le rapport
 name: Repair CI consistency
 
 on:
@@ -76,6 +76,56 @@ jobs:
             echo ""
             echo "### check-tools.sh"
             bash scripts/check-tools.sh 2>&1 || true
+            echo ""
+            echo "### check-hermes-plugin.py"
+            python3 scripts/check-hermes-plugin.py 2>&1 || true
+            echo ""
+            echo "### test-convert-slug-collisions.sh"
+            bash scripts/test-convert-slug-collisions.sh 2>&1 | tail -n 40 || true
+            echo ""
+            echo "### test-convert-frontmatter.sh"
+            bash scripts/test-convert-frontmatter.sh 2>&1 | tail -n 40 || true
+            echo ""
+            echo "### lint-agents.sh (division orchestration uniquement)"
+            bash scripts/lint-agents.sh orchestration/*.md 2>&1 | tail -n 40 || true
+            echo ""
+            echo "### Python : slugs dupliques (toutes divisions)"
+            python3 - <<'PYEOF' 2>&1 || true
+import json, re, sys
+from pathlib import Path
+root = Path(".")
+divs = sorted(json.loads((root / "divisions.json").read_text())["divisions"].keys())
+def slugify(v):
+    v = v.lower()
+    return re.sub(r"[^a-z0-9]+", "-", v).strip("-")
+seen = {}
+for d in divs:
+    base = root / d
+    if not base.is_dir():
+        continue
+    for p in sorted(base.rglob("*.md")):
+        text = p.read_text(errors="replace")
+        if not text.startswith("---\n"):
+            continue
+        parts = text.split("---\n", 2)
+        if len(parts) < 3:
+            continue
+        for line in parts[1].splitlines():
+            if line.startswith("name:"):
+                nm = line.split(":", 1)[1].strip().strip("\"'")
+                if nm:
+                    slug = slugify(nm)
+                    seen.setdefault(slug, []).append(f"{nm} <- {p}")
+                break
+dups = {k: v for k, v in seen.items() if len(v) > 1}
+if not dups:
+    print("Aucun slug duplique.")
+else:
+    for slug, locs in sorted(dups.items()):
+        print(f"DOUBLON {slug}:")
+        for loc in locs:
+            print(f"  - {loc}")
+PYEOF
           } > "docs/ci-diagnostics/$DATE.md" 2>&1
           cat "docs/ci-diagnostics/$DATE.md"
 
@@ -88,7 +138,7 @@ jobs:
             echo "Rien a committer"
             exit 0
           fi
-          git commit -m "fix(ci): enregistre la division orchestration, exclut augmentations/ et docs/, regenere integrations + manifeste"
+          git commit -m "fix(ci): diagnostics etendus (hermes, slugs, frontmatter) dans le rapport CI"
           git fetch origin main
           git rebase origin/main
           git push origin main
