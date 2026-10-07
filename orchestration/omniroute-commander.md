@@ -1,5 +1,5 @@
 ---
-name:        OmniRoute Commander
+name:        OmniRoute OmniBrain Commander
 description: The brain of the agency — a central orchestrator agent that receives any
              request, decomposes it, and commands the specialized agents of the
              collection in parallel, each in its domain. It routes work like a
