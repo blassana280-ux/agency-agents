@@ -34,22 +34,24 @@ jobs:
           git remote add upstream https://github.com/msitarzewski/agency-agents.git || true
           git fetch upstream main
 
-      - name: Réparation - revert du commit corrompu f287483
+      - name: Reparation - revert du commit corrompu f287483
+        id: revert
         run: |
+          echo "reverted=0" >> "$GITHUB_OUTPUT"
           if git log --oneline --grep="revert f287483" | grep -q .; then
-            echo "Revert déjà présent, on continue."
+            echo "Revert deja present, on continue."
           elif git cat-file -e f287483acbb9f0fe0a8eadfd1aa4b4f8815ec485 2>/dev/null && git merge-base --is-ancestor f287483acbb9f0fe0a8eadfd1aa4b4f8815ec485 HEAD; then
             git revert --no-commit f287483acbb9f0fe0a8eadfd1aa4b4f8815ec485
-            git commit -m "revert f287483: répare les fichiers altérés par une lecture corrompue (db-optimizer, embedded-firmware)"
+            git commit -m "revert f287483: repare les fichiers alteres par une lecture corrompue (db-optimizer, embedded-firmware)"
+            echo "reverted=1" >> "$GITHUB_OUTPUT"
           else
-            echo "Commit f287483 absent, rien à faire."
+            echo "Commit f287483 absent, rien a faire."
           fi
 
       - name: Fusion amont (auto, fallback -X ours)
         id: merge
         run: |
           BEFORE=$(git rev-list --count HEAD..upstream/main)
-          echo "before=$BEFORE" >> "$GITHUB_OUTPUT"
           echo "before=$BEFORE" >> "$GITHUB_ENV"
           if [ "$BEFORE" = "0" ]; then
             echo "already=1" >> "$GITHUB_OUTPUT"
@@ -63,34 +65,33 @@ jobs:
           fi
           printf '%s\n' "$CONFLICTED" > /tmp/conflicted.txt
 
-      - name: Push du résultat
-        if: steps.merge.outputs.already != '1'
-        run: |
-          git push origin main
+      - name: Push du resultat
+        if: steps.revert.outputs.reverted == '1' || steps.merge.outputs.already != '1'
+        run: git push origin main
 
       - name: Issue de rapport
-        if: steps.merge.outputs.already != '1'
+        if: steps.revert.outputs.reverted == '1' || steps.merge.outputs.already != '1'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           REPORT=/tmp/report.md
           {
-            echo "## Rapport de synchronisation amont — $(date -u +'%Y-%m-%d %H:%M UTC')"
+            echo "## Rapport de synchronisation amont - $(date -u +'%Y-%m-%d %H:%M UTC')"
             echo ""
-            echo "- **Commits amont intégrés** : $BEFORE"
-            echo "- **Stratégie de conflit** : fork prioritaire (\`-X ours\`) — les hunks en conflit conservent la version augmentée du fork"
-            echo "- **Fichiers en conflit résolus en faveur du fork** (correctifs amont à réappliquer manuellement si pertinent) :"
+            echo "- Commits amont integres : $BEFORE"
+            echo "- Strategie de conflit : fork prioritaire (-X ours)"
+            echo "- Fichiers en conflit resolus en faveur du fork (correctifs amont a reappliquer manuellement si pertinent) :"
             echo ""
-            echo "\`\`\`"
+            echo '~~~'
             cat /tmp/conflicted.txt 2>/dev/null || echo "(aucun)"
-            echo "\`\`\`"
+            echo '~~~'
             echo ""
-            echo "Fusion exécutée par \`.github/workflows/sync-upstream.yml\` (déclenché par push ou cron quotidien 06:30 UTC)."
+            echo "Fusion executee par .github/workflows/sync-upstream.yml (push ou cron quotidien 06:30 UTC)."
           } > "$REPORT"
-          TITLE="Rapport sync amont — $(date -u +'%Y-%m-%d')"
+          TITLE="Rapport sync amont - $(date -u +'%Y-%m-%d')"
           EXISTING=$(gh issue list --state open --search "Rapport sync amont in:title" --json number --jq '.[0].number // empty')
           if [ -n "$EXISTING" ]; then
             gh issue comment "$EXISTING" --body-file "$REPORT"
           else
-            gh issue create --title "$TITLE" --body-file "$REPORT" || echo "Création d'issue impossible"
+            gh issue create --title "$TITLE" --body-file "$REPORT"
           fi
