@@ -39,7 +39,7 @@ jobs:
           } > /tmp/cidiag/before.md 2>&1
           cat /tmp/cidiag/before.md
 
-      - name: README d'orchestration hors conversion si pas un agent
+      - name: README orchestration hors conversion si pas un agent
         run: |
           if [ -f orchestration/README.md ] && [ "$(head -n 1 orchestration/README.md | tr -d '\r')" != "---" ]; then
             git mv orchestration/README.md orchestration/README || true
@@ -59,7 +59,7 @@ jobs:
 
       - name: Diagnostic apres reparation + rapport
         run: |
-          DATE=$(date -u +'%Y-%m-%d')
+          DATE=$(date -u +%Y-%m-%d)
           mkdir -p docs/ci-diagnostics
           {
             echo "# Rapport de reparation CI - $DATE"
@@ -80,6 +80,13 @@ jobs:
 
       - name: Commit et push
         run: |
+          git checkout -B main "$GITHUB_SHA"
           git add -A
-          git commit -m "fix(ci): enregistre la division orchestration, exclut augmentations/ et docs/, regenere integrations + manifeste" || echo "Rien a committer"
+          if git diff --cached --quiet; then
+            echo "Rien a committer"
+            exit 0
+          fi
+          git commit -m "fix(ci): enregistre la division orchestration, exclut augmentations/ et docs/, regenere integrations + manifeste"
+          git fetch origin main
+          git rebase origin/main
           git push origin main
