@@ -1,0 +1,136 @@
+name: Repair CI consistency
+
+on:
+  push:
+    paths:
+      - ".github/workflows/repair-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repair-ci
+  cancel-in-progress: false
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configuration git
+        run: |
+          git config user.name "Lassana Bah (bot)"
+          git config user.email "blassana280-ux@users.noreply.github.com"
+
+      - name: Diagnostic avant reparation
+        run: |
+          mkdir -p /tmp/cidiag
+          {
+            echo "## check-divisions.sh"
+            bash scripts/check-divisions.sh 2>&1 || true
+            echo ""
+            echo "## check-tools.sh"
+            bash scripts/check-tools.sh 2>&1 || true
+            echo ""
+            echo "## test-convert-outputs.sh (advisory)"
+            bash scripts/test-convert-outputs.sh --drift=advisory 2>&1 || true
+          } > /tmp/cidiag/before.md 2>&1
+          cat /tmp/cidiag/before.md
+
+      - name: Reparation des divisions (orchestration in, augmentations/docs out)
+        run: |
+          set -e
+          if [ -f orchestration/README.md ] && [ "$(head -n 1 orchestration/README.md | tr -d '\r')" != "---" ]; then
+            git mv orchestration/README.md orchestration/README || true
+            echo "orchestration/README.md deplace en orchestration/README (pas de frontmatter, hors conversion)"
+          fi
+          python3 - <<'PY'
+import json, re
+
+def edit(path, fn, label):
+    t = open(path, encoding='utf-8').read()
+    try:
+        t2 = fn(t)
+    except Exception as e:
+        print('ERR  ' + path + ': ' + str(e)); return
+    if t2 != t:
+        open(path, 'w', encoding='utf-8', newline='').write(t2)
+        print('OK   ' + label)
+    else:
+        print('SKIP ' + label)
+
+def fix_non_div(t):
+    m = re.search(r'NON_DIVISION_DIRS=\(([^)]*)\)', t)
+    if not m: raise SystemExit('NON_DIVISION_DIRS introuvable')
+    inner = m.group(1)
+    add = [x for x in ('augmentations', 'docs') if not re.search(r'\b' + x + r'\b', inner)]
+    if not add: return t
+    return t.replace(m.group(0), 'NON_DIVISION_DIRS=(' + inner.rstrip() + ' ' + ' '.join(add) + ')')
+edit('scripts/check-divisions.sh', fix_non_div, 'check-divisions.sh NON_DIVISION_DIRS + augmentations docs')
+
+d = json.load(open('divisions.json', encoding='utf-8'))
+if 'orchestration' not in d['divisions']:
+    d['divisions']['orchestration'] = {"label": "Orchestration", "icon": "Bot", "color": "#F43F5E"}
+    open('divisions.json', 'w', encoding='utf-8', newline='').write(json.dumps(d, indent=2, ensure_ascii=False) + '\n')
+    print('OK   divisions.json + orchestration')
+else:
+    print('SKIP divisions.json (orchestration deja present)')
+
+def add_agent_dir(t):
+    m = re.search(r'AGENT_DIRS=\(([^)]*)\)', t)
+    if not m: raise SystemExit('AGENT_DIRS introuvable')
+    if re.search(r'\borchestration\b', m.group(1)): return t
+    return t[:m.start()] + 'AGENT_DIRS=(' + m.group(1).rstrip() + '\n  orchestration\n)' + t[m.end():]
+edit('scripts/convert.sh', add_agent_dir, 'convert.sh AGENT_DIRS + orchestration')
+edit('scripts/lint-agents.sh', add_agent_dir, 'lint-agents.sh AGENT_DIRS + orchestration')
+
+p = '.github/workflows/lint-agents.yml'
+lines = open(p, encoding='utf-8').read().split('\n')
+if not any('orchestration' in l for l in lines):
+    out = []
+    for l in lines:
+        out.append(l)
+        if 'spatial-computing' in l:
+            out.append(l.replace('spatial-computing', 'orchestration'))
+    open(p, 'w', encoding='utf-8', newline='').write('\n'.join(out))
+    print('OK   lint-agents.yml filtres + orchestration')
+else:
+    print('SKIP lint-agents.yml')
+PY
+
+      - name: Regeneration des sorties converties (integrations/)
+        run: |
+          bash scripts/convert.sh --parallel 2>&1 | tail -n 30
+
+      - name: Regeneration du manifeste convert-outputs
+        run: |
+          bash scripts/test-convert-outputs.sh --update 2>&1 | tail -n 40 || true
+
+      - name: Diagnostic apres reparation + rapport
+        run: |
+          DATE=$(date -u +'%Y-%m-%d')
+          mkdir -p docs/ci-diagnostics
+          {
+            echo "# Rapport de reparation CI - $DATE"
+            echo ""
+            echo "## Etat avant reparation"
+            echo ""
+            cat /tmp/cidiag/before.md
+            echo ""
+            echo "## Etat apres reparation"
+            echo ""
+            echo "### check-divisions.sh"
+            bash scripts/check-divisions.sh 2>&1 || true
+            echo ""
+            echo "### check-tools.sh"
+            bash scripts/check-tools.sh 2>&1 || true
+          } > "docs/ci-diagnostics/$DATE.md" 2>&1
+          cat "docs/ci-diagnostics/$DATE.md"
+
+      - name: Commit et push
+        run: |
+          git add -A
+          git commit -m "fix(ci): enregistre la division orchestration, exclut augmentations/ et docs/, regenere integrations + manifeste" || echo "Rien a committer"
+          git push origin main
