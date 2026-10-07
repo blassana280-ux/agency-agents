@@ -1,0 +1,132 @@
+# 🛡️ Maintenance quotidienne des agents — système autonome anti-erreur
+#
+# Ce workflow tourne TOUS LES JOURS à 06:30 (heure de Bamako / UTC), sans
+# dépendre d'un agent externe. Il :
+#   1. ANTI-ERREUR   : audite chaque agent (frontmatter, doublons, liens
+#                      cassés, secrets exposés, blocs de code non fermés…)
+#   2. RENFORCEMENT : applique les correctifs sûrs automatiquement (BOM,
+#                      CRLF, espaces de fin, newline final) et écrit un
+#                      rapport de santé quotidien avec score par division.
+#   3. PROTECTION   : commit correctifs + rapport, ouvre/maintient une issue
+#                      de suivi tant que des anomalies subsistent, et la
+#                      clôture automatiquement dès que le dépôt redevient sain.
+#
+# Déclenchement manuel : onglet Actions → « 🛡️ Maintenance quotidienne des
+# agents » → Run workflow.
+
+name: 🛡️ Maintenance quotidienne des agents
+
+on:
+  schedule:
+    - cron: "30 6 * * *" # tous les jours, 06:30 UTC (06:30 à Bamako)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: daily-maintenance
+  cancel-in-progress: false
+
+env:
+  ISSUE_TITLE: "🛡️ Maintenance quotidienne — anomalies détectées"
+  ISSUE_LABEL: "maintenance-quotidienne"
+
+jobs:
+  maintenance:
+    name: Audit · Renforcement · Protection
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: "1. Anti-erreur — audit de santé du roster + correctifs automatiques"
+        id: health
+        continue-on-error: true
+        run: node scripts/agent-health.mjs --fix --report --ci
+
+      - name: "2. Renforcement — lint complet du roster (règles existantes)"
+        id: lint
+        continue-on-error: true
+        run: bash scripts/lint-agents.sh
+
+      - name: "3. Cohérence divisions.json ↔ dossiers"
+        id: divisions
+        continue-on-error: true
+        run: bash scripts/check-divisions.sh
+
+      - name: "4. Cohérence des runbooks"
+        id: runbooks
+        continue-on-error: true
+        run: bash scripts/check-runbooks.sh
+
+      - name: "5. Cohérence de tools.json"
+        id: tools
+        continue-on-error: true
+        run: bash scripts/check-tools.sh
+
+      - name: "6. Anti-doublons — originalité des agents"
+        id: originality
+        continue-on-error: true
+        run: bash scripts/check-agent-originality.sh
+
+      - name: "7. Commit des correctifs + rapport quotidien"
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "🛡️ maintenance quotidienne: correctifs automatiques + rapport du $(date -u +%F)"
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            git push origin HEAD:"$GITHUB_REF_NAME"
+          else
+            echo "Aucun changement — rien à committer."
+          fi
+
+      - name: "8. Verdict global"
+        id: verdict
+        if: always()
+        run: |
+          if [[ "${{ steps.health.outcome }}" == "failure" || "${{ steps.lint.outcome }}" == "failure" || "${{ steps.divisions.outcome }}" == "failure" || "${{ steps.runbooks.outcome }}" == "failure" || "${{ steps.tools.outcome }}" == "failure" || "${{ steps.originality.outcome }}" == "failure" ]]; then
+            echo "failed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "failed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: "9. Protection — issue de suivi des anomalies"
+        if: always() && steps.verdict.outputs.failed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create "$ISSUE_LABEL" --color B60305 --description "Anomalies détectées par la maintenance quotidienne" 2>/dev/null || true
+          BODY_FILE="docs/reports/maintenance/LATEST.md"
+          if [[ ! -f "$BODY_FILE" ]]; then
+            printf 'Le rapport détaillé est indisponible ; consulter les logs du workflow.\n' > /tmp/body.md
+            BODY_FILE=/tmp/body.md
+          fi
+          NUMBER=$(gh issue list --state open --label "$ISSUE_LABEL" --json number --jq '.[0].number')
+          if [[ -n "$NUMBER" && "$NUMBER" != "null" ]]; then
+            gh issue comment "$NUMBER" --body-file "$BODY_FILE"
+            echo "Issue #$NUMBER mise à jour."
+          else
+            gh issue create --title "$ISSUE_TITLE" --label "$ISSUE_LABEL" --body-file "$BODY_FILE"
+          fi
+
+      - name: "10. Protection — clôture automatique si tout est propre"
+        if: always() && steps.verdict.outputs.failed == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          NUMBER=$(gh issue list --state open --label "$ISSUE_LABEL" --json number --jq '.[0].number')
+          if [[ -n "$NUMBER" && "$NUMBER" != "null" ]]; then
+            gh issue comment "$NUMBER" --body "✅ Audit du $(date -u +%F) : aucune anomalie détectée. Issue clôturée automatiquement."
+            gh issue close "$NUMBER"
+          else
+            echo "Aucune issue ouverte : dépôt sain."
+          fi
