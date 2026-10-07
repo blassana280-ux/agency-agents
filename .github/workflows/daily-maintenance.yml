@@ -4,10 +4,14 @@
 # dépendre d'un agent externe. Il :
 #   1. ANTI-ERREUR   : audite chaque agent (frontmatter, doublons, liens
 #                      cassés, secrets exposés, blocs de code non fermés…)
-#   2. RENFORCEMENT : applique les correctifs sûrs automatiquement (BOM,
+#   2. RENFORCEMENT  : applique les correctifs sûrs automatiquement (BOM,
 #                      CRLF, espaces de fin, newline final) et écrit un
 #                      rapport de santé quotidien avec score par division.
-#   3. PROTECTION   : commit correctifs + rapport, ouvre/maintient une issue
+#   3. RENFORCEMENT MÉTIER : renforce chaque jour N agents DANS leur
+#                      spécialité propre (IA Mistral — nécessite le secret
+#                      MISTRAL_API_KEY, sinon cette étape est ignorée) et
+#                      propose le résultat en PR pour revue.
+#   4. PROTECTION   : commit correctifs + rapport, ouvre/maintient une issue
 #                      de suivi tant que des anomalies subsistent, et la
 #                      clôture automatiquement dès que le dépôt redevient sain.
 #
@@ -24,6 +28,7 @@ on:
 permissions:
   contents: write
   issues: write
+  pull-requests: write
 
 concurrency:
   group: daily-maintenance
@@ -32,6 +37,9 @@ concurrency:
 env:
   ISSUE_TITLE: "🛡️ Maintenance quotidienne — anomalies détectées"
   ISSUE_LABEL: "maintenance-quotidienne"
+  REINFORCE_LABEL: "renforcement-quotidien"
+  REINFORCE_PER_DAY: "10"
+  MISTRAL_MODEL: "mistral-large-latest"
 
 jobs:
   maintenance:
@@ -51,7 +59,7 @@ jobs:
         continue-on-error: true
         run: node scripts/agent-health.mjs --fix --report --ci
 
-      - name: "2. Renforcement — lint complet du roster (règles existantes)"
+      - name: "2. Renforcement structurel — lint complet du roster (règles existantes)"
         id: lint
         continue-on-error: true
         run: bash scripts/lint-agents.sh
@@ -89,23 +97,64 @@ jobs:
             echo "Aucun changement — rien à committer."
           fi
 
-      - name: "8. Verdict global"
+      - name: "8. Renforcement métier — spécialités des agents (IA Mistral)"
+        id: reinforce
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+        run: |
+          if [[ -z "$MISTRAL_API_KEY" ]]; then
+            echo "ℹ️ Secret MISTRAL_API_KEY absent — renforcement métier ignoré (le reste de la maintenance continue)."
+            echo "   Pour l'activer : Settings → Secrets and variables → Actions → New repository secret → MISTRAL_API_KEY."
+            exit 0
+          fi
+          BRANCH="renforcement/$(date -u +%F)"
+          git checkout -B "$BRANCH"
+          REINFORCE_FAILED=0
+          node scripts/agent-reinforce.mjs || REINFORCE_FAILED=1
+          if [[ -z "$(git status --porcelain)" ]]; then
+            echo "Aucun renforcement à proposer aujourd'hui."
+            git checkout "$GITHUB_REF_NAME"
+            exit "$REINFORCE_FAILED"
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "⚡ renforcement quotidien: spécialités renforcées du $(date -u +%F)"
+          git push --force-with-lease origin HEAD:"$BRANCH"
+          gh label create "$REINFORCE_LABEL" --color 6366F1 --description "Renforcement quotidien des spécialités par IA" 2>/dev/null || true
+          EXISTING=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
+          if [[ -z "$EXISTING" || "$EXISTING" == "null" ]]; then
+            gh pr create --base "$GITHUB_REF_NAME" --head "$BRANCH" \
+              --title "⚡ Renforcement quotidien des spécialités — $(date -u +%F)" \
+              --label "$REINFORCE_LABEL" \
+              --body-file docs/reports/maintenance/REINFORCEMENT.md
+          else
+            echo "PR #$EXISTING déjà ouvert pour aujourd'hui — mis à jour par le push."
+          fi
+          exit "$REINFORCE_FAILED"
+
+      - name: "9. Verdict global"
         id: verdict
         if: always()
         run: |
-          if [[ "${{ steps.health.outcome }}" == "failure" || "${{ steps.lint.outcome }}" == "failure" || "${{ steps.divisions.outcome }}" == "failure" || "${{ steps.runbooks.outcome }}" == "failure" || "${{ steps.tools.outcome }}" == "failure" || "${{ steps.originality.outcome }}" == "failure" ]]; then
+          if [[ "${{ steps.health.outcome }}" == "failure" || "${{ steps.lint.outcome }}" == "failure" || "${{ steps.divisions.outcome }}" == "failure" || "${{ steps.runbooks.outcome }}" == "failure" || "${{ steps.tools.outcome }}" == "failure" || "${{ steps.originality.outcome }}" == "failure" || "${{ steps.reinforce.outcome }}" == "failure" ]]; then
             echo "failed=true" >> "$GITHUB_OUTPUT"
           else
             echo "failed=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: "9. Protection — issue de suivi des anomalies"
+      - name: "10. Protection — issue de suivi des anomalies"
         if: always() && steps.verdict.outputs.failed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh label create "$ISSUE_LABEL" --color B60305 --description "Anomalies détectées par la maintenance quotidienne" 2>/dev/null || true
           BODY_FILE="docs/reports/maintenance/LATEST.md"
+          if [[ "${{ steps.reinforce.outcome }}" == "failure" && -f "docs/reports/maintenance/REINFORCEMENT.md" ]]; then
+            BODY_FILE="docs/reports/maintenance/REINFORCEMENT.md"
+          fi
           if [[ ! -f "$BODY_FILE" ]]; then
             printf 'Le rapport détaillé est indisponible ; consulter les logs du workflow.\n' > /tmp/body.md
             BODY_FILE=/tmp/body.md
@@ -118,7 +167,7 @@ jobs:
             gh issue create --title "$ISSUE_TITLE" --label "$ISSUE_LABEL" --body-file "$BODY_FILE"
           fi
 
-      - name: "10. Protection — clôture automatique si tout est propre"
+      - name: "11. Protection — clôture automatique si tout est propre"
         if: always() && steps.verdict.outputs.failed == 'false'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
