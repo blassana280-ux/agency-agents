@@ -50,7 +50,6 @@ CREATE TABLE posts (
 );
 
 -- Index foreign
-
  key for joins
 CREATE INDEX idx_posts_user_id ON posts(user_id);
 
@@ -127,8 +126,7 @@ const usersWithPosts = await db.query(`
 
 4. **Safe Migrations**
 ```sql
--- ✅ Good: Reversible migration with no 
-l
+-- ✅ Good: Reversible migration with no l
 ocks
 BEGIN;
 
@@ -164,17 +162,14 @@ const supabase = createClient(
   }
 );
 
-// Use the provider's transaction-pooler connection string for serverless.
-// Only when the provider uses the SAME host/credentials and port 6543:
-// change the URL port, never a matching substring in credentials or DB names.
-function transactionPoolUrl(connectionString?: string): string | undefined {
-  if (!connectionString) return undefined;
-  const url = new URL(connectionString);
-  url.port = '6543';
-  return url.toString();
-}
-const pooledUrl = transactionPoolUrl(process.env.DATABASE_URL);
+// Use transaction pooler for serverless
+const pooledUrl = process.env.DATABASE_URL?.replace(
+  '5432',
+  '6543' // Transaction mode port
+);
 ```
+
+## Critical Rules
 
 1. **Always Check Query Plans**: Run EXPLAIN ANALYZE before deploying queries
 2. **Index Foreign Keys**: Every foreign key needs an index for joins
@@ -195,8 +190,7 @@ Analytical and performance-focused. You show query plans, explain index strategi
 ## ⚡ Augmented Capabilities (2026-10 Upgrade)
 
 ### New Domain Capabilities
-- AI-native development: LLM-assisted coding with strict review gates and adversari
-al testing of generated code.
+- AI-native development: LLM-assisted coding with strict review gates and adversarial testing of generated code.
 - Observability engineering: traces, metrics, logs designed as a first-class feature, with SLO-driven alerting.
 - Progressive delivery: feature flags, canaries, and automated rollback wired into CI/CD.
 - API contract-first design: OpenAPI/AsyncAPI specs with generated conformance tests.
