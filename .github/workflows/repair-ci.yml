@@ -1,4 +1,4 @@
-# repair-ci v6: slugs dupliques via scripts/list-duplicate-slugs.py (pas de heredoc)
+# repair-ci v7: renomme l agent orchestration en collision de slug (omniroute-commander)
 name: Repair CI consistency
 
 on:
@@ -49,6 +49,15 @@ jobs:
 
       - name: Reparation des divisions
         run: python3 scripts/fix-ci-consistency.py
+
+      - name: Renomme l agent orchestration en collision de slug
+        run: |
+          if grep -qE '^name:[[:space:]]*OmniRoute Commander[[:space:]]*$' orchestration/omniroute-commander.md; then
+            sed -i -E 's/^name:[[:space:]]*OmniRoute Commander[[:space:]]*$/name:        OmniRoute OmniBrain Commander/' orchestration/omniroute-commander.md
+            echo "Renomme: OmniRoute Commander -> OmniRoute OmniBrain Commander (collision de slug avec specialized/specialized-omniroute-commander.md)"
+          else
+            echo "Pas de collision a renommer (deja fait)"
+          fi
 
       - name: Regeneration des sorties converties (integrations/)
         run: |
@@ -103,7 +112,7 @@ jobs:
             echo "Rien a committer"
             exit 0
           fi
-          git commit -m "fix(ci): diagnostics etendus (hermes, slugs, frontmatter) dans le rapport CI"
+          git commit -m "fix(ci): renomme OmniRoute Commander (orchestration) en OmniRoute OmniBrain Commander - collision de slug omniroute-commander"
           git fetch origin main
           git rebase origin/main
           git push origin main
