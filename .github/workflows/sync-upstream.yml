@@ -1,0 +1,96 @@
+name: Sync amont + veille quotidienne
+
+on:
+  push:
+    paths:
+      - ".github/workflows/sync-upstream.yml"
+  schedule:
+    - cron: "30 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: sync-amont
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configuration git
+        run: |
+          git config user.name "Lassana Bah (bot)"
+          git config user.email "blassana280-ux@users.noreply.github.com"
+
+      - name: Ajout du remote amont et fetch
+        run: |
+          git remote add upstream https://github.com/msitarzewski/agency-agents.git || true
+          git fetch upstream main
+
+      - name: Réparation - revert du commit corrompu f287483
+        run: |
+          if git log --oneline --grep="revert f287483" | grep -q .; then
+            echo "Revert déjà présent, on continue."
+          elif git cat-file -e f287483acbb9f0fe0a8eadfd1aa4b4f8815ec485 2>/dev/null && git merge-base --is-ancestor f287483acbb9f0fe0a8eadfd1aa4b4f8815ec485 HEAD; then
+            git revert --no-commit f287483acbb9f0fe0a8eadfd1aa4b4f8815ec485
+            git commit -m "revert f287483: répare les fichiers altérés par une lecture corrompue (db-optimizer, embedded-firmware)"
+          else
+            echo "Commit f287483 absent, rien à faire."
+          fi
+
+      - name: Fusion amont (auto, fallback -X ours)
+        id: merge
+        run: |
+          BEFORE=$(git rev-list --count HEAD..upstream/main)
+          echo "before=$BEFORE" >> "$GITHUB_OUTPUT"
+          echo "before=$BEFORE" >> "$GITHUB_ENV"
+          if [ "$BEFORE" = "0" ]; then
+            echo "already=1" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          CONFLICTED=""
+          if ! git merge upstream/main --no-edit; then
+            CONFLICTED=$(git diff --name-only --diff-filter=U)
+            git merge --abort
+            git merge -X ours upstream/main --no-edit
+          fi
+          printf '%s\n' "$CONFLICTED" > /tmp/conflicted.txt
+
+      - name: Push du résultat
+        if: steps.merge.outputs.already != '1'
+        run: |
+          git push origin main
+
+      - name: Issue de rapport
+        if: steps.merge.outputs.already != '1'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          REPORT=/tmp/report.md
+          {
+            echo "## Rapport de synchronisation amont — $(date -u +'%Y-%m-%d %H:%M UTC')"
+            echo ""
+            echo "- **Commits amont intégrés** : $BEFORE"
+            echo "- **Stratégie de conflit** : fork prioritaire (\`-X ours\`) — les hunks en conflit conservent la version augmentée du fork"
+            echo "- **Fichiers en conflit résolus en faveur du fork** (correctifs amont à réappliquer manuellement si pertinent) :"
+            echo ""
+            echo "\`\`\`"
+            cat /tmp/conflicted.txt 2>/dev/null || echo "(aucun)"
+            echo "\`\`\`"
+            echo ""
+            echo "Fusion exécutée par \`.github/workflows/sync-upstream.yml\` (déclenché par push ou cron quotidien 06:30 UTC)."
+          } > "$REPORT"
+          TITLE="Rapport sync amont — $(date -u +'%Y-%m-%d')"
+          EXISTING=$(gh issue list --state open --search "Rapport sync amont in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body-file "$REPORT"
+          else
+            gh issue create --title "$TITLE" --body-file "$REPORT" || echo "Création d'issue impossible"
+          fi
