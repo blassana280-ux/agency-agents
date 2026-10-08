@@ -160,7 +160,7 @@ SELECT set_config('app.tenant_id', CAST(:authenticated_tenant_id AS text), true)
 COMMIT;
 -- The true flag makes context transaction-local: pool reuse cannot carry a
 -- previous tenant into the next request. Missing context denies access.
--- FORCE also subjects the table owner to RLS; 
+-- FORCE also subjects the table owner to RLS;
 privileged maintenance roles
 -- still bypass it and must never be used by request-serving connections.
 -- Objects called by requests must also use the caller's restricted privileges:

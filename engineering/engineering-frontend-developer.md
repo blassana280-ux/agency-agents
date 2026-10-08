@@ -78,7 +78,7 @@ interface DataTableProps {
 
 export const DataTable = memo<DataTableProps>(({ data, columns, onRowClick }) => {
   const parentRef = React.useRef<HTMLDivElement>(null);
-  
+
   const rowVirtualizer = useVirtualizer({
     count: data.length,
     getScrollElement: () => parentRef.current,

@@ -66,7 +66,7 @@ support_channels:
       - enterprise_customers
       - billing_issues
       - technical_emergencies
-    
+
   live_chat:
     response_time_sla: "30 seconds"
     concurrent_chat_limit: 3
@@ -75,16 +75,16 @@ support_channels:
       - technical_issues: "tier2_technical"
       - billing_questions: "billing_specialist"
       - general_inquiries: "tier1_general"
-    
+
   phone_support:
-   
+
  response_time_sla: "3 rings"
     callback_option: true
     priority_queue:
       - premium_customers
       - escalated_issues
       - urgent_technical_problems
-    
+
   social_media:
     monitoring_keywords:
       - "@company_handle"
@@ -92,7 +92,7 @@ support_channels:
       - "company_name issues"
     response_time_sla: "1 hour"
     escalation_to_private: true
-    
+
   in_app_messaging:
     contextual_help: true
     user_session_data: true
@@ -112,7 +112,7 @@ support_tiers:
       - technical_complexity
       - policy_exceptions
       - customer_dissatisfaction
-    
+
   tier2_technical:
     capabilities:
       - advanced_troubleshooting
@@ -123,7 +123,7 @@ support_tiers:
       - engineering_required
       - security_concerns
       - data_recovery_needs
-    
+
   tier3_specialists:
     capabilities:
       - enterprise_support
@@ -147,32 +147,32 @@ class SupportAnalytics:
     def __init__(self, support_data):
         self.data = support_data
         self.metrics = {}
-        
+
     def calculate_key_metrics(self):
         """
         Calculate comprehensive support performance metrics
         """
         current_month = datetime.now().month
         last_month = current_month - 1 if current_month > 1 else 12
-        
+
         # Response time metrics
         self.metrics['avg_first_response_time'] = self.data['first_response_time']
 .mean()
         self.metrics['avg_resolution_time'] = self.data['resolution_time'].mean()
-        
+
         # Quality metrics
         self.metrics['first_contact_resolution_rate'] = (
-            len(self.data[self.data['contacts_to_resolution'] == 1]) / 
+            len(self.data[self.data['contacts_to_resolution'] == 1]) /
             len(self.data) * 100 if len(self.data) else None
         )
-        
+
         self.metrics['customer_satisfaction_score'] = self.data['csat_score'].mean()
-        
+
         # Volume metrics
         self.metrics['total_tickets'] = len(self.data)
         self.metrics['tickets_by_channel'] = self.data.groupby('channel').size()
         self.metrics['tickets_by_priority'] = self.data.groupby('priority').size()
-        
+
         # Agent performance
         self.metrics['agent_performance'] = self.data.groupby('agent_id').agg({
             'csat_score': 'mean',
@@ -180,9 +180,9 @@ class SupportAnalytics:
             'first_response_time': 'mean',
             'ticket_id': 'count'
         }).rename(columns={'ticket_id': 'tickets_handled'})
-        
+
         return self.metrics
-    
+
     def identify_support_trends(self):
         """
         Compare calendar periods, preserving year boundaries and missing evidence.
@@ -199,24 +199,24 @@ class SupportAnalytics:
             return 'improving' if improving else 'declining'
 
         trends = {}
-        
+
         # Ticket volume trends
         daily_volume = self.data.groupby(self.data['created_date'].dt.date).size()
         trends['volume_trend'] = 'increasing' if daily_volume.iloc[-7:].mean() > daily_volume.iloc[-14:-7].mean() else 'decreasing'
-        
+
         # Common issue categories
         issue_frequency = self.data['issue_category'].value_counts()
         trends['top_issues'] = issue_frequency.head(5).to_dict()
-        
+
         # Customer satisfaction trends
         monthly_csat = self.data.groupby(self.data['created_date'].dt.month)['csat_score'].mean()
         trends['satisfaction_trend'] = 'improving' if monthly_csat.iloc[-1] > monthly_csat.iloc[-2] else 'declining'
-        
+
         # Response time trends
         weekly_response_time = self.data.groupby(self.data['created_date'].dt.week)['first_response_time'].mean()
-  
+
       trends['response_time_trend'] = 'improving' if weekly_response_time.iloc[-1] < weekly_response_time.iloc[-2] else 'declining'
-        
+
         return trends
 
     def generate_improvement_recommendations(self):
@@ -224,7 +224,7 @@ class SupportAnalytics:
         Generate specific recommendations based on support data analysis
         """
         recommendations = []
-        
+
         # Response time recommendations
         if self.metrics['avg_first_response_time'] > 2:  # 2 hours SLA
             recommendations.append({
@@ -234,7 +234,7 @@ class SupportAnalytics:
                 'priority': 'HIGH',
                 'expected_impact': '30% reduction in response time'
             })
-        
+
         # First contact resolution recommendations
         if (self.metrics['first_contact_resolution_rate'] is not None and
                 self.metrics['first_contact_resolution_rate'] < 80):
@@ -245,7 +245,7 @@ class SupportAnalytics:
                 'priority': 'MEDIUM',
                 'expected_impact': '15% improvement in FCR rate'
             })
-        
+
         # Customer satisfaction recommendations
         if self.metrics['customer_satisfaction_score'] < 4.5:
             recommendations.append({
@@ -255,9 +255,9 @@ class SupportAnalytics:
                 'priority': 'HIGH',
                 'expected_impact': '0.3 point CSAT improvement'
             })
-        
+
         return recommendations
-    
+
     de
 f create_proactive_outreach_list(self):
         """
@@ -267,21 +267,21 @@ f create_proactive_outreach_list(self):
         frequent_reporters = self.data[
             self.data['created_date'] >= datetime.now() - timedelta(days=30)
         ].groupby('customer_id').size()
-        
+
         high_volume_customers = frequent_reporters[frequent_reporters >= 3].index.tolist()
-        
+
         # Customers with low satisfaction scores
         low_satisfaction = self.data[
-            (self.data['csat_score'] <= 3) & 
+            (self.data['csat_score'] <= 3) &
             (self.data['created_date'] >= datetime.now() - timedelta(days=7))
         ]['customer_id'].unique()
-        
+
         # Customers with unresolved tickets over SLA
         overdue_tickets = self.data[
-            (self.data['status'] != 'resolved') & 
+            (self.data['status'] != 'resolved') &
             (self.data['created_date'] <= datetime.now() - timedelta(hours=48))
         ]['customer_id'].unique()
-        
+
         return {
             'high_volume_customers': high_volume_customers,
             'low_satisfaction_customers': low_satisfaction.tolist(),
@@ -296,7 +296,7 @@ class KnowledgeBaseManager:
         self.articles = []
         self.categories = {}
         self.search_analytics = {}
-        
+
     def create_article(self, title, content, category, tags, difficulty_level):
         """
         Create comprehensive knowledge base article
@@ -317,19 +317,19 @@ class KnowledgeBaseManager:
             're
 lated_tickets': []
         }
-        
+
         # Add step-by-step instructions
         article['steps'] = self.extract_steps(content)
-        
+
         # Add troubleshooting section
         article['troubleshooting'] = self.generate_troubleshooting_section(category)
-        
+
         # Add related articles
         article['related_articles'] = self.find_related_articles(tags, category)
-        
+
         self.articles.append(article)
         return article
-    
+
     def generate_article_template(self, issue_type):
         """
         Generate standardized article template based on issue type
@@ -351,7 +351,7 @@ lated_tickets': []
             'account_management': {
                 'structure': [
                     'Overview',
-                    'Prerequisites', 
+                    'Prerequisites',
                     'Step-by-Step Instructions',
                     'Important Notes',
                     'Frequently Asked Questions',
@@ -376,16 +376,16 @@ ative',
                 'include_video': False
             }
         }
-        
+
         return templates.get(issue_type, templates['technical_troubleshooting'])
-    
+
     def optimize_article_content(self, article_id, usage_data):
         """
         Optimize article content based on usage analytics and customer feedback
         """
         article = self.get_article(article_id)
         optimization_suggestions = []
-        
+
         # Analyze search patterns
         if usage_data['bounce_rate'] > 60:
             optimization_suggestions.append({
@@ -393,7 +393,7 @@ ative',
                 'recommendation': 'Add clearer introduction and improve content organization',
                 'priority': 'HIGH'
             })
-        
+
         # Analyze customer feedback
         negative_feedback = [f for f in article['customer_feedback'] if f['rating'] <= 2]
         if len(negative_feedback) > 5:
@@ -403,7 +403,7 @@ ative',
                 'recommendation': f"Address common complaints: {', '.join(common_complaints)}",
                 'priority': 'MEDIUM'
             })
-        
+
         # Analyze related ticket patterns
         if len(article['related_tickets']) > 20:
             optimization_suggestions.append({
@@ -411,9 +411,9 @@ ative',
                 'recommendation': 'Article may not be solving the problem completely - review and expand',
                 'priority': 'HIGH'
             })
-        
+
         return optimization_suggestions
-    
+
     def create_interactive_troubleshooter(self, issue_category):
         """
         Create interactive troubleshooting flow
@@ -429,7 +429,7 @@ ontent': True,
                 'device_type': 'optimize_for_platform'
             }
         }
-        
+
         return troubleshooter
 ```
 
@@ -470,7 +470,7 @@ ontent': True,
 ### Contact Details
 **Customer Name**: [Name]
 **Account Type**: [Free/Premium/Enterprise]
-**Contact 
+**Contact
 Method**: [Email/Chat/Phone/Social]
 **Priority Level**: [Low/Medium/High/Critical]
 **Previous Interactions**: [Number of recent tickets, satisfaction scores]
@@ -490,7 +490,7 @@ Method**: [Email/Chat/Phone/Social]
 **Resource Requirements**: [What tools, access, or specialists are needed]
 
 ### Solution Implementation
-**Steps Taken**: 
+**Steps Taken**:
 1. [First action taken with result]
 2. [Second action taken with result]
 3. [Final resolution steps]

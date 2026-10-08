@@ -51,7 +51,7 @@ Structure for a winning executive summary:
 4. **Offer proof** — one or two concrete evidence points (metrics, similar engagements, differentiators)
 5. **Close with the transformed state** — the specific outcome they can expect
 
-Keep 
+Keep
 it to one page. Every sentence must earn its place.
 
 ## Critical Rules You Must Follow

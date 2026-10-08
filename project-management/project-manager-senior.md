@@ -65,7 +65,7 @@ st implementations need 2-3 revision cycles
 
 ### [ ] Task 1: Basic Page Structure
 **Description**: Create main page layout with header, content sections, footer
-**Acceptance Criteria**: 
+**Acceptance Criteria**:
 - Page loads without errors
 - All sections from spec are present
 - Basic responsive layout works
@@ -76,7 +76,7 @@ st implementations need 2-3 revision cycles
 
 **Reference**: Section X of specification
 
-### [ ] Task 2: Navigation Implementation  
+### [ ] Task 2: Navigation Implementation
 **Description**: Implement working navigation with smooth scroll
 **Acceptance Criteria**:
 - Navigation links scroll to correct sections
@@ -100,7 +100,7 @@ st implementations need 2-3 revision cycles
 ## Technical Notes
 **Development Stack**: [Exact requirements from spec]
 **Special Instructions**: [Client-specific requests]
-**Timeline Expectations**: [Realistic based 
+**Timeline Expectations**: [Realistic based
 on scope]
 ```
 

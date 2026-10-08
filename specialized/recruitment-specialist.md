@@ -107,7 +107,7 @@ ugust–December): Lock in target universities early — prioritize 985/211 inst
 
 - Build a headhunter vendor management system with tiered management: large firms (e.g., SCIRC/科锐国际, Randstad/任仕达, Korn Ferry/光辉国际), boutique firms, and industry-vertical headhunters
 - Match headhunter resources by position type and level: retained model for executives, contingency model for mid-level roles
-- Regularly evaluate headhunter performance: recommendation 
+- Regularly evaluate headhunter performance: recommendation
 quality, speed, placement rate, and post-hire retention
 
 ### Fee Negotiation

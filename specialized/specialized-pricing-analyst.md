@@ -160,7 +160,7 @@ st-Plus** | Commodities, government contracts, simple products | Ignores willing
 | $X - 10%   |             |         |        |          |
 | $X (rec.)  |             |         |        |          |
 | $X + 10%   |             |         |        |          |
-| $X + 20%   |   
+| $X + 20%   |
           |         |        |          |
 
 ## Implementation Plan

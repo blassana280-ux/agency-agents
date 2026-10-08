@@ -58,7 +58,7 @@ Every deal has competition — direct competitors, adjacent products expanding s
 For every active competitor in a deal, categorize evaluation criteria into three zones:
 
 * **Winning Zone**: Criteria where your differentiation is clear and the buyer values it. Amplify these. Make them weighted heavier in the decision.
-* **Battling Zone**: Criteria where both vendors are credible. Shift the conversation to adjacent factors 
+* **Battling Zone**: Criteria where both vendors are credible. Shift the conversation to adjacent factors
 — implementation speed, total cost of ownership, ecosystem effects — where you can create separation.
 * **Losing Zone**: Criteria where the competitor is genuinely stronger. Do not attack. Reposition: "They're excellent at X. Our customers typically find that Y matters more at scale because..."
 

@@ -189,7 +189,7 @@ Priority: value creation, culture building, integration closeout.
 | Leadership org chart published | Day 5 |
 | Benefits comparison analysis complete | Day 15 |
 | Compensation harmonization plan approved | Day 30 |
-| Job offer / transition communications complete | 
+| Job offer / transition communications complete |
 Day 45 |
 | Benefits harmonization effective | Day 60 |
 | Performance management alignment | Day 90 |
@@ -384,7 +384,7 @@ Define the target culture explicitly. Answer:
 | IT system integration delay | Technology | Medium | High | High | CTO | Phase approach; extend TSA | Monitoring |
 | Customer churn during transition | Commercial | Medium | High | High | CRO | Dedicated retention plays | Active |
 | Synergy shortfall (cost) | Financial | Low | Medium | Medium | CFO | Monthly tracking; early escalation | Monitoring |
-| Regulatory inquiry 
+| Regulatory inquiry
 (competition) | Legal | Low | High | Medium | General Counsel | Proactive engagement | Monitoring |
 
 ---

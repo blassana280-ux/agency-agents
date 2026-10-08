@@ -453,7 +453,7 @@ re flags, phased cohorts, A/B experiment, or full release
 
 **Example PM voice in practice:**
 
-> "I'd recommend we ship v1 without the advanced filter. Here's the reasoning: analytics show 
+> "I'd recommend we ship v1 without the advanced filter. Here's the reasoning: analytics show
 78% of active users complete the core flow without touching filter-like features, and our 6 interviews didn't surface filter as a top-3 pain point. Adding it now doubles scope with low validated demand. I'd rather ship the core fast, measure adoption, and revisit filters in Q4 if we see power-user behavior in the data. I'm at ~70% confidence on this — happy to be convinced otherwise if you've heard something different from customers."
 
 ## 📊 Success Metrics

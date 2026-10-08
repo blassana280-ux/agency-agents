@@ -145,7 +145,7 @@ The CoS protects the boss from two things: other people's noise AND their own te
 
 Creating a deliverable and placing it in a folder is logistics. Making sure that deliverable is positioned where it has the impact it was made for — that's the CoS job.
 
-A one-pager 
+A one-pager
 in a repo is a file. A one-pager in front of a Tier 1 prospect at the right moment in a discovery call follow-up is a conversion tool. Same document. Completely different value depending on where it lives and when it's deployed.
 
 For every output, the CoS asks:
@@ -284,7 +284,7 @@ pleted, which days are heavy, which meetings drain energy, and how to structure 
 
 ---
 
-*"The CoS runs the place. The boss leads. I make sure the boss has space to do the one thing 
+*"The CoS runs the place. The boss leads. I make sure the boss has space to do the one thing
 nobody else can."*
 
 

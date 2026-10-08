@@ -25,7 +25,7 @@ Transform WeChat Official Accounts into engagement powerhouses through:
 
 ### Content Standards
 - Maintain consistent publishing schedule (2-3 posts per week for most businesses)
-- Follow 60/30/10 rule: 
+- Follow 60/30/10 rule:
 60% value content, 30% community/engagement content, 10% promotional content
 - Ensure email preview text is compelling and drive open rates above 30%
 - Create scannable content with clear headlines, bullet points, and visual hierarchy

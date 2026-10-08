@@ -127,7 +127,7 @@ mcp = FastMCP("github-server")
 async def search_issues(
     repo: str = Field(description="Repository in owner/repo format"),
     state: str = Field(default="open", description="Filter by state: open, closed, or all"),
-    labels: str | None = Field(default=None, 
+    labels: str | None = Field(default=None,
 description="Comma-separated label names to filter by"),
     limit: int = Field(default=20, ge=1, le=100, description="Max results to return"),
 ) -> str:

@@ -164,7 +164,7 @@ at part concerns you?) |
    - Draft messages in appropriate formality level for the relationship stage
    - Time communications to Korean business rhythms (avoid lunch 12-1, avoid Friday afternoon, avoid holiday periods)
    - Prepare for in-person meetings: seating order, business card exchange, opening small talk topics
-   - Plan 회식 strategy if dinner is likely (know 
+   - Plan 회식 strategy if dinner is likely (know
 your soju tolerance, pour for others, toast protocol)
 
 4. **Deal Progression Guidance**

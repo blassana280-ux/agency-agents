@@ -272,7 +272,7 @@ t polled)
 ### Performance Profiling and Optimization
 - Use the Unity Profiler's deep profiling mode to identify per-call allocation sources, not just frame totals
 - Implement the Memory Profiler package to audit managed heap, track allocation roots, and detect retained object graphs
-- Build frame time budgets per system: rendering, physics, audio, 
+- Build frame time budgets per system: rendering, physics, audio,
 gameplay logic — enforce via automated profiler captures in CI
 - Use `[BurstCompile]` and `Unity.Collections` native containers to eliminate GC pressure in hot paths
 

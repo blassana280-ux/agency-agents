@@ -207,7 +207,7 @@ etailing
 
 ### Platform Review Mechanisms
 
-- 
+-
 **Douyin (TikTok China)**:
   - Healthcare industry access: Must submit Medical Institution Practice License or drug/device qualifications for industry certification
   - Content review rules: Prohibits showing surgical procedures, patient testimonials, or prescription drug information
@@ -322,7 +322,7 @@ red declaration statements?
 |-----------|--------|----------------------|
 | "Start your beauty journey now" | Creates appearance anxiety | Introduce procedure principles and technical features |
 | "Before-and-after comparison photos" | Explicitly prohibited | Display technical principle diagrams |
-| "Celebrity-inspired nose" | Celebrity effect 
+| "Celebrity-inspired nose" | Celebrity effect
 exploitation | Introduce procedure characteristics and suitable candidates |
 | "Limited-time sale on double eyelid surgery" | Price promotion inducement | Showcase facility qualifications and physician team |
 

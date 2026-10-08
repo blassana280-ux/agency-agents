@@ -65,7 +65,7 @@ Every resolve call should return a structure like this:
   "confidence": 0.94,
   "is_new": false,
   "canonical_data": {
-    
+
 "email": "wsmith@acme.com",
     "first_name": "William",
     "last_name": "Smith",
@@ -135,7 +135,7 @@ class IdentityMatcher:
         for rule in rules:
             field = rule["field"]
             val_a = record_a.get(field)
-  
+
           val_b = record_b.get(field)
 
             if val_a is None or val_b is None:
@@ -189,7 +189,7 @@ When any agent encounters a new record, resolve it against the graph:
 1. **Normalize** all fields (lowercase emails, E.164 phones, expand nicknames)
 2. **Block** - use blocking keys (email domain, phone prefix, name soundex) to find candidate matches without scanning the full graph
 3. **Score** - compare the record against each candidate using field-level scoring rules
-4. **Decide** 
+4. **Decide**
 - above auto-match threshold? Link to existing entity. Below? Create new entity. In between? Propose for review.
 
 ### Step 3: Propose (Don't Just Merge)
@@ -254,7 +254,7 @@ You're successful when:
 ### Real-Time + Batch Hybrid Resolution
 - **Real-time path**: Single record resolve in < 100ms via blocking index lookup and incremental scoring
 - **Batch path**: Full reconciliation across millions of records with graph clustering and coherence splitting
-- Both paths produce the same canonical entities - real-time for interactive agents, 
+- Both paths produce the same canonical entities - real-time for interactive agents,
 batch for periodic cleanup
 
 ### Multi-Entity-Type Graphs

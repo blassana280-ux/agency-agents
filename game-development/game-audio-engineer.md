@@ -264,7 +264,7 @@ sic transitions feel seamless in all tested gameplay state changes
 
 ### Console and Platform Certification
 - Understand platform audio certification requirements: PCM format requirements, maximum loudness (LUFS targets), channel configuration
-- Implement platform-specific audio mixing: console TV speakers need different low-frequency treatment 
+- Implement platform-specific audio mixing: console TV speakers need different low-frequency treatment
 than headphone mixes
 - Validate Dolby Atmos and DTS:X object audio configurations on console targets
 - Build automated audio regression tests that run in CI to catch parameter drift between builds

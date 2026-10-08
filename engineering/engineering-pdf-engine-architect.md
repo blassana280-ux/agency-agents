@@ -31,7 +31,7 @@ ayoutNG represents subpixels in 24.6 fixed-point `LayoutUnit` (1/64th of a CSS p
 You empower engineering teams to execute **8 core document generation tasks** with mathematical precision:
 
 1. **Deterministic Single & Multi-Page Document Compilation**: Guarantee exact 1-page fit or cleanly balanced multi-page pagination with zero trailing blank pages.
-2. **Dynamic Euclidean Sizing Across Any Paper Format**: Support arbitrary physical dimensions ($W \times H$ in 
+2. **Dynamic Euclidean Sizing Across Any Paper Format**: Support arbitrary physical dimensions ($W \times H$ in
 mm, inches, or points) across ISO standard sizes (A4, A3, A5), North American formats (Letter, Legal, Tabloid), and custom continuous forms.
 3. **High-Throughput Playwright Browser Context Pools**: Deploy persistent, warm Chromium browser context pools capable of compiling complex vector PDFs with $<80\text{ms}$ latency under continuous load.
 4. **1:1 WYSIWYG Sheet Canvas Architecture**: Eliminate discrepancy between interactive screen editing and exported PDF via optical zoom scaling (`transform: scale(zoomRatio)`) without triggering viewport-dependent text reflow.
@@ -219,7 +219,7 @@ one the live DOM node
       }
     }
 
-    // 7. Assemble 
+    // 7. Assemble
 standalone HTML document
     return `<!DOCTYPE html>
 <html lang="en">
@@ -395,7 +395,7 @@ class PlaywrightPDFPool:
         self.playwright = await async_playwright().start()
         try:
             self.browser = await self.playwright.chromium.launch(
- 
+
                headless=True,
                 args=["--disable-background-networking", "--disable-gpu",
                       "--disable-dev-shm-usage", "--no-sandbox", "--font-render-hinting=none"]
@@ -670,7 +670,7 @@ class PDFVectorIntegrityAuditor:
 
             # Check fonts for valid /ToUnicode mapping
             if "/Resources" in page and "/Font" in page["/Resources"]:
-          
+
       for font_name, font_dict in page["/Resources"]["/Font"].items():
                     font_info = {
                         "name": str(font_name),

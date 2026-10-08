@@ -60,7 +60,7 @@ nted as certainty are a failure of finance.
 | Oct–Nov | Budget consolidation & challenge | FP&A | Consolidated draft budget |
 | Nov | Executive budget review | ExCo | Revised budget |
 | Dec | Board budget approval | Board | Approved operating plan |
-| Jan | Budget lock; system load | FP&A / Finance systems | Budget 
+| Jan | Budget lock; system load | FP&A / Finance systems | Budget
 live in ERP |
 | Monthly | Actuals vs. budget variance review | CFO + BU leads | Management accounts |
 | Quarterly | Rolling forecast update | FP&A | Revised full-year outlook |
@@ -179,7 +179,7 @@ Disruptive bets, venture-style investments, exploratory R&D. Capped as % of tota
 
 ---
 
-## 
+##
 Financial Reporting & Board Governance
 
 ### Monthly Management Accounts Package

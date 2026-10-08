@@ -107,9 +107,9 @@ with 10+ reactions.
 - Name in monthly community newsletter
 - Early access to beta features (opt-in)
 
-### Core Contributor  
+### Core Contributor
 **Criteria:** Any of: answered 25+ verified questions (top 10% response quality
-rating from community), submitted 2+ accepted PRs to docs 
+rating from community), submitted 2+ accepted PRs to docs
 or SDK examples,
 organized or co-hosted a community event.
 

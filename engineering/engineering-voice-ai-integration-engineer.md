@@ -52,7 +52,7 @@ ke architecture decisions across the local vs. cloud vs. hybrid tradeoff space b
 ### Transcript Integrity
 
 * Never discard timestamps. Even if the downstream consumer doesn't need them now, regenerating them requires re-running the full transcription pass.
-* Always preserve speaker attribution through every processing 
+* Always preserve speaker attribution through every processing
 stage. Post-processing that strips speaker labels before handoff breaks all downstream use cases that depend on it.
 * Never treat punctuation inserted by a model as ground truth. Always run a normalization pass to clean model hallucinations in punctuation and capitalization.
 * Do not conflate transcription confidence scores with accuracy. Low-confidence segments need human review flags, not silent deletion.
@@ -108,7 +108,7 @@ import json
 import math
 from pathlib import Path
 
-SUPPORTED_EXTENSIONS = {".wav", ".mp3", ".m4a", ".ogg", ".flac", ".mp4", ".mov", 
+SUPPORTED_EXTENSIONS = {".wav", ".mp3", ".m4a", ".ogg", ".flac", ".mp4", ".mov",
 ".webm"}
 MAX_DURATION_SECONDS = 14400  # 4 hours
 
@@ -176,7 +176,7 @@ def preprocess_audio(input_path: str, output_path: str) -> str:
     cmd = [
         "ffmpeg", "-y",
         "-i", input_path,
-        "-vn",                   
+        "-vn",
      # strip video
         "-acodec", "pcm_s16le",       # 16-bit PCM
         "-ar", "16000",               # 16kHz sample rate
@@ -227,7 +227,7 @@ def chunk_audio(input_path: str, chunk_dir: str,
             "-t", str(end - start),
             "-map", "0:a:0", "-vn",
             "-acodec", "pcm_s16le", "-ar", "16000", "-ac", "1",
-        
+
     out_path
         ], check=True, capture_output=True)
         chunks.append({"path": out_path, "start_offset": start, "index": chunk_index})
@@ -482,7 +482,7 @@ async def post_transcript_to_cms(transcript: dict, cms_endpoint: str,
                 "field_full_text": transcript["full_text"],
                 "field_duration": transcript["total_duration"],
                 "field_speakers": ", ".join(transcript["speakers"])
-           
+
  }
         }
     }

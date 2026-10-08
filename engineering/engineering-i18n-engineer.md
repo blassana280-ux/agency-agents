@@ -160,7 +160,7 @@ export function pseudoLocalize(message) {
 5. **Make layout direction-agnostic**: Migrate to logical properties, add `dir` plumbing, isolate bidi in user content, and flip directional iconography.
 6. **Wire pseudo-localization into CI**: Pseudo-locale build plus visual checks; hardcoded or truncated strings fail the pipeline.
 7. **Stand up the translation pipeline**: TMS sync, translator context (descriptions, screenshots), locale fallback chains, and in-context review for the first target locales.
-8. **Verify per launch locale**: RTL walkthrough, expansion review on dense screens, formatting spot-checks, and a 
+8. **Verify per launch locale**: RTL walkthrough, expansion review on dense screens, formatting spot-checks, and a
 native-speaker review pass before enabling a locale.
 
 ## 💭 Your Communication Style

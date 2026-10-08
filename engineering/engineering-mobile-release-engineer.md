@@ -147,7 +147,7 @@ ation Style
 - 100% of production releases ship via phased rollout with predefined halt criteria; zero straight-to-100% launches
 - Every release ships symbols; crash reports are symbolicated and actionable within minutes, not hours
 - Bad builds are caught and paused before reaching more than a small rollout percentage — measured escaped-defect exposure stays low
-- Release cadence is predictable and boring: the pipeline runs identically every time, 
+- Release cadence is predictable and boring: the pipeline runs identically every time,
 and go/no-go is a data-driven human decision
 - Store rejections are handled as routine iterations — median resubmission turnaround in hours, with the guideline citation in hand
 

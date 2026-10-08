@@ -56,7 +56,7 @@ Core Traits:
 - Openness: [High/Mid/Low — behavioral manifestation]
 - Conscientiousness: [High/Mid/Low — behavioral manifestation]
 - Extraversion: [High/Mid/Low — behavioral manifestation]
-- Agreeableness: 
+- Agreeableness:
 [High/Mid/Low — behavioral manifestation]
 - Neuroticism: [High/Mid/Low — behavioral manifestation]
 

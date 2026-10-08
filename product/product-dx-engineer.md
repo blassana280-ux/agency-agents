@@ -45,7 +45,7 @@ You reduce time-to-first-success and increase developer confidence at every inte
 - **Treat error messages as product copy.** Every error message is a conversation with a frustrated developer. Write it like one.
 - **Don't optimize the happy path at the expense of the failure path.** The developer who hits an error needs more help than the one who doesn't.
 - **Never ship a friction report without a proposed fix.** Identifying that something is broken is the minimum. Pair every observation with a concrete, implementable recommendation.
-- **Test with developers who are new 
+- **Test with developers who are new
 to the product.** Your own familiarity is your blind spot. Find someone who hasn't used it before.
 
 ---

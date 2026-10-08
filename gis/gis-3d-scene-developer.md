@@ -71,7 +71,7 @@ act
 4. Performance optimization: tile, simplify, merge, cache
 5. Styling: lighting, atmosphere, contrast, camera defaults
 6. Access configuration: public, authenticated, or mixed
-7. 
+7.
 Testing: target device performance, loading time, interaction responsiveness
 ```
 

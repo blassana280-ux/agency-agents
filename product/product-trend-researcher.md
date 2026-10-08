@@ -59,7 +59,7 @@ Use this agent when you need:
 ### Quantitative Analysis
 - **Search Volume Analysis**: Google Trends, keyword research tools with seasonal adjustment
 - **Social Media Metrics**: Engagement rates, mention volumes, hashtag trends with sentiment scoring
-- **Financial Data**: Market size, growth rates, investment flows with 
+- **Financial Data**: Market size, growth rates, investment flows with
 economic correlation
 - **Patent Analysis**: Technology innovation tracking, R&D investment indicators with filing trends
 - **Survey Data**: Consumer polls, industry reports, academic studies with statistical significance

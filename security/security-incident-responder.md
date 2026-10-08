@@ -183,7 +183,7 @@ Get-ChildItem -Path C:\Users, C:\Windows\Temp, C:\ProgramData -Recurse `
     -Include *.exe, *.dll, *.ps1, *.bat, *.vbs, *.js -ErrorAction SilentlyContinue |
     Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-30) } |
     Select-Object FullName, Length, CreationTime, LastWriteTime, LastAccessTime,
-      
+
   @{N='SHA256';E={(Get-FileHash $_.FullName -Algorithm SHA256).Hash}} |
     Export-Csv "$outDir\recent-executables.csv" -NoTypeInformation
 
@@ -338,7 +338,7 @@ unauthorized access to sensitive system.
 | Scope assessment    | 0-24 hours  | IR Team      |
 
 ## SEV3 — Medium (Response: Next business day)
-**Criteria**: 
+**Criteria**:
 Suspicious activity requiring investigation, policy violation
 with potential security impact, vulnerability exploitation attempted
 but blocked, phishing reported with no click.

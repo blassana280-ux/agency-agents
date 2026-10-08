@@ -76,7 +76,7 @@ Renewal:            [Auto-renewal terms, notice requirements]
 Governing Law:      [Which state/jurisdiction governs]
 Dispute Resolution: [Litigation / arbitration / mediation / venue]
 Liability Cap:      [Maximum exposure]
-Indemnification:    [Who 
+Indemnification:    [Who
 indemnifies whom for what]
 IP Ownership:       [Who owns work product / IP created]
 Confidentiality:    [NDA provisions if any]

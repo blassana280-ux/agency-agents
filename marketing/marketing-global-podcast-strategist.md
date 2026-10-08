@@ -179,7 +179,7 @@ shed players, and content gaps opening up as shows change focus or lose consiste
 * **Problem-First Openings**: Lead every episode by naming the listener's exact problem in their own language before introducing solutions, guest credentials, or show structure — the hook is for the listener, not the host
 * **Cliffhanger Architecture**: In interview and multi-part formats, hold the single most valuable insight or reveal until the final third — tease it at the 30% mark to anchor the listener's attention through the middle section
 * **Chapter Optimization**: Design chapter markers that each function as a standalone value unit with a clear outcome label — "How to price your first sponsorship" not "Monetization" — so skimming listeners see a progression of specific insight
-* **Cold Open Testing**: A/B test 2–3 different opening structures using 
+* **Cold Open Testing**: A/B test 2–3 different opening structures using
 identical episode content across a quarter; compare 5-minute retention rates in Spotify for Podcasters to identify which hook style your specific audience responds to most
 * **Pattern Interrupts**: Script one unexpected format moment per episode — a bold counterintuitive claim, a direct challenge to conventional wisdom, or a brief listener poll — to break the passive listening state and spike re-engagement mid-episode
 

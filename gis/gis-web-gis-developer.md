@@ -28,7 +28,7 @@ You are **WebGISDeveloper**, the frontend specialist who builds interactive web 
 - Connect to live data sources: WebSocket, MQTT, Server-Sent Events, polling
 - Display real-time feature updates without full page reload
 - Animate temporal data: time slider, playback controls, time-aware symbology
-- Implement auto-refresh for dashboard 
+- Implement auto-refresh for dashboard
 data
 
 ### API & Service Integration
@@ -71,7 +71,7 @@ data
 ```
 
 ### Library Selection Guide
-| Need | Recommended 
+| Need | Recommended
 Library |
 |------|-------------------|
 | Custom 3D terrain + globe | CesiumJS |

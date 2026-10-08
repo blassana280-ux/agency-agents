@@ -131,7 +131,7 @@ def fetch_thread(imap_conn, thread_ids):
 ```python
 def reconstruct_thread(messages):
     """Build conversation topology from message headers.
-    
+
     Key challenges:
     - Forwarded chains collapse multiple conversations into one message body
     - Quoted replies duplicate content (20-msg thread = ~4-5x token bloat)
@@ -168,24 +168,24 @@ t": parent_id,
             "children": [],
             "message": msg
         }
-    
+
     # Link children to parents
     for msg_id, node in graph.items():
         if node["parent"] and node["parent"] in graph:
             graph[node["parent"]]["children"].append(msg_id)
-    
+
     # Deduplicate quoted content
     for msg_id, node in graph.items():
         node["message"]["unique_body"] = strip_quoted_content(
             node["message"]["body"],
             get_parent_bodies(node, graph)
         )
-    
+
     return graph
 
 def strip_quoted_content(body, parent_bodies):
     """Remove quoted text that duplicates parent messages.
-    
+
     Handles multiple quoting styles:
     - Prefix quoting: lines starting with '>'
     - Delimiter quoting: '---Original Message---', 'On ... wrote:'
@@ -194,7 +194,7 @@ def strip_quoted_content(body, parent_bodies):
     lines = body.split("\n")
     unique_lines = []
     in_quote_block = False
-    
+
     for line in lines:
         if is_quote_delimiter(line):
             in_quote_block = True
@@ -204,7 +204,7 @@ def strip_quoted_content(body, parent_bodies):
             continue
         if not in_quote_block and not line.startswith(">"):
             unique_lines.append(line)
-    
+
     return "\n".join(unique_lines)
 ```
 
@@ -213,7 +213,7 @@ def strip_quoted_content(body, parent_bodies):
 ```python
 def extract_structured_context(thread_graph):
     """Extract structured data from reconstructed thread.
-    
+
     Produces:
     - Participant map with roles and activity patterns
     - Decision timeline (explicit commitments + implicit agreements)
@@ -224,9 +224,9 @@ def extract_structured_context(thread_graph):
     decisions = extract_decisions(thread_graph, participants)
     action_items = extract_action_items(thread_graph, participants)
     attachments = link_attachments_to_context(thread_graph)
-    
+
     return {
-      
+
   "thread_id": get_root_id(thread_graph),
         "message_count": len(thread_graph),
         "participants": participants,
@@ -238,7 +238,7 @@ def extract_structured_context(thread_graph):
 
 def extract_action_items(thread_graph, participants):
     """Extract action items with correct attribution.
-    
+
     Critical: In a flattened thread, 'I' refers to different people
     in different messages. Without preserved From: headers, an LLM
     will misattribute tasks. This function binds each commitment
@@ -263,12 +263,12 @@ def extract_action_items(thread_graph, participants):
 ```python
 def build_agent_context(thread_graph, query, token_budget=4000):
     """Assemble context for an AI agent, respecting token limits.
-    
+
     Uses hybrid retrieval:
     1. Semantic search for query-relevant message segments
     2. Full-text search for exact entity/keyword matches
     3. Metadata filters (date range, participant, has_attachment)
-    
+
     Returns structured JSON with source citations so the agent
     can ground its reasoning in specific messages.
     """
@@ -276,7 +276,7 @@ def build_agent_context(thread_graph, query, token_budget=4000):
     semantic_hits = semantic_search(query, thread_graph, top_k=20)
     keyword_hits = fulltext_search(query, thread_graph)
     merged = reciprocal_rank_fusion(semantic_hits, keyword_hits)
-    
+
     # Assemble context within token budget
     context_blocks = []
     token_count = 0
@@ -288,7 +288,7 @@ def build_agent_context(thread_graph, query, token_budget=4000):
             break
         context_blocks.append(block)
         token_count += block_tokens
-    
+
     return {
         "query": query,
         "context": context_blocks,
@@ -315,7 +315,7 @@ from langchain.tools import tool
 @tool
 def email_ask(query: str, datasource_id: str) -> dict:
     """Ask a natural language question about email threads.
-    
+
     Returns a structured answer with source citations grounded
     in specific messages from the thread.
     """
@@ -326,10 +326,10 @@ def email_ask(query: str, datasource_id: str) -> dict:
 @tool
 def email_search(query: str, datasource_id: str, filters: dict = None) -> list:
     """Search across email threads using hybrid retrieval.
-    
+
     Supports filters: date_range, participants, has_attachment,
     thread_subject, label.
-    
+
     Returns ranked message segments with metadata.
     """
     results = hybrid_search(query, datasource_id, filters)

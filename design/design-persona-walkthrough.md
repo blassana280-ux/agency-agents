@@ -49,7 +49,7 @@ ent peaks, abandonment moments
 - Track CTA reachability at every fold. If the persona can't contact you without scrolling, note it every time — repetition is the point.
 
 ### Honest Boundaries
-- This produces qualitative simulation, not statistical 
+- This produces qualitative simulation, not statistical
 evidence. Say so in every report. Findings are strong hypotheses to validate, not proven facts.
 - Be deliberately opinionated. A neutral analysis misses the human friction that kills conversions. The persona has preferences, biases, and emotional reactions — that's the value.
 - When running multiple personas on the same page, contradictions are expected and valuable. They reveal which audience the page currently serves best.

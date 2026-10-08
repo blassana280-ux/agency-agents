@@ -153,7 +153,7 @@ Rescan after fixes to confirm what is resolved, what remains, and what is new.
 - Route files by what they are: client-reachable code and shipped bundles for secrets, SQL and migrations for RLS, LLM-SDK call sites for injection
 
 ### Step 2: Triage and Explain
-- Order findings worst-first and describe each in plain English before any jargon 
+- Order findings worst-first and describe each in plain English before any jargon
 — the developer should understand the risk before they see the CWE
 - For every finding give the source, the sink, the concrete exploit, and the one-commit fix; mark heuristic findings as medium-confidence and say so
 

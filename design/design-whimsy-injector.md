@@ -89,7 +89,7 @@ or, animation, and visual element preferences]
   position: relative;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  
+
   &::before {
     content: '';
     position: absolute;
@@ -100,16 +100,16 @@ or, animation, and visual element preferences]
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s;
   }
-  
+
   &:hover {
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    
+
     &::before {
       left: 100%;
     }
   }
-  
+
   &:active {
     transform: translateY(-1px) scale(1.01);
   }
@@ -118,7 +118,7 @@ or, animation, and visual element preferences]
 /* Playful Form Validation */
 .form-field-success {
   position: relative;
-  
+
   &::after {
     content: '✨';
     position: absolute;
@@ -138,14 +138,14 @@ or, animation, and visual element preferences]
 .loading-whimsy {
   display: inline-flex;
   gap: 4px;
-  
+
   .dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background: var(--primary-color);
     animation: bounce 1.4s infinite both;
-    
+
     &:nth-child(2) { animation-delay: 0.16s; }
     &:nth-child(3) { animation-delay: 0.32s; }
   }
@@ -160,7 +160,7 @@ or, animation, and visual element preferences]
 .easter-egg-zone {
   cursor: default;
   transition: all 0.3s ease;
-  
+
   &:hover {
     background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
     background-size: 400% 400%;
@@ -178,7 +178,7 @@ ient {
 /* Progress Celebration */
 .progress-celebration {
   position: relative;
-  
+
   &.completed::after {
     content: '🎉';
     position: absolute;
@@ -299,9 +299,9 @@ class WhimsyAchievements {
         <p>${achievement.description}</p>
       </div>
     `;
-    
+
     document.body.appendChild(celebration);
-    
+
     // Auto-remove after animation
     setTimeout(() => {
       celebration.remove();
@@ -315,14 +315,14 @@ class EasterEggManager {
     this.konami = '38,38,40,40,37,39,37,39,66,65'; // Up, Up, Down, Down, Left, Right, Left, Right, B, A
     this.sequence = [];
     this.setupListeners();
- 
+
  }
 
   setupListeners() {
     document.addEventListener('keydown', (e) => {
       this.sequence.push(e.keyCode);
       this.sequence = this.sequence.slice(-10); // Keep last 10 keys
-      
+
       if (this.sequence.join(',') === this.konami) {
         this.triggerKonamiEgg();
       }
@@ -334,7 +334,7 @@ class EasterEggManager {
       if (e.target.classList.contains('easter-egg-zone')) {
         clickSequence.push(Date.now());
         clickSequence = clickSequence.filter(time => Date.now() - time < 2000);
-        
+
         if (clickSequence.length >= 5) {
           this.triggerClickEgg();
           clickSequence = [];
@@ -347,7 +347,7 @@ class EasterEggManager {
     // Add rainbow mode to entire page
     document.body.classList.add('rainbow-mode');
     this.showEasterEggMessage('🌈 Rainbow mode activated! You found the secret!');
-    
+
     // Auto-remove after 10 seconds
     setTimeout(() => {
       document.body.classList.remove('rainbow-mode');
@@ -370,9 +370,9 @@ class EasterEggManager {
     element.className = 'floating-emoji';
     element.style.left = Math.random() * window.innerWidth + 'px';
     element.style.animationDuration = (Math.random() * 2 + 2) + 's';
-    
+
     document.body.appendChild(element);
-    
+
     setTimeout(() => element.remove(), 4000);
   }
 }

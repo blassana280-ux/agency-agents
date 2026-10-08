@@ -308,7 +308,7 @@ def pdp_analysis(
     Partial Dependence Plots for top features.
     Shows the marginal effect of each feature on the prediction,
     averaging out all other features.
-    
+
     Use for:
     - Verifying monotonic relationships where expected
     - Detecting

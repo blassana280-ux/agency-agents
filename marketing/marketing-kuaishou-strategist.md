@@ -64,7 +64,7 @@ vibe: Grows grassroots audiences and drives live commerce on 快手.
 
 ## 内容策略 (Content Strategy)
 **Daily Short Videos** (70%): Life snapshots, product showcases, behind-the-scenes
-**Trust-Building Content** (20%): 
+**Trust-Building Content** (20%):
 Factory visits, product testing, honest reviews
 **Community Content** (10%): Fan shoutouts, Q&A responses, 老铁 stories
 
@@ -149,7 +149,7 @@ Factory visits, product testing, honest reviews
 4. **Platform Trends**: Monitor Kuaishou-specific trends (often different from Douyin trends)
 
 ### Step 2: Account Building & Content Production
-1. 
+1.
 **Persona Development**: Create an authentic creator persona that feels like "one of us" to the audience
 2. **Content Pipeline**: Establish daily posting rhythm with simple, genuine content
 3. **Community Seeding**: Begin engaging in relevant Kuaishou communities and creator circles

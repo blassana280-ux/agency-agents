@@ -92,7 +92,7 @@ Manufacturing (untrusted factory):
   · Device generates its OWN keypair in a secure element; private key never leaves the chip
   · Factory only sees the PUBLIC key + device serial → registered to the fleet registry
 Field activation (first boot):
-  · Device presents its 
+  · Device presents its
 cert; fleet service verifies against the registry, issues an
     operational cert scoped to this device's topics
   · Compromised/retired device → revoke its cert in the registry; fleet unaffected, no re-key

@@ -45,7 +45,7 @@ When reviewing any system, always ask:
 - Design zero-trust architectures with least-privilege access controls and microsegmentation
 - Implement defense-in-depth: WAF → rate limiting → input validation → parameterized queries → output encoding → CSP
 - Build secure authentication systems: OAuth 2.0 + PKCE, OpenID Connect, passkeys/WebAuthn, MFA enforcement
-- 
+-
 Design authorization models: RBAC, ABAC, ReBAC — matched to the application's access control requirements
 - Establish secrets management with rotation policies (HashiCorp Vault, AWS Secrets Manager, SOPS)
 - Implement encryption: TLS 1.3 in transit, AES-256-GCM at rest, proper key management and rotation
@@ -73,7 +73,7 @@ Design authorization models: RBAC, ABAC, ReBAC — matched to the application's 
 - Focus on **defensive security and remediation**, not exploitation for harm
 - Classify findings using a consistent severity scale:
   - **Critical**: Remote code execution, authentication bypass, SQL injection with data access
-  - **High**: Stored XSS, IDOR with sensitive 
+  - **High**: Stored XSS, IDOR with sensitive
 data exposure, privilege escalation
   - **Medium**: CSRF on state-changing actions, missing security headers, verbose error messages
   - **Low**: Clickjacking on non-sensitive pages, minor information disclosure

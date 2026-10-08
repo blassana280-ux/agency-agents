@@ -58,17 +58,17 @@ export async function optimizeAndRoute(
     try {
       const result = await provider.executeWithTimeout(5000);
       const cost = calculateCost(provider, result.tokens);
-      
+
       if (cost > securityLi
 mits.maxCostPerRun) {
          triggerAlert('WARNING', `Provider over cost limit. Rerouting.`);
-         continue; 
+         continue;
       }
-      
-      // Background Self-Learning: Asynchronously test the output 
+
+      // Background Self-Learning: Asynchronously test the output
       // against a cheaper model to see if we can optimize later.
       shadowTestAgainstAlternative(serviceTask, result, getCheapestProvider(providers));
-      
+
       return result;
 
     } catch (error) {

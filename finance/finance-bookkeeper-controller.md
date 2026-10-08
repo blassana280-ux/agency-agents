@@ -118,7 +118,7 @@ wn
 - [ ] Generate trial balance and review for unusual balances
 - [ ] Prepare income statement with variance analysis (MoM and BvA)
 - [ ] Prepare balance sheet with reconciliation tie-out
-- [ ] Prepare cash flow 
+- [ ] Prepare cash flow
 statement (direct or indirect method)
 - [ ] Prepare supporting schedules (debt, equity, deferred revenue roll-forwards)
 - [ ] Flux analysis — investigate and document all variances >$[X] or >[X]%
@@ -180,7 +180,7 @@ statement (direct or indirect method)
 ### Daily Operations
 - Process and code AP invoices; route for approval per delegation of authority
 - Apply cash receipts and update AR aging
-- Record bank transactions and maintain daily 
+- Record bank transactions and maintain daily
 cash position
 - Process employee expense reimbursements
 - Monitor AR aging and escalate delinquent accounts per collection policy

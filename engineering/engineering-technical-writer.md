@@ -167,7 +167,7 @@ paths:
                 value:
                   customer_id: "cust_abc123"
                   items:
-                    - 
+                    -
 product_id: "prod_xyz"
                       quantity: 2
                   shipping_address:
@@ -319,7 +319,7 @@ const config = {
 ## 🔄 Your Workflow Process
 
 ### Step 1: Understand Before You Write
-- Interview the engineer who built it: "What's 
+- Interview the engineer who built it: "What's
 the use case? What's hard to understand? Where do users get stuck?"
 - Run the code yourself — if you can't follow your own setup instructions, users can't either
 - Read existing GitHub issues and support tickets to find where current docs fail

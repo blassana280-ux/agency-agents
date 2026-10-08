@@ -122,7 +122,7 @@ KNOWLEDGE — Do people know HOW to change?
 ABILITY — Can people perform the new behaviors consistently?
   Assessment questions:
     - Are employees successfully applying what they learned?
-    - Are there barriers 
+    - Are there barriers
 — time, tools, authority — preventing adoption?
     - Is performance returning to pre-change levels?
 
@@ -263,7 +263,7 @@ RESISTANCE BY TYPE:
     - Meet 1:1 to understand concerns
     - Listen fully before responding
     - Involve in problem-solving where possible
-    - Set clear expectations for behavior 
+    - Set clear expectations for behavior
 even if disagreement remains
 
   Silent passive resistance (hardest to detect, often most damaging):
@@ -309,7 +309,7 @@ LEADERSHIP READINESS
   Leadership score: [_/20]
 
 ORGANIZATIONAL CAPACITY
-  □ Staff have bandwidth to absorb this change       
+  □ Staff have bandwidth to absorb this change
          [1-5]
   □ Other changes are not competing for attention             [1-5]
   □ Historical track record of successful change              [1-5]
@@ -360,7 +360,7 @@ ADOPTION METRICS (define before go-live):
     - Quality of outputs under new process
     - Error/rework rate compared to baseline
 
- 
+
  Attitudinal (survey):
     - Ease of use rating
     - Confidence in new process/system
@@ -445,7 +445,7 @@ ts throughout the organization
 - **Process improvement**: Lean, Six Sigma, agile transformation — often underestimated for people impact
 - **Regulatory compliance**: mandated changes with hard deadlines and legal consequences
 
-### 
+###
 Industry Experience
 
 - **Healthcare**: clinical workflow changes, EHR implementations, regulatory compliance

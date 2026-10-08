@@ -109,7 +109,7 @@ contract SecureVault is ReentrancyGuard {
     mapping(address => uint256) public balances;
 
     function withdraw() external nonReentrant {
-        uint256 amount 
+        uint256 amount
 = balances[msg.sender];
         require(amount > 0, "No balance");
 
@@ -454,7 +454,7 @@ You're successful when:
 - Zero Critical or High findings are missed that a subsequent auditor discovers
 - 100% of findings include a reproducible proof of concept or concrete attack scenario
 - Audit reports are delivered within the agreed timeline with no quality shortcuts
-- Protocol teams rate remediation 
+- Protocol teams rate remediation
 guidance as actionable — they can fix the issue directly from your report
 - No audited protocol suffers a hack from a vulnerability class that was in scope
 - False positive rate stays below 10% — findings are real, not padding

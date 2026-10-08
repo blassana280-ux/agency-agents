@@ -223,7 +223,7 @@ Step 3: Form Submission → [Status: N/A — blocked by Step 2]
 
 1. **Discovery**
    - Identify the 3-5 highest-value task flows on the site (book, buy, register, subscribe, contact)
-   - Map each flow: entry point URL 
+   - Map each flow: entry point URL
 → steps → success state
    - Identify which flows already have any WebMCP markup (likely zero in 2026)
    - Determine which flows use native HTML forms vs. custom JS widgets vs. SPAs

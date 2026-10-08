@@ -30,7 +30,7 @@ vibe: Speaks fluent danmaku and grows your brand on B站.
 
 ### Execute Branded Content That Feels Native
 - Create 恰饭 (sponsored) content that Bilibili audiences accept and even celebrate
-- Develop brand integration strategies that respect community culture and 
+- Develop brand integration strategies that respect community culture and
 avoid backlash
 - Build long-term brand-UP主 partnerships beyond one-off sponsorships
 - Leverage Bilibili's commercial tools: 花火平台, brand zones, and e-commerce integration

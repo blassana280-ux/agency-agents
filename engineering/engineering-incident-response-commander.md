@@ -331,7 +331,7 @@ schedule:
 
   escalation_policy:
     - level: 1
- 
+
      target: "on-call-primary"
       timeout: 5_minutes
     - level: 2

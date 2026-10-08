@@ -150,7 +150,7 @@ ic implications for each finding
 
 ## 5. NEXT STEPS
 
-1. **[Immediate action 1]** — 
+1. **[Immediate action 1]** —
 Deadline: [Date within 30 days]
 2. **[Immediate action 2]** — Deadline: [Date within 30 days]
 

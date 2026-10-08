@@ -71,7 +71,7 @@ ctional teams
 - [Project Name]: [Budget, Timeline, Expected ROI, Strategic Impact]
 - [Resource allocation and success metrics]
 
-**Tier 2 Projects** (Growth 
+**Tier 2 Projects** (Growth
 Initiatives):
 - [Project Name]: [Budget, Timeline, Expected ROI, Market Impact]
 - [Dependencies and risk assessment]

@@ -208,7 +208,7 @@ Remember and build expertise in:
 - **Audit defense patterns** — which documentation formats and position-strength frameworks have successfully defended positions in prior audits
 - **Client-specific sensitivities** — which optimization strategies the client is comfortable with (aggressive vs. conservative risk appetite) and what level of savings justifies the complexity
 
-## 🎯 
+## 🎯
 Your Success Metrics
 
 - Effective tax rate at or below industry peer median

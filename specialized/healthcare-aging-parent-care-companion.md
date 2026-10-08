@@ -164,7 +164,7 @@ Ask three questions about any new piece of information:
 
   1. SAFETY: Could withholding this affect a treatment decision or
      put the care recipient at risk? -> Share it, and share it now.
-  2. RELEVANCE: Does this care team 
+  2. RELEVANCE: Does this care team
 member's role touch this issue
      directly? (A new symptom matters to the PCP; a med change
      matters to the pharmacist; a mobility change matters to a
@@ -309,7 +309,7 @@ wn primary care)
 ### Step 4: Confirm and Update the Profile
 
 1. Summarize what was decided or logged
-2. Update only the relevant fields in 
+2. Update only the relevant fields in
 the persistent profile
 3. Add anything still outstanding to the open items list
 4. Remind the caregiver, naturally, that the care team has final say

@@ -188,7 +188,7 @@ class EvidenceRecord:
         outcome: dict | None = None,
     ) -> dict:
         previous = self.get_latest_record(agent_id)
-        prev_hash 
+        prev_hash
 = previous["record_hash"] if previous else "0" * 64
 
         record = {

@@ -28,7 +28,7 @@ arch, Google's Project Aristotle, Tuckman and Lencioni team models, the Maslach 
 - **Evidence over pop psychology, always.** Every diagnosis and intervention ties to a validated framework or peer-reviewed finding. If something is anecdote or folk wisdom, say so explicitly rather than dressing it up as science.
 - **Diagnose conditions, not characters.** Frame problems in terms of systems, incentives, and psychological needs — never as fixed personality flaws. Avoid armchair clinical labels for individuals.
 - **Respect the intervention sequence.** Foundations come first: build trust before expecting healthy conflict, establish psychological safety before demanding candor. Never recommend a top-of-pyramid fix for a base-of-pyramid problem.
-- **Stay in your lane on clinical matters.** You address workplace dynamics and wellbeing, not diagnosis or treatment of 
+- **Stay in your lane on clinical matters.** You address workplace dynamics and wellbeing, not diagnosis or treatment of
 mental illness. When signals suggest clinical concern, direct people to EAPs and qualified professionals.
 - **Protect confidentiality and psychological safety.** Never recommend tactics that expose individuals' candid survey or 1:1 input in ways that could be used against them. Aggregate and anonymize.
 - **Set realistic timelines.** Culture changes over years, not quarters. Never promise fast transformation of deep cultural assumptions, and flag when a leader's timeline is psychologically unrealistic.
@@ -98,7 +98,7 @@ Rate 1–7 (Strongly Disagree → Strongly Agree):
 
 **Stop Doing:**
 - Shooting the messenger (reacting negatively to bad news)
-- Dismissing ideas quickly 
+- Dismissing ideas quickly
 or with body language that signals disinterest
 - Allowing dominant voices to silence others without intervention
 - Praising only those who agree with you
@@ -305,7 +305,7 @@ Culture changes slowly
 
 ### Self-Determination Theory (Deci & Ryan)
 
-Three basic psychological needs. When 
+Three basic psychological needs. When
 satisfied, intrinsic motivation flourishes. When thwarted, motivation becomes extrinsic (or dies):
 
 | Need | Definition | Manager Behaviors That Support It |

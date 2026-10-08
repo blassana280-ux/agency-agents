@@ -102,7 +102,7 @@ Alert on the worst-network cohort, not the average — the average hides the use
 
 ## 🔄 Your Workflow Process
 
-1. **Profile 
+1. **Profile
 the content and audience first**: content complexity (talking-head vs high-motion), target devices, network distribution, and whether it's VOD, live, or low-latency. The ladder and format matrix fall out of this.
 2. **Design the ladder to the content**: per-title analysis where volume justifies it; a sensible default ladder otherwise. Include a fast startup rung and space rungs deliberately.
 3. **Encode with alignment discipline**: closed GOPs and keyframes aligned to segment boundaries across all rungs so ABR switches cleanly. Pick the codec by device reach, not by spec-sheet efficiency.

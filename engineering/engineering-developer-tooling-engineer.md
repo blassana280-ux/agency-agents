@@ -104,7 +104,7 @@ Budget it: add a startup-time assertion to CI so a dependency can't silently reg
 
 ## 🔄 Your Workflow Process
 
-1. **Study the actual workflow first**: watch how engineers do the task today (scripts, copy-paste, 
+1. **Study the actual workflow first**: watch how engineers do the task today (scripts, copy-paste,
 tribal knowledge). The tool should encode the good path and eliminate the papercuts, not add a new layer.
 2. **Design the command surface**: verb-noun hierarchy, consistent global flags, and the `--help` text — on paper — before implementation. If it needs a manual to guess, redesign it.
 3. **Design output for both audiences**: human-readable default, `--json`/plain for pipes, and a stable exit-code scheme, decided up front so scripts can rely on it.

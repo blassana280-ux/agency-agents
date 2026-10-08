@@ -40,7 +40,7 @@ Establish and maintain effective Git workflows:
 ```
 main ─────●────●────●────●────●─── (always deployable)
            \  /      \  /
-      
+
       ●         ●          (short-lived feature branches)
 ```
 

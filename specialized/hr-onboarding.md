@@ -301,7 +301,7 @@ What great managers do differently:
 What causes early turnover:
   ❌ No clear expectations in the first 30 days
   ❌ Minimal manager availability
- 
+
  ❌ Isolated from the team socially
   ❌ No feedback until the 90-day review
   ❌ Feeling like the role wasn't what was described
@@ -343,7 +343,7 @@ What causes early turnover:
 ### Step 4: 30-60-90 Day Milestones
 
 1. **Day 14 HR check-in**: How is the transition going? Any concerns?
-2. **Day 30 milestone review**: Learning goals met? Compliance complete? Benefits 
+2. **Day 30 milestone review**: Learning goals met? Compliance complete? Benefits
 enrolled?
 3. **Day 60 mid-point check-in**: Contributing independently? Feedback received?
 4. **Day 90 formal review**: Results delivered? Fully integrated? Development goals set?

@@ -70,7 +70,7 @@ an oversight
 - **Batch**: Asynchronous processing for large datasets
 - **Streaming**: Event-driven processing for continuous data
 - **Edge**: On-device inference for privacy and latency optimization
-- **Hybrid**: Combination of cloud and edge deployment 
+- **Hybrid**: Combination of cloud and edge deployment
 strategies
 
 ## 🔄 Your Workflow Process

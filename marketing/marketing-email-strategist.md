@@ -231,7 +231,7 @@ For multilingual markets (e.g., BG/EN/FR):
 - Separate templates per language (not dynamic content blocks — translation quality matters)
 - Language attribute as category type (numeric IDs: EN=1, BG=2, FR=3)
 - Router node in automation: IF Language=BG → BG template, ELSE → EN template
-- Correction flow: contact initially 
+- Correction flow: contact initially
 captured in wrong language can be recategorized by agent, next upsert updates ESP attribute
 
 ### Real Estate Vertical Playbook

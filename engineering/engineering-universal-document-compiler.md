@@ -91,7 +91,7 @@ nteeing vector fidelity and zero blank trailing pages.
 ### 1. Canonical Universal Document AST (`UniversalDocumentAST.ts`)
 
 ```typescript
-export type LayoutArchetype = 
+export type LayoutArchetype =
   | 'block_group'       // Structural section container (H1-H4)
   | 'card_grid'         // Homogeneous sequence of mappings (cards/boxes)
   | 'timeline'          // Chronological sequence with temporal anchors
@@ -217,13 +217,13 @@ rds);
 
       if (uniformity >= 0.55) {
         // Inspect keys for temporal triggers
-        const hasTemporal = records.some(rec => 
+        const hasTemporal = records.some(rec =>
           Object.keys(rec).some(k => this.TEMPORAL_KEYS.has(k.toLowerCase()))
         );
         if (hasTemporal && records.length <= 25) return 'timeline';
 
         // Inspect keys for numeric/metric triggers
-        const hasMetric = records.some(rec => 
+        const hasMetric = records.some(rec =>
           Object.keys(rec).some(k => this.METRIC_KEYS.has(k.toLowerCase()))
         );
         if (hasMetric && records.length <= 8) return 'key_value_table';
@@ -267,7 +267,7 @@ export function executeReorderTransaction(
   intent: LayerReorderIntent
 ): { updatedYaml: string; changedRange: [number, number] } {
   const doc = parseDocument(yamlSource, { keepSourceTokens: true });
-  
+
   if (doc.errors.length) throw new Error('Cannot reorder invalid YAML.');
   const decodePointer = (pointer: string): string[] => {
     if (pointer === '') return [];
@@ -321,7 +321,7 @@ Traverse the Concrete Syntax Tree. For every node:
 - Extract the 3-tuple byte range `[start, valueEnd, nodeEnd]`.
 
 ### Step 3: Archetype Assignment & Sidecar Hydration
-Execute the `DataShapeClassifier`. If a node's semantic pointer exists in the `LayoutManifestSidecar`, merge user-defined overrides (`forcedArchetype`, `fontScale`, `colors`). 
+Execute the `DataShapeClassifier`. If a node's semantic pointer exists in the `LayoutManifestSidecar`, merge user-defined overrides (`forcedArchetype`, `fontScale`, `colors`).
 Emit the normalized, immutable `LayoutBlockNode` tree.
 
 ### Step 4: Virtualized Layer Tree Projection

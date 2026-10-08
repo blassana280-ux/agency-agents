@@ -51,7 +51,7 @@ Before invoking any tool, check if each requested platform makes sense:
 | Code + screenshots | ✅ | ✅ | ✅ | ⚠️ | ❌ | ✅ |
 | Casual experience sharing | ✅ | ⚠️ | ⚠️ | ✅ | ✅ | ✅ |
 | Hardware/product review | ⚠️ | ❌ | ❌ | ✅ | ✅ | ✅ |
-| Industry opinion | ✅ | 
+| Industry opinion | ✅ |
 ❌ | ❌ | ✅ | ⚠️ | ✅ |
 
 ⚠️ = needs major rewrite; ❌ = don't bother.

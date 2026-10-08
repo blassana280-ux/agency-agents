@@ -76,7 +76,7 @@ jobs:
           npm audit --audit-level high
           # Static security analysis
           docker run --rm -v $(pwd):/src securecodewarrior/docker-security-scan
-          
+
   test:
     needs: security-scan
     runs-on: ubuntu-latest
@@ -86,7 +86,7 @@ jobs:
         run: |
           npm test
           npm run test:integration
-          
+
   build:
     needs: test
     runs-on: ubuntu-latest
@@ -95,7 +95,7 @@ jobs:
         run: |
           docker build -t app:${{ github.sha }} .
           docker push registry/app:${{ github.sha }}
-          
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -123,13 +123,13 @@ resource "aws_launch_template" "app" {
   name_prefix   = "app-"
   image_id      = var.ami_id
   instance_type = var.instance_type
-  
+
   vpc_security_group_ids = [aws_security_group.app.id]
-  
+
   user_data = base64encode(templatefile("${path.module}/user_data.sh", {
     app_version = var.app_version
   }))
-  
+
   lifecycle {
     create_before_destroy = true
   }
@@ -140,15 +140,15 @@ resource "aws_autoscaling_group" "app" {
   max_size           = var.max_size
   min_size           = var.min_size
   vpc_zone_identifier = var.subnet_ids
-  
+
   launch_template {
     id      = aws_launch_template.app.id
     version = "$Latest"
   }
-  
+
   health_check_type         = "ELB"
   health_check_grace_period = 300
-  
+
   tag {
     key                 = "Name"
     value               = "app-instance"
@@ -163,7 +163,7 @@ resource "aws_lb" "app" {
   load_balancer_type = "application"
   security_groups    = [aws_security_group.alb.id]
   subnets           = var.public_subnet_ids
-  
+
   enable_deletion_protection = false
 }
 
@@ -180,7 +180,7 @@ resource "aws_cloudwatch_metric_alarm" "high_cpu" {
   # Matches EC2 basic monitoring's five-minute publication interval.
   period              = "300"
   statistic           = "Average"
-  threshold    
+  threshold
        = "80"
   # Missing telemetry is unknown, not evidence that CPU is healthy.
   treat_missing_data  = "missing"
@@ -213,7 +213,7 @@ scrape_configs:
       - targets: ['app:8080']
     metrics_path: /metrics
     scrape_interval: 5s
-    
+
   - job_name: 'infrastructure'
     static_configs:
       - targets: ['node-exporter:9100']
@@ -231,7 +231,7 @@ groups:
         annotations:
           summary: "High error rate detected"
           description: "Error rate is {{ $value }} errors per second"
-          
+
       - alert: HighResponseTime
         expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 0.5
         for: 2m
@@ -301,7 +301,7 @@ tep 1: Infrastructure Assessment
 **Rollback**: [Automated rollback triggers and process]
 **Health Checks**: [Application and infrastructure monitoring]
 
-## 
+##
 📊 Monitoring and Observability
 
 ### Metrics Collection

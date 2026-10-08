@@ -133,7 +133,7 @@ Purpose:        [ ] Listing price recommendation
                 [ ] Offer price guidance
                 [ ] Annual market update
 
-SUBJECT 
+SUBJECT
 PROPERTY
 ───────────────────────────────────────
 Address:        [Full address]

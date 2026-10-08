@@ -285,7 +285,7 @@ ViewField::make('energy_summary')
 - Add `->summarize()` to numeric columns (e.g. average energy score across all rows)
 
 ### Global Search Optimization
-- Only 
+- Only
 register `->searchable()` on indexed database columns
 - Use `getGlobalSearchResultDetails()` to show meaningful context in search results
 

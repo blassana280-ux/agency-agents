@@ -134,7 +134,7 @@ set firewall family inet filter PROTECT-RE term drop-rest then discard
 set interfaces lo0 unit 0 family inet filter input PROTECT-RE
 ```
 
-### Palo Alto 
+### Palo Alto
 PAN-OS Security Policy and Routing
 
 ```panos
@@ -158,7 +158,7 @@ commit
 |----------|----------------|---------|----------------------|------------------|
 | Cisco IOS/IOS-XE | `show running-config`, `show version`, `show logging` | `show ip route`, `show ip ospf neighbor`, `show ip bgp summary`, `show ip cef exact-route` | `show ip interface brief`, `show interfaces status`, `show interfaces counters errors`, `show spanning-tree vlan 20` | `show access-lists`, `show control-plane host open-ports` |
 | Cisco ASA/FTD CLI | `show running-config`, `show version` | `show route`, `show asp table routing` | `show interface ip brief`, `show interface` | `show conn`, `show xlate`, `show nat detail`, `packet-tracer input ... detailed` |
-| Juniper Junos | `show configuration \| compare`, `show system uptime`, `show log messages` | `show route`, `show ospf neighbor`, `show bgp summary`, `show route forwarding-table` | `show interfaces terse`, `show interfaces extensive` | `show security flow session`, `show firewall filter`, `monitor 
+| Juniper Junos | `show configuration \| compare`, `show system uptime`, `show log messages` | `show route`, `show ospf neighbor`, `show bgp summary`, `show route forwarding-table` | `show interfaces terse`, `show interfaces extensive` | `show security flow session`, `show firewall filter`, `monitor
 traffic interface ... no-resolve` |
 | Palo Alto PAN-OS | `show system info`, `show jobs all`, `show config diff` | `show routing route`, `show routing protocol bgp summary`, `test routing fib-lookup virtual-router default ip 8.8.8.8` | `show interface all`, `show counter interface all` | `show session all filter source ...`, `test security-policy-match`, `show counter global filter packet-filter yes delta yes` |
 

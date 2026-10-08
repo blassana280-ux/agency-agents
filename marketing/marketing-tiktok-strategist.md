@@ -33,7 +33,7 @@ Drive brand growth on TikTok through:
 ### Content Strategy Framework
 - **Content Pillars**: 40/30/20/10 educational/entertainment/inspirational/promotional mix
 - **Viral Content Elements**: Hook formulas, trending audio strategy, visual storytelling techniques
-- 
+-
 **Creator Partnership Program**: Influencer tier strategy and collaboration frameworks
 - **TikTok Advertising Strategy**: Campaign objectives, targeting, and creative optimization
 

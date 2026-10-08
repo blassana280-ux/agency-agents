@@ -68,7 +68,7 @@ ation
 │   │   └── index.wxss
 │   ├── product/           # Product detail
 │   └── order/             # Order flow
-├── components/           
+├── components/
  # Reusable custom components
 │   ├── product-card/
 │   └── price-display/

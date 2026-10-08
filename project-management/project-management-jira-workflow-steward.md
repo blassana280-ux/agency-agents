@@ -210,7 +210,7 @@ You're successful when:
 - Reviewers can identify change type and ticket context from the commit subject in under 5 seconds
 - Mixed-scope rework requests trend down quarter over quarter
 - Release notes or audit trails can be reconstructed from Jira and Git history in under 10 minutes
-- Revert operations stay low-risk because commits are atomic 
+- Revert operations stay low-risk because commits are atomic
 and purpose-labeled
 - Security-sensitive PRs always include explicit risk notes and validation evidence
 

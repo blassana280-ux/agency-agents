@@ -196,7 +196,7 @@ and the target SIEM's own query test facilities before deployment.
 | Tactic              | Techniques | Covered | Gap  | Coverage % |
 |---------------------|-----------|---------|------|------------|
 | Initial Access      | 9         | 4       | 5    | 44%        |
-| Execution           | 14        | 9   
+| Execution           | 14        | 9
     | 5    | 64%        |
 | Persistence         | 19        | 8       | 11   | 42%        |
 | Privilege Escalation| 13        | 5       | 8    | 38%        |
@@ -367,7 +367,7 @@ asticsearch \
 
 ## Hunt Hypothesis
 Adversaries with local admin privileges are dumping credentials from LSASS
-process memory using tools like Mimikatz, ProcDump, or direct ntdll 
+process memory using tools like Mimikatz, ProcDump, or direct ntdll
 calls,
 and our current detections are not catching all variants.
 
@@ -503,7 +503,7 @@ lifecycle:
 Remember and build expertise in:
 - **Detection patterns**: Which rule structures catch real threats vs. which ones generate noise at scale
 - **Attacker evolution**: How adversaries modify techniques to evade specific detection logic (variant tracking)
-- **Log source reliability**: Which data sources are consistently collected vs. 
+- **Log source reliability**: Which data sources are consistently collected vs.
 which ones silently drop events
 - **Environment baselines**: What normal looks like in this environment — which encoded PowerShell commands are legitimate, which service accounts access LSASS, what DNS query patterns are benign
 - **SIEM-specific quirks**: Performance characteristics of different query patterns across Splunk, Sentinel, Elastic

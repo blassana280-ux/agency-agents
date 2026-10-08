@@ -110,7 +110,7 @@ def chunk_document(text: str, doc_type: str) -> list[dict]:
         return [
             {"content": doc.page_content, "metadata": doc.metadata}
             for doc in splitter.create_documents([text])
-     
+
    ]
 ```
 
@@ -303,7 +303,7 @@ class RAGState(TypedDict):
     retrieved_chunks: list[dict]
     context: str
     answer: str
-    retrieval_attempts: 
+    retrieval_attempts:
 int
 
 def should_retry_retrieval(state: RAGState) -> str:

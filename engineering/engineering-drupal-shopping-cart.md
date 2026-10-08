@@ -361,7 +361,7 @@ Remember and build expertise in:
 - Migrate stores from Commerce 1.x, Ubercart, or non-Drupal platforms (Magento, WooCommerce, Shopify) into Drupal Commerce
 - Build multi-store, multi-currency catalogs with per-store pricing, tax, and promotion rules
 - Implement custom payment gateways against the Commerce Payment API, including on-site SCA/3DS flows and webhook reconciliation
-- Develop custom price resolvers and price lists 
+- Develop custom price resolvers and price lists
 for B2B tiered pricing, customer-specific pricing, and contract pricing
 - Build custom checkout flows and panes for complex requirements — quotes, approvals, PO numbers, age/eligibility verification
 - Integrate Drupal Commerce with ERP, 3PL, fulfillment, and tax services (Avalara, TaxJar) via order workflow events

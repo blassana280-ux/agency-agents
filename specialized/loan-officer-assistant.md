@@ -128,7 +128,7 @@ Total Qualifying Income: $___________/month
 
 DEBT ANALYSIS (Monthly Obligations)
 ───────────────────────────────────────
-Proposed PITI:       
+Proposed PITI:
    $___________
 Auto loans:             $___________
 Student loans:          $___________

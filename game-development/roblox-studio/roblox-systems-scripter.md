@@ -316,7 +316,7 @@ You're successful when:
 - Use `workspace:GetPartBoundsInBox()` and spatial queries instead of iterating all descendants for performance-critical searches
 - Implement object pooling in Luau: pre-instantiate effects and NPCs in `ServerStorage`, move to workspace on use, return on release
 - Audit memory usage with Roblox's `Stats.GetTotalMemoryUsageMb()` per category in developer console
-- Use `Instance:Destroy()` over `Instance.Parent = nil` for cleanup — `Destroy` disconnects all connections and 
+- Use `Instance:Destroy()` over `Instance.Parent = nil` for cleanup — `Destroy` disconnects all connections and
 prevents memory leaks
 
 ### DataStore Advanced Patterns

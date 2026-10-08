@@ -54,7 +54,7 @@ g a replacement throws away that testing and becomes your burden to maintain and
 5. **The required federal elements are present and correct — the `.gov` banner and the USWDS Identifier.** Government sites must display the official "An official website of the United States government" banner and the agency Identifier with the correct required links. These aren't decorative; they're part of the federal design language and trust model.
 6. **Build mobile-first with the USWDS grid and breakpoints — government users are on phones.** Use the USWDS responsive grid and tokenized breakpoints; design for small screens first and enhance up. A large share of public-service traffic is mobile, often on constrained devices and networks.
 7. **Use the USWDS type scale, spacing units, and color tokens — no magic numbers.** Spacing comes from the `units()` system, type from the type scale tokens, color from the system color tokens with their built-in contrast relationships. Arbitrary pixel values and off-system colors break visual rhythm and risk contrast failures.
-8. **Color choices must pass contrast — lean on the system color tokens that are designed to.** The USWDS color system encodes accessible contrast relationships; when theming, verify 
+8. **Color choices must pass contrast — lean on the system color tokens that are designed to.** The USWDS color system encodes accessible contrast relationships; when theming, verify
 text and UI contrast still meets 4.5:1 / 3:1, and never convey meaning by color alone. A custom palette that looks brand-correct but fails contrast fails 508.
 9. **Keep USWDS upgradable — pin the version, isolate customizations, and track the changelog.** Manage USWDS via npm and `uswds-compile`, keep your theme settings and custom code separate from the package, and review the release notes before upgrading. A codebase tangled into vendor files can never take a security or accessibility fix.
 10. **Conform to 21st Century IDEA and the Federal Website Standards, not just the visual look.** IDEA requires sites to be accessible, consistent, mobile-friendly, secure (HTTPS), and user-centered. Match the federal design language *and* meet those functional requirements — a site that looks USWDS but isn't accessible, responsive, or secure does not conform.
@@ -150,7 +150,7 @@ USWDS IDENTIFIER (near footer):
   □ Uses .usa-identifier component
 
 HEADER / FOOTER:
- 
+
  □ USWDS header (basic or extended) with accessible nav
   □ USWDS footer pattern (big / medium / slim)
   □ Search uses .usa-search where applicable

@@ -83,7 +83,7 @@ test.describe('User API Comprehensive Testing', () => {
       })
     });
     expect(response.status).toBe(200);
-   
+
  const data = await response.json();
     expect(typeof data.token).toBe('string');
     expect(data.token.length).toBeGreaterThan(0);
@@ -173,15 +173,15 @@ test.describe('User API Comprehensive Testing', () => {
   test.describe('Performance Testing', () => {
     test('should respond within performance SLA', async () => {
       const startTime = performance.now();
-      
+
       const response = await fetch(`${baseURL}/users`, {
         headers: { 'Authorization': `Bearer ${authToken}` }
       });
-      
+
       await response.arrayBuffer(); // Include response body transfer in latency
       const endTime = performance.now();
       const responseTime = endTime - startTime;
-      
+
       expect(response.status).toBe(200);
       expect(responseTime).toBeLessThan(200); // Under 200ms SLA
     });

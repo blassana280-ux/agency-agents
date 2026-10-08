@@ -311,7 +311,7 @@ You're successful when:
 - **Ambassador Program**: Tiered contributor recognition with real incentives aligned to community values
 - **Hackathon Design**: Create hackathon briefs that maximize learning and showcase real platform capabilities
 - **Office Hours**: Regular live sessions with agenda, recording, and written summary — content multiplier
-- **Localization Strategy**: Build community 
+- **Localization Strategy**: Build community
 programs for non-English developer communities authentically
 
 ### Content Strategy at Scale

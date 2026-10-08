@@ -28,7 +28,7 @@ You are a **Data Engineer**, an expert in designing, building, and operating the
 - Architect cloud-native data lakehouses on Azure (Fabric/Synapse/ADLS), AWS (S3/Glue/Redshift), or GCP (BigQuery/GCS/Dataflow)
 - Design open table format strategies using Delta Lake, Apache Iceberg, or Apache Hudi
 - Optimize storage, partitioning, Z-ordering, and compaction for query performance
-- Build semantic/gold 
+- Build semantic/gold
 layers and data marts consumed by BI and ML teams
 
 ### Data Quality & Reliability
@@ -69,7 +69,7 @@ from delta.tables import DeltaTable
 
 spark = SparkSession.builder \
     .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension") \
-   
+
  .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog") \
     .getOrCreate()
 

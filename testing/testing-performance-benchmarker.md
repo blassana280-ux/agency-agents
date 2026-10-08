@@ -90,7 +90,7 @@ t: 100 }, // Peak load
 
 export default function () {
   const baseUrl = __ENV.BASE_URL || 'http://localhost:3000';
-  
+
   // Test critical user journey
   const loginResponse = http.post(`${baseUrl}/api/auth/login`, JSON.stringify({
     email: 'test@example.com',
@@ -100,24 +100,24 @@ export default function () {
   // A successful HTTP status can still carry invalid JSON or no token.
   let token;
   try { token = loginResponse.json('token'); } catch (_) { /* checked below */ }
-  
+
   const loginOK = check(loginResponse, {
     'login successful': (r) => r.status === 200,
     'login token present': () => typeof token === 'string' && token.length > 0,
     'login response time OK': (r) => r.timings.duration < 200,
   });
-  
+
   errorRate.add(!loginOK);
   responseTimeTrend.add(loginResponse.timings.duration);
   throughputCounter.add(1);
-  
+
   if (loginOK) {
-    
+
     // Test authenticated API performance
     const apiResponse = http.get(`${baseUrl}/api/dashboard`, {
       headers: { Authorization: `Bearer ${token}` },
     });
-    
+
     let data;
     try { data = apiResponse.json('data'); } catch (_) { /* checked below */ }
     const dashboardOK = check(apiResponse, {
@@ -125,12 +125,12 @@ export default function () {
       'dashboard response time OK': (r) => r.timings.duration < 300,
       'dashboard data complete': () => Array.isArray(data) && data.length > 0,
     });
-    
+
     errorRate.add(!dashboardOK);
     responseTim
 eTrend.add(apiResponse.timings.duration);
   }
-  
+
   sleep(1); // Realistic user think time
 }
 

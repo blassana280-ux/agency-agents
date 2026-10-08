@@ -90,7 +90,7 @@ criteria()
         self.test_results = {}
         self.cost_analysis = {}
         self.risk_assessment = {}
-    
+
     def _define_evaluation_criteria(self) -> List[EvaluationCriteria]:
         """Define weighted evaluation criteria"""
         return [
@@ -102,55 +102,55 @@ criteria()
             EvaluationCriteria("support", 0.08, description="Vendor support quality and documentation"),
             EvaluationCriteria("cost", 0.07, description="Total cost of ownership and value")
         ]
-    
+
     def evaluate_tool(self, tool_name: str, tool_config: Dict) -> ToolScoring:
         """Comprehensive tool evaluation with quantitative scoring"""
         scores = {}
         notes = {}
-        
+
         # Functional testing
         functionality_score, func_notes = self._test_functionality(tool_config)
         scores["functionality"] = functionality_score
         notes["functionality"] = func_notes
-        
+
         # Usability testing
         usability_score, usability_notes = self._test_usability(tool_config)
         scores["usability"] = usability_score
         notes["usability"] = usability_notes
-        
+
         # Performance testing
         performance_score, perf_notes = self._test_performance(tool_config)
         scores["performance"] = performance_score
         notes["performance"] = perf_notes
-        
+
         # Security assessment
         security_score, sec_notes = self._assess_security(tool_config)
         scores["security"] = security_score
         notes["security"] = sec_notes
-        
+
         # Integration t
 esting
         integration_score, int_notes = self._test_integration(tool_config)
         scores["integration"] = integration_score
         notes["integration"] = int_notes
-        
+
         # Support evaluation
         support_score, support_notes = self._evaluate_support(tool_config)
         scores["support"] = support_score
         notes["support"] = support_notes
-        
+
         # Cost analysis
         cost_score, cost_notes = self._analyze_cost(tool_config)
         scores["cost"] = cost_score
         notes["cost"] = cost_notes
-        
+
         # Calculate weighted scores
         total_score = sum(scores.values())
         weighted_score = sum(
-            scores[criterion.name] * criterion.weight 
+            scores[criterion.name] * criterion.weight
             for criterion in self.criteria
         )
-        
+
         return ToolScoring(
             tool_name=tool_name,
             scores=scores,
@@ -158,34 +158,34 @@ esting
             weighted_score=weighted_score,
             notes=notes
         )
-    
+
     def _test_functionality(self, tool_config: Dict) -> tuple[float, str]:
         """Test core functionality against requirements"""
         required_features = tool_config.get("required_features", [])
         optional_features = tool_config.get("optional_features", [])
-        
+
         # Test each required feature
         feature_scores = []
         test_notes = []
-        
+
         for feature in required_features:
             score = self._test_feature(feature, tool_config)
             feature_scores.append(score)
             test_notes.append(f"{feature}: {score}/10")
-        
+
         # Calculate score with required features as 80% weight
         required_avg = np.mean(feature_scores) if feature_scores else 0
-        
+
         # Test optional features
         optional_scores = []
         for feature in optional_features:
             score = self._test_feature(feature, tool_config)
             optional_scores.append(score)
             test_notes.append(f"{feature} (optional): {score}/10")
-        
-     
+
+
    optional_avg = np.mean(optional_scores) if optional_scores else 0
-        
+
         # An absent category is not a failed category: normalize active weights.
         active_scores = []
         if feature_scores:
@@ -198,15 +198,15 @@ esting
             weight for _, weight in active_scores
         )
         notes = "; ".join(test_notes)
-        
+
         return final_score, notes
-    
+
     def _test_performance(self, tool_config: Dict) -> tuple[float, str]:
         """Performance testing with quantitative metrics"""
         api_endpoint = tool_config.get("api_endpoint")
         if not api_endpoint:
             return 5.0, "No API endpoint for performance testing"
-        
+
         # Response time testing
         response_times = []
         failed_requests = 0
@@ -220,10 +220,10 @@ esting
             except requests.RequestException:
                 failed_requests += 1
                 response_times.append(10.0)  # Network/HTTP failure penalty
-        
+
         avg_response_time = np.mean(response_times)
         p95_response_time = np.percentile(response_times, 95)
-        
+
         # Score based on response time (lower is better)
         if avg_response_time < 0.1:
             speed_score = 10
@@ -235,11 +235,11 @@ esting
             speed_score = 4
         else:
             speed_score = 2
-        
+
         notes = (f"Penalty-adjusted avg: {avg_response_time:.2f}s, P95: {p95_response_time:.2f}s; "
                  f"failed requests: {failed_requests}/{len(response_times)}")
         return speed_score, notes
-    
+
     def calculate_total_cost_ownership(self, tool_config: Dict, years: int = 3) -> Dict:
         """Calculate TCO only for a defined positive adoption horizon."""
         users = tool_config.get("expected_users", 1)
@@ -258,19 +258,19 @@ esting
             "migration": tool_config.get("migration_cost", 0),
             "support": tool_config.get("annual_support_cost", 0) * years,
         }
-        
+
         total_cost = sum(costs.values())
-        
+
         # Calculate cost per user per year
         cost_per_user_year = total_cost / (users * years)
-        
+
         return {
             "cost_breakdown": costs,
             "total_cost": total_cost,
             "cost_per_user_year": cost_per_user_year,
             "years_analyzed": years
         }
-    
+
     def generate_comparison_report(self, tool_evaluations: List[ToolScoring]) -> Dict:
         """Generate comprehensive comparison report"""
         # Create comparison matrix
@@ -282,12 +282,12 @@ esting
             }
             for eval in tool_evaluations
         ])
-        
+
         # Equal best scores share rank 1; average ranking would give 1.5
         # and make the existing Rank == 1 lookup fail. Stable input order
         # selects the convenience top_performer field among tied leaders.
         comparison_df["Rank"] = comparison_df["Weighted Score"].rank(method="min", ascending=False)
-        
+
         # Identify strengths and weaknesses
         analysis = {
             "top_performer": comparison_df.loc[comparison_df["Rank"] == 1, "Tool"].iloc[0],
@@ -298,7 +298,7 @@ esting
             },
             "recommendations": self._generate_recommendations(comparison_df, tool_evaluations)
         }
-        
+
         return analysis
 ```
 

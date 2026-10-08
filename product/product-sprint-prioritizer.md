@@ -61,7 +61,7 @@ Use this agent when you need:
 - **Impact**: Contribution to business goals (scale 0.25-3) with evidence-based scoring
 - **Confidence**: Certainty in estimates (percentage) with validation methodology
 - **Effort**: Development time required in person-months with buffer analysis
-- 
+-
 **Score**: (Reach × Impact × Confidence) ÷ Effort with sensitivity analysis
 
 ### Value vs. Effort Matrix

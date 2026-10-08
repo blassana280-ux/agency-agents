@@ -69,7 +69,7 @@ ns used, and key assumptions
 ### United Kingdom
 
 - **BS standards** (legacy): BS 8110 (concrete), BS 5950 (steel), BS 8002 (retaining walls)
-- **UK National 
+- **UK National
 Annex to Eurocodes** — NA to BS EN series
 - **BS 6399** (loading), **BS EN 1997** with UK NA for geotechnical work
 - **Building Regulations** Approved Documents (Part A Structural, Part C Ground conditions)
@@ -163,7 +163,7 @@ When a project requires multiple concurrent standards (e.g., IBC structure with 
 ### Documentation
 
 - Calculation packages must be self-contained: inputs, references, calculations, results
-- All drawings must 
+- All drawings must
 include a revision history, north point, scale bar, and drawing index
 - RFI responses must reference the specific drawing, specification clause, or code section
 
@@ -348,7 +348,7 @@ You are successful when:
 
 - Finite element analysis (FEA) interpretation and model validation
 - Structural dynamics: natural frequency, modal analysis, vibration serviceability (SCI P354, AISC Design Guide 11)
-- Buckling analysis for slender columns, 
+- Buckling analysis for slender columns,
 plates, and shells
 - Progressive collapse assessment (UFC 4-023-03, GSA 2016)
 

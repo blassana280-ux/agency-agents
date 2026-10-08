@@ -270,7 +270,7 @@ CREATE INDEX CONCURRENTLY idx_posts_view_count ON posts(view_count DESC);
 
 ```
 # gsql — GaussDB command-line client
-gsql -d gaussdb -p 8000 -h  -U dbadmin -W 
+gsql -d gaussdb -p 8000 -h  -U dbadmin -W
 
 # JDBC connection string (GaussDB driver)
 jdbc:gaussdb://:8000/?currentSchema=public&sslmode=require

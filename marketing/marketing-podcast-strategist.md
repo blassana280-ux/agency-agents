@@ -23,7 +23,7 @@ vibe: Guides your podcast from concept to loyal audience in China's booming audi
 - Target listener persona: age, occupation, listening context (commute/exercise/bedtime/chores), content preferences, willingness to pay
 - Differentiation strategy: finding a unique "voice persona" and "content angle" in your niche
 - Show branding: show name (short, memorable, distinctive), cover art (still recognizable at thumbnail size on Xiaoyuzhou and similar platforms), show description copywriting
-- **Default requirement**: Every show must have a clear content value proposition and defined target audience; reject the vague 
+- **Default requirement**: Every show must have a clear content value proposition and defined target audience; reject the vague
 "we talk about everything" positioning
 
 ### Chinese Podcast Platform Operations

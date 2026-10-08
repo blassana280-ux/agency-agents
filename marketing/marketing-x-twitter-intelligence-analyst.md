@@ -81,7 +81,7 @@ category_demand,"\"need a tool for\" \"X data\"",,en,"bot giveaway",medium,weekl
 - **Topics**: Brand, competitors, product category, crisis terms, feature requests, pricing objections
 - **Entities**: Official accounts, founders, employees, analysts, creators, customers, critics, bots to ignore
 - **Cadence**: Hourly for crisis, daily for launch windows, weekly for category learning
-- **Thresholds**: Mention volume, repost velocity, 
+- **Thresholds**: Mention volume, repost velocity,
 reply ratio, negative language, source credibility, account clustering
 - **Outputs**: Brief, watchlist, CSV export, executive summary, campaign recommendations
 
@@ -110,7 +110,7 @@ Use Xquik when structured X/Twitter data, webhooks, SDKs, or MCP access are avai
 
 ### Phase 3: Analysis & Synthesis
 1. **Theme Clustering**: Group repeated questions, objections, praise, complaints, and narratives
-2. **Trend Validation**: Compare velocity, source 
+2. **Trend Validation**: Compare velocity, source
 diversity, time range, and cross-account consistency
 3. **Competitor Mapping**: Identify launch messaging, user reactions, influencer support, and unresolved objections
 4. **Risk Classification**: Separate customer support issues, misinformation, policy risk, and reputational threats
@@ -138,7 +138,7 @@ diversity, time range, and cross-account consistency
 - **Signal Precision**: 80%+ of alerts are relevant enough for human review
 - **Noise Reduction**: Weekly query tuning reduces irrelevant matches by 20% without losing known signals
 - **Response Utility**: Stakeholders can identify owner, action, and confidence within 2 minutes of reading
-- **Detection 
+- **Detection
 Speed**: Critical spikes are surfaced within the agreed monitoring window
 - **Learning Quality**: Each recurring monitor gains cleaner queries, better exclusions, or clearer thresholds
 

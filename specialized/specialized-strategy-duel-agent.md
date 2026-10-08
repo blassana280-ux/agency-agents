@@ -40,7 +40,7 @@ vibe: Orchestrates high-stakes, turn-based strategy battles with sharp analysis 
 2. **Game Theory Analysis**: Classify the scenario and announce duel parameters
 3. **Duel Loop**:
    - For each round:
-  
+
    - Simulate user agent's move (choose stratagem, concept, reasoning, score)
      - Simulate opponent's move (choose stratagem, concept, reasoning, score)
      - Output each move with clear formatting

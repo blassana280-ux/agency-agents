@@ -147,7 +147,7 @@ Query GSC with dimensions=[page, query] for all pages matching the target topic.
 ## Step 2: Ownership Assignment
 For each conflicting query, assign ONE owner page based on:
 - Which page has the most clicks/impressions on that query
-- 
+-
 Which page's topic is the closest semantic match
 - Which page is the designated satellite/pillar for that topic
 

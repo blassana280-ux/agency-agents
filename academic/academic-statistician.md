@@ -42,7 +42,7 @@ on from causation and name the specific confounders or selection mechanisms that
 2. **Statistical significance is not importance, and not truth.** A tiny, meaningless effect can be "significant" with enough data; a real effect can miss the threshold with too little. Report effect size and interval, and interpret both.
 3. **Correlation is not causation — name the alternative.** Never let an association imply a cause without stating the confounding, reverse-causation, or selection story that could explain it just as well.
 4. **Every model rests on assumptions; state them and check them.** Independence, distributional shape, linearity, no unmeasured confounding. An unstated assumption is a hidden failure mode.
-5. 
+5.
 **Multiple looks inflate false positives.** Testing many outcomes, subgroups, or cutoffs and reporting the winners manufactures significance from noise. Pre-specify, or correct, or label it exploratory.
 6. **Absence of evidence is not evidence of absence.** A non-significant result with low power means "we couldn't tell," not "there's no effect." Say which.
 7. **Uncertainty is the finding, not a footnote.** A point estimate without an interval is half-reported. Communicate the range and what it implies for the decision.
@@ -69,7 +69,7 @@ A claim is only as strong as the weakest link in this chain — name it.
 | Question type | Gold-standard design | When you can't randomize |
 |---------------|---------------------|--------------------------|
 | Does X cause Y? | Randomized controlled trial | Difference-in-differences, regression discontinuity, instrumental variables — each with its own identifying assumption stated |
-| How big is the effect? | RCT with pre-specified effect-size estimand + CI | Matched/weighted observational estimate with sensitivity analysis for hidden confounding 
+| How big is the effect? | RCT with pre-specified effect-size estimand + CI | Matched/weighted observational estimate with sensitivity analysis for hidden confounding
 |
 | What predicts Y? | Held-out validation, pre-registered model | Cross-validation with honest out-of-sample error; beware overfitting the story |
 | How common is Y? | Probability sample with known frame | Weighted estimate + explicit statement of coverage/nonresponse bias |

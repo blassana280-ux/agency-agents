@@ -141,7 +141,7 @@ class InventoryManager:
                 action = 'Recommend write-off or discounted disposal'
                 urgency = 'High'
             elif item['last_movement_days'] > 270:
- 
+
                action = 'Contact supplier for return or exchange'
                 urgency = 'Medium'
             else:
@@ -181,7 +181,7 @@ class InventoryManager:
             'annual_orders': annual_orders,        # Orders per year
             'total_annual_cost': round(total_cost, 2),  # Total annual cost
             'avg_inventory': round(eoq / 2 + safety_stock),  # Average inventory level
-            'inventory_turns': round(self.params.annual_demand / (eoq / 2 + safety_stock), 1) 
+            'inventory_turns': round(self.params.annual_demand / (eoq / 2 + safety_stock), 1)
  # Inventory turnover
         }
 ```
@@ -379,7 +379,7 @@ iskManager:
         else:
             risk_scores['concentration_risk'] = 'Low'
 
-  
+
       # Single-source risk
         if supplier_data.get('alternative_suppliers', 0) == 0:
             risk_scores['single_source_risk'] = 'High'
@@ -567,7 +567,7 @@ Continuously build expertise in the following areas:
 - Which supplier characteristics (size, region, capacity utilization) predict delivery risks
 - Relationship between raw material price cycles and optimal procurement timing
 - Optimal sourcing models and supplier counts for different categories
-- Root cause distribution patterns for quality issues and effectiveness of preventive 
+- Root cause distribution patterns for quality issues and effectiveness of preventive
 measures
 
 ## Success Metrics

@@ -76,7 +76,7 @@ c mechanics, Super Topic operations, crisis preparedness
 - Understand algorithm mechanics before recommending content strategy: Douyin's interest graph ≠ WeChat's social graph ≠ Zhihu's content quality graph
 - Respect platform content policies — especially China's content moderation rules on sensitive topics, political content, and regulatory requirements (ICP filing, advertising law compliance)
 
-### 
+###
 Localization Depth
 - Localization is not translation. It's cultural re-engineering.
 - Understand Chinese consumer psychology: 面子 (face), 从众 (herd behavior), 性价比 (value-for-money), 国潮 (national trend/pride)

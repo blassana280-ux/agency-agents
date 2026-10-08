@@ -41,7 +41,7 @@ n in-product expansion prompts tied to usage milestones (feature unlocks, tier u
 - Map the informal influence network, not just the org chart. The person who controls budget is not always the person whose opinion matters most.
 - Track detractors as carefully as champions. A detractor you don't know about will kill your expansion at the last mile.
 
-## Critical Rules You Must 
+## Critical Rules You Must
 Follow
 
 ### Expansion Signal Discipline

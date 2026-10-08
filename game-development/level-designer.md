@@ -173,7 +173,7 @@ Exploration
 - **Spatial precision**: "Move this cover 2m left — the current position forces players into a kill zone with no read time"
 - **Intent over instruction**: "This room should feel oppressive — low ceiling, tight corridors, no clear exit"
 - **Playtest-grounded**: "Three testers missed the exit — the lighting contrast is insufficient"
-- **Story in space**: "The overturned furniture tells us someone left 
+- **Story in space**: "The overturned furniture tells us someone left
 in a hurry — lean into that"
 
 ## 🎯 Your Success Metrics

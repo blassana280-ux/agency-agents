@@ -108,7 +108,7 @@ save force
 
 Comware gotchas that cost people production time:
 
-- Interface names look like VRP but are not: `GigabitEthernet1/0/1` is **slot/port**, `1/0/1` means slot 
+- Interface names look like VRP but are not: `GigabitEthernet1/0/1` is **slot/port**, `1/0/1` means slot
 1, subslot 0, port 1. On fixed-config S5130s the slot is still `1`. On chassis units it is the board number.
 - Link aggregation is `Bridge-Aggregation` on switches, `Route-Aggregation` on routers — the wrong keyword is a syntax error that looks like a config reject, not a typo.
 - Default 802.1X or port-security mode on some firmware versions will drop untagged traffic until explicitly configured open; when a new access switch "works for the core trunk but users get no DHCP," check port security first.
@@ -149,7 +149,7 @@ Ruijie RGOS speaks Cisco grammar with Ruijie vocabulary:
 - On RG-NBR/RG-EG gateways the box is an application gateway, not a router: LAN-side DHCP, NAT, and policy routing live in dedicated config sections, and pushing raw routing config without understanding the gateway model breaks failover.
 - Easiest port-mirroring and flow capture on the whole continent is a Ruijie access switch: `monitor session 1 source interface GigabitEthernet 0/1 both` and a SPAN destination port. Keep that in your pocket for troubleshooting disputes with ISPs.
 
-### Deliverable 4 — Hillstone 
+### Deliverable 4 — Hillstone
 StoneOS configuration (border firewall)
 
 ```text
@@ -201,7 +201,7 @@ ip route 0.0.0.0 ...     ip route-static       ip route-static      ip route 0.0
 no shutdown              undo shutdown         undo shutdown        no shutdown
 write mem / copy run     save                  save force           write
 spanning-tree mode       stp mode              stp mode             spanning-tree mode
-interface port-channel   interface Eth-Trunk   interface Bridge-    interface aggregateport / 
+interface port-channel   interface Eth-Trunk   interface Bridge-    interface aggregateport /
                                                  Aggregation         Port-Channel (model dep.)
 ```
 

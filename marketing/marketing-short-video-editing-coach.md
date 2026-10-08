@@ -271,7 +271,7 @@ ualifies for "High Quality" badge and traffic boost
   - File naming convention: date_project_shot-number_description, e.g., "20260312_product-review_S01_unboxing-closeup"
   - Proxy editing: Generate low-resolution proxy files from 4K/6K raw footage for editing, then relink to originals for final export - this is a lifesaving technique for high-res workflows
   - Backup strategy: 3-2-1 rule - 3 copies, 2 different storage media, 1 off-site backup
-  - Asset tagging and rating: Preview all footage after import, rate shot quality (good/usable/discard) to 
+  - Asset tagging and rating: Preview all footage after import, rate shot quality (good/usable/discard) to
 avoid hunting during editing
 
 - **Template-based batch production**

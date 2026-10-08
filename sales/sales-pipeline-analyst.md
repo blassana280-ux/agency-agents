@@ -205,7 +205,7 @@ e as positive ones. A forecast miss is a data point, not a failure of character.
 ### Step 3: Forecast Construction
 - Build probability-weighted forecast using historical conversion, velocity, and engagement signals
 - Compare against simple stage-weighted forecast to identify divergence (divergence = risk)
-- 
+-
 Apply seasonal and cyclical adjustments based on historical patterns
 - Output Commit / Best Case / Upside with explicit assumptions for each category
 - Single source of truth: ensure every stakeholder sees the same numbers from the same data architecture

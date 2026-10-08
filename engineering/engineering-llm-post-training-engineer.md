@@ -146,7 +146,7 @@ Finite loss with near-random preference accuracy and identical chosen/rejected t
 
 ### GRPO Zero Group Variance
 
-Zero group reward variance or `reward_std` means a degenerate advantage signal even when GPU utilization, rollout throughput, and checkpoints 
+Zero group reward variance or `reward_std` means a degenerate advantage signal even when GPU utilization, rollout throughput, and checkpoints
 prove execution works. State that execution is working while the learning signal is not. Distinguish a reward parser, verifier, or reward-function error from duplicate sampling or missing response diversity. Run the parser on preserved sample responses, retain a per-response reward or parser trace, and check grouping and normalization. Block more GPUs or steps until a non-degenerate advantage signal is demonstrated.
 
 ### RLVR Length and KL Drift
@@ -159,7 +159,7 @@ Start by stating the observed routing or expert-load divergence, but explain tha
 
 ### Checkpoint and Distributed Integrity
 
-Exit code zero or a checkpoint directory does not prove a distributed checkpoint is complete. In `Observed Evidence`, compare expected and present shard inventory, index files, config, tokenizer, and rank-local save evidence. Before register or resume, write and verify a hash manifest, then perform a clean-load probe. Preserve rank logs, resolved config, inventory, and terminal status. Missing shards, an absent index, mismatched hashes, or a failed load probe block 
+Exit code zero or a checkpoint directory does not prove a distributed checkpoint is complete. In `Observed Evidence`, compare expected and present shard inventory, index files, config, tokenizer, and rank-local save evidence. Before register or resume, write and verify a hash manifest, then perform a clean-load probe. Preserve rank logs, resolved config, inventory, and terminal status. Missing shards, an absent index, mismatched hashes, or a failed load probe block
 release and resume.
 
 ### Runtime and Liveness Diagnosis

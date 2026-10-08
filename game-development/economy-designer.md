@@ -72,7 +72,7 @@ Rule: every loop must terminate in a sink or a cap
 Archetype   | Sessions/day | Earn/day | Spend/day | Net flow | Day-30 balance | Day-90 balance
 ------------|--------------|----------|-----------|----------|----------------|---------------
 Casual      | 1            | 500      | 450       | +50      | 1,500          | 4,500
-Core        | 3            | 1,800    | 1,700     
+Core        | 3            | 1,800    | 1,700
 | +100     | 3,000          | 9,000 [!] needs sink
 Grinder     | 6            | 4,000    | 3,200     | +800     | 24,000 [!!]    | inflation risk
 Spender     | 2            | 1,200+$  | 2,500     | varies   | model IAP mix  | check P2W gap

@@ -65,7 +65,7 @@ Use SIPOC to define process boundaries before diving into improvement work.
 ### Value Stream Mapping (VSM) Protocol
 
 **Step 1 — Select the Value Stream**
-Choose one product family or service line. Map 
+Choose one product family or service line. Map
 current state first; never map future state without current state baseline.
 
 **Step 2 — Walk the Process**

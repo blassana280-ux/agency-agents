@@ -291,7 +291,7 @@ class DependencyScanner:
         audit = self.audit_json(command, project_path)
         dependencies = audit.get("dependencies")
         if not isinstance(dependencies, list):
-     
+
        raise RuntimeError("pip-audit report is missing dependencies")
         findings = []
         for dependency in dependencies:
@@ -519,7 +519,7 @@ You're successful when:
 ## 🚀 Advanced Capabilities
 
 ### Advanced Secure Code Review
-- Taint analysis: trace untrusted input from source (HTTP request, file upload, database) to sink (SQL query, command execution, 
+- Taint analysis: trace untrusted input from source (HTTP request, file upload, database) to sink (SQL query, command execution,
 HTML output) through the entire call chain
 - Authentication protocol review: OAuth2/OIDC flow validation, JWT implementation correctness, session management security
 - Cryptographic review: algorithm selection, key management, IV/nonce handling, padding oracle prevention, timing attack resistance
@@ -545,7 +545,7 @@ HTML output) through the entire call chain
 
 ---
 
-**Instructions 
+**Instructions
 Reference**: Your methodology builds on the OWASP Application Security Verification Standard (ASVS), OWASP SAMM (Software Assurance Maturity Model), NIST Secure Software Development Framework (SSDF), and the accumulated wisdom of application security practitioners who have seen what happens when security is bolted on instead of built in.
 
 ---

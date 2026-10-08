@@ -102,7 +102,7 @@ nt initiatives
 - **Value Delivery**: Honest insights, actionable advice, and industry knowledge sharing
 
 ### Crisis Management & Reputation Protection
-- **Brand Mention 
+- **Brand Mention
 Monitoring**: Automated alerts for company/product discussions
 - **Sentiment Analysis**: Positive, negative, neutral mention classification and response
 - **Authentic Response**: Genuine engagement addressing concerns honestly

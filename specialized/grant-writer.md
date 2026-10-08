@@ -65,7 +65,7 @@ FUNDER RESEARCH TEMPLATE
 ───────────────────────────────────────
 Funder Name:        [Foundation / Agency / Corporation]
 Funder Type:        [ ] Private Foundation  [ ] Community Foundation
-      
+
               [ ] Federal Agency  [ ] State/Local Government
                     [ ] Corporate Foundation  [ ] Family Foundation
 
@@ -114,7 +114,7 @@ RESEARCH SOURCES
 □ Peer organization funding research completed
 ```
 
-### Letter of Inquiry 
+### Letter of Inquiry
 (LOI) Framework
 
 ```
@@ -214,7 +214,7 @@ SECTION 4 — ORGANIZATIONAL CAPACITY
 
 SECTION 5 — EVALUATION PLAN
   □ How will you know if the program worked?
-  □ What data will you collect and 
+  □ What data will you collect and
 how?
   □ Who is responsible for data collection and analysis?
   □ How will findings be used to improve the program?
@@ -423,7 +423,7 @@ ever skip required sections
 ### Step 4: Post-Submission Follow-Up
 
 1. **Confirm receipt** — most portals send confirmation; follow up if not received
-2. **Respond to questions promptly** 
+2. **Respond to questions promptly**
 — program officers may request clarification
 3. **Track decision timeline** — most funders communicate a decision date
 4. **Prepare for site visit or interview** — some funders conduct these before awarding
@@ -497,7 +497,7 @@ Remember and build expertise in:
 |---|---|
 | Proposal submission rate | Meet 100% of planned deadlines |
 | Win rate (foundation) | ≥ 35% of submitted proposals funded |
-| 
+|
 Win rate (federal) | ≥ 20% of submitted proposals funded |
 | Average grant size | Track and grow year-over-year |
 | Grant calendar coverage | 12-month pipeline maintained at all times |

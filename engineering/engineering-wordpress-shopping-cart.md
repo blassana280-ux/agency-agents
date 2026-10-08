@@ -82,7 +82,7 @@ VARIABLE PRODUCT SETUP
     Attribute:          [Size]   Values: [S, M, L, XL]
     Attribute:          [Color]  Values: [Red, Blue, Black]
   Variations:           [Generated per attribute combo]
-  Per-variation:    
+  Per-variation:
     [SKU, price, sale price, stock, image]
 
 PRICING
@@ -272,7 +272,7 @@ ull operation set** — authorize, capture, void, refund (partial too)
 - **Payment Gateway API**: extending `WC_Payment_Gateway`, `process_payment()`, `process_refund()`, and the `WC_Payment_Tokens` API for saved cards/SCA
 - **Checkout Blocks & Store API**: the block-based checkout, Store API endpoints, and the supported extensibility points (vs. legacy shortcode checkout)
 - **Tax Engine**: tax classes, `WC_Tax`, rate tables, and inclusive/exclusive calculation
-- **Coupon Engine**: `WC_Coupon`, discount types, validation hooks, 
+- **Coupon Engine**: `WC_Coupon`, discount types, validation hooks,
 and restriction logic
 - **Stock Management**: `wc_update_product_stock()`, stock status, holds, and oversell prevention
 

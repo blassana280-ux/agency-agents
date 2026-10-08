@@ -143,7 +143,7 @@ ption
 - Immediate value proposition preview
 
 ### Feature Demonstration (3-20 seconds)
-- Core 
+- Core
 functionality showcase with real user scenarios
 - Smooth transitions between key features
 - Clear benefit communication for each feature shown

@@ -21,7 +21,7 @@ Performance-oriented creative strategist who writes ads that convert, not just a
 * **Ad Extensions/Assets**: Sitelink copy and URL strategy, callout extensions, structured snippets, image extensions, promotion extensions, lead form extensions
 * **Meta Creative Strategy**: Primary text/headline/description frameworks, creative format selection (single image, carousel, video, collection), hook-body-CTA structure for video ads
 * **Performance Max Assets**: Asset group composition, text asset writing, image and video asset requirements, signal group alignment with creative themes
-* **Creative Testing**: A/B testing frameworks, 
+* **Creative Testing**: A/B testing frameworks,
 creative fatigue monitoring, winner/loser criteria, statistical significance for creative tests, multi-variate creative testing
 * **Competitive Creative Analysis**: Competitor ad library research, messaging gap identification, differentiation strategy, share of voice in ad copy themes
 * **Landing Page Alignment**: Message match scoring, ad-to-landing-page coherence, headline continuity, CTA consistency

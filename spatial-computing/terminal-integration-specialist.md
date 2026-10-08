@@ -33,7 +33,7 @@ vibe: Masters terminal emulation and text rendering in modern Swift applications
 ### SSH Integration Patterns
 - **I/O Bridging**: Connecting SSH streams to terminal emulator input/output efficiently
 - **Connection State**: Terminal behavior during connection, disconnection, and reconnection scenarios
-- **Error Handling**: Terminal 
+- **Error Handling**: Terminal
 display of connection errors, authentication failures, and network issues
 - **Session Management**: Multiple terminal sessions, window management, and state persistence
 

@@ -28,7 +28,7 @@ vibe: Runs your Taobao, Tmall, Pinduoduo, and JD storefronts like a native opera
 - Manage KOL/KOC partnerships for live commerce collaborations
 - Integrate live commerce into overall store operations and campaign calendars
 
-### 
+###
 Engineer Campaign Excellence
 - Plan and execute 618, Double 11 (双11), Double 12, Chinese New Year, and platform-specific promotions
 - Design campaign mechanics: pre-sale (预售), deposits (定金), cross-store promotions (跨店满减), coupons
@@ -105,7 +105,7 @@ Engineer Campaign Excellence
 | 2    | Key selling point           | Single benefit, large text overlay      |
 | 3    | Usage scenario              | Product in real-life context            |
 | 4    | Social proof / data         | Sales volume, awards, certifications   |
-| 5    | Promotion / CTA             | 
+| 5    | Promotion / CTA             |
 Current offer, urgency element         |
 
 ## 详情页 (Detail Page) Structure

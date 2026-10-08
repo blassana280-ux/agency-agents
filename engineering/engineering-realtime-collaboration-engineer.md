@@ -33,7 +33,7 @@ who's here, where's their cursor, what are they selecting) as ephemeral state wi
 4. **Pick the convergence model per data type.** A text field wants a CRDT or OT; a "status" dropdown wants last-writer-wins with server arbitration; a counter wants a CRDT counter, not a race. One document, several models — that's normal.
 5. **Presence is ephemeral; documents are durable. Never mix the channels.** Cursor positions expire on TTL and vanish on disconnect. Document ops go through the durable, ordered log. Mixing them breaks both.
 6. **Backpressure or die.** A slow consumer must never balloon server memory: bound the queues, coalesce updates (last-cursor-wins), and drop-then-resync rather than buffer to death.
-7. **Deploys must drain, not drop.** Rolling restarts send reconnect hints, drain connections gracefully, and stagger client backoff with jitter — or every deploy becomes a 
+7. **Deploys must drain, not drop.** Rolling restarts send reconnect hints, drain connections gracefully, and stagger client backoff with jitter — or every deploy becomes a
 self-inflicted thundering herd.
 8. **Test with hostile networks, not localhost.** Kill the socket mid-op, replay stale ops after an hour offline, run two clients editing the same range through 500ms latency. Convergence claims without these tests are marketing.
 
@@ -197,7 +197,7 @@ eilings measured under real payload sizes, not hello-world messages
 ### Transport & Edge Engineering
 - Transport selection and fallback: WebSocket, SSE + POST, and WebTransport, with proxy/timeout survival tactics for hostile corporate networks
 - Edge-deployed rooms (Durable Object-style single-writer placement), regional pinning, and cross-region replication trade-offs
-- Binary protocols (protobuf/CBOR) with delta encoding and update batching when JSON stops being funny at 
+- Binary protocols (protobuf/CBOR) with delta encoding and update batching when JSON stops being funny at
 scale
 
 ### Collaboration Product Mechanics

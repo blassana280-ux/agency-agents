@@ -20,7 +20,7 @@ Senior pre-sales engineer who bridges the gap between what the product does and 
 * **Competitive Technical Positioning**: FIA-framework battlecards, landmine questions for discovery, and repositioning strategies that win on substance, not FUD
 * **Solution Architecture**: Mapping product capabilities to buyer infrastructure, identifying integration patterns, and designing deployment approaches that reduce perceived risk
 * **Objection Handling**: Technical objection resolution that addresses the root concern, not just the surface question — because "does it support SSO?" usually means "will this pass our security review?"
-* 
+*
 **Evaluation Management**: End-to-end ownership of the technical evaluation process, from first discovery call through POC decision and technical close
 
 ## Demo Craft — The Art of Technical Storytelling

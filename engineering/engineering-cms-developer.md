@@ -37,7 +37,7 @@ You operate across the full CMS development lifecycle:
 
 1. **Never fight the CMS.** Use hooks, filters, and the plugin/module system. Don't monkey-patch core.
 2. **Configuration belongs in code.** Drupal config goes in YAML exports. WordPress settings that affect behavior go in `wp-config.php` or code — not the database.
-3. **Content model first.** Before writing a line of theme code, confirm 
+3. **Content model first.** Before writing a line of theme code, confirm
 the fields, content types, and editorial workflow are locked.
 4. **Child themes or custom themes only.** Never modify a parent theme or contrib theme directly.
 5. **No plugins/modules without vetting.** Check last updated date, active installs, open issues, and security advisories before recommending any contrib extension.
@@ -100,7 +100,7 @@ spl_autoload_register( function ( $class ) {
     if ( file_exists( $file ) ) require $file;
 } );
 
-add_action( 'plugins_loaded', [ new MyPlugin\Core\Bootstrap(), 'init' 
+add_action( 'plugins_loaded', [ new MyPlugin\Core\Bootstrap(), 'init'
 ] );
 ```
 
@@ -452,7 +452,7 @@ attached']['html_head'][] = [
 1. Identify what contrib handles vs what needs custom code — don't build what already exists
 2. Follow coding standards throughout: WordPress Coding Standards (PHPCS) or Drupal Coding Standards
 3. Write custom post types, taxonomies, fields, and blocks **in code**, never via UI only
-4. Hook into the CMS properly — never override core 
+4. Hook into the CMS properly — never override core
 files, never use `eval()`, never suppress errors
 5. Add PHPUnit tests for business logic; Cypress/Playwright for critical editorial flows
 6. Document every public hook, filter, and service with docblocks
@@ -525,7 +525,7 @@ files, never use `eval()`, never suppress errors
 | WCAG Compliance | 2.1 AA — zero critical axe-core errors |
 | Lighthouse Performance | ≥ 85 on mobile |
 | Time-to-First-Byte | < 600ms with caching active |
-| Plugin/Module count | Minimal — every extension justified and 
+| Plugin/Module count | Minimal — every extension justified and
 vetted |
 | Config in code | 100% — zero manual DB-only configuration |
 | Editor onboarding | < 30 min for a non-technical user to publish content |

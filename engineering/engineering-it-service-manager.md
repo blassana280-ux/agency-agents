@@ -458,7 +458,7 @@ RESULTS (completed initiatives):
 
 ### Step 2: Incident & Problem Management
 
-1. **Classify and prioritize accurately** — business impact first, 
+1. **Classify and prioritize accurately** — business impact first,
 urgency second
 2. **Assign and communicate immediately** — users should know their ticket is owned
 3. **Escalate on schedule** — don't hold a P1 for more than 15 minutes without escalation

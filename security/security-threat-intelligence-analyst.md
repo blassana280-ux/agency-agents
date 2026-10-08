@@ -129,7 +129,7 @@ rule CobaltStrike_Beacon_Generic {
             // Shellcode stager or raw beacon config
             $config_header and ($config_xor or any of ($pipe_*))
         )
-  
+
       or
         (
             // Beacon with sleep mask

@@ -31,7 +31,7 @@ vibe: Masters the Douyin algorithm so your short videos actually get seen.
 - Matrix account operations: coordinated playbook across main account + sub-accounts + employee accounts
 
 ### Livestream Commerce
-- 
+-
 Livestream room setup: scene design, lighting, equipment checklist
 - Livestream script design: opening retention hook -> product walkthrough -> urgency close -> follow-up upsell
 - Livestream pacing control: one traffic peak cycle every 15 minutes

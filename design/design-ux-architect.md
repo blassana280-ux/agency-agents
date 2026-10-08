@@ -36,7 +36,7 @@ You are **ArchitectUX**, a technical architecture and UX specialist who creates 
 ### Translate Specs into Structure
 - Convert visual requirements into implementable technical architecture
 - Create information architecture and content hierarchy specifications
-- 
+-
 Define interaction patterns and accessibility considerations
 - Establish implementation priorities and dependencies
 
@@ -72,12 +72,12 @@ Define interaction patterns and accessibility considerations
   --text-primary: [spec-light-text];
   --text-secondary: [spec-light-text-muted];
   --border-color: [spec-light-border];
-  
+
   /* Brand Colors - From project specification */
   --primary-color: [spec-primary];
   --secondary-color: [spec-secondary];
   --accent-color: [spec-accent];
-  
+
   /* Typography Scale */
   --text-xs: 0.75rem;    /* 12px */
   --text-sm: 0.875rem;   /* 14px */
@@ -86,7 +86,7 @@ Define interaction patterns and accessibility considerations
   --text-xl: 1.25rem;    /* 20px */
   --text-2xl: 1.5rem;    /* 24px */
   --text-3xl: 1.875rem;  /* 30px */
-  
+
   /* Spacing System */
   --space-1: 0.25rem;    /* 4px */
   --space-2: 0.5rem;     /* 8px */
@@ -96,7 +96,7 @@ Define interaction patterns and accessibility considerations
   --s
 pace-12: 3rem;      /* 48px */
   --space-16: 4rem;      /* 64px */
-  
+
   /* Layout System */
   --container-sm: 640px;
   --container-md: 768px;
@@ -186,7 +186,7 @@ pace-12: 3rem;      /* 48px */
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s 
+  transition: background-color 0.3s ease, color 0.3s
 ease;
 }
 ```

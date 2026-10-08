@@ -118,9 +118,9 @@ model User {
   email     String   @unique
   name      String?
   createdAt DateTime @default(now())
-  
+
   feedbacks Feedback[]
-  
+
   @@map("users")
 }
 
@@ -130,9 +130,9 @@ model Feedback {
   rating  Int
   userId  String
   user    User   @relation(fields: [userId], references: [id])
-  
+
   createdAt DateTime @default(now())
-  
+
   @@map("feedbacks")
 }
 ```
@@ -179,11 +179,11 @@ export function FeedbackForm() {
         throw new Error('Failed to submit feedback');
       }
     } catch (error) {
-      toast({ 
-        title: 'Error', 
-   
+      toast({
+        title: 'Error',
+
      description: 'Failed to submit feedback. Please try again.',
-        variant: 'destructive' 
+        variant: 'destructive'
       });
     }
   }
@@ -228,8 +228,8 @@ export function FeedbackForm() {
         </select>
       </div>
 
-      <Button 
-        type="submit" 
+      <Button
+        type="submit"
         disabled={form.formState.isSubmitting}
         className="w-full"
       >
@@ -251,7 +251,7 @@ export function trackEvent(eventName: string, properties?: Record<string, any>) 
   if (typeof window !== 'undefined') {
     // Google Analytics 4
     window.gtag?.('event', eventName, properties);
-    
+
     // Simple internal tracking
     fetch('/api/analytics
 ', {
@@ -288,12 +288,12 @@ export function useABTest(testName: string, variants: string[]) {
       a = ((a << 5) - a) + b.charCodeAt(0);
       return a & a;
     }, 0);
-    
+
     const variantIndex = Math.abs(hash) % experimentVariants.length;
     const assignedVariant = experimentVariants[variantIndex];
-    
+
     setVariant(assignedVariant);
-    
+
     // Track assignment
     trackEvent('ab_test_assignment', {
       test_name: testName,
@@ -308,7 +308,7 @@ export function useABTest(testName: string, variants: string[]) {
 // Usage in component
 export function LandingPageHero() {
   const heroVariant = useABTest('hero_cta', ['Sign Up Free', 'Start Your Trial']);
-  
+
   if (!heroVariant) return <div>Loading...</div>;
 
   return (
@@ -438,7 +438,7 @@ Remember and build expertise in:
 - What validation metrics provide the most actionable product insights
 - When prototypes should evolve to production vs. complete rebuilds
 
-## 🎯 Your 
+## 🎯 Your
 Success Metrics
 
 You're successful when:

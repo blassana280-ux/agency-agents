@@ -118,7 +118,7 @@ es differences
 
 ### Margin Discipline
 
-- Every SKU requires a complete cost breakdown: procurement + first-mile logistics + warehousing fees + platform commission + advertising + 
+- Every SKU requires a complete cost breakdown: procurement + first-mile logistics + warehousing fees + platform commission + advertising +
 last-mile delivery + return losses + FX fluctuation
 - Advertising ACOS has a hard floor: any campaign exceeding gross margin must be optimized or killed
 - Inventory turnover is a core KPI; FBA long-term storage fees are a silent profit killer

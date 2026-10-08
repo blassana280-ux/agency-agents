@@ -1,0 +1,554 @@
+# 🛡️ Rapport de maintenance quotidienne — 2026-10-08
+
+Généré automatiquement par `scripts/agent-health.mjs` (workflow « 🛡️ Maintenance quotidienne des agents »).
+
+**❌ Score global : 25/100** — 287 agents analysés — 193 erreur(s), 134 avertissement(s).
+
+## Score par division
+
+| Division | Agents | Erreurs | Avertissements | Score |
+|---|---|---|---|---|
+| academic | 6 | 0 | 0 | 100/100 |
+| design | 10 | 8 | 3 | 57/100 |
+| engineering | 65 | 39 | 2 | 0/100 |
+| finance | 5 | 6 | 0 | 70/100 |
+| game-development | 21 | 21 | 21 | 0/100 |
+| gis | 13 | 13 | 0 | 35/100 |
+| healthcare | 3 | 1 | 16 | 79/100 |
+| marketing | 37 | 17 | 19 | 0/100 |
+| paid-media | 7 | 7 | 0 | 65/100 |
+| product | 6 | 5 | 0 | 75/100 |
+| project-management | 7 | 7 | 1 | 64/100 |
+| research | 1 | 1 | 0 | 95/100 |
+| sales | 9 | 0 | 0 | 100/100 |
+| security | 12 | 5 | 0 | 75/100 |
+| spatial-computing | 6 | 6 | 6 | 64/100 |
+| specialized | 61 | 44 | 49 | 0/100 |
+| support | 6 | 6 | 0 | 70/100 |
+| testing | 9 | 7 | 0 | 65/100 |
+| orchestration | 3 | 0 | 17 | 83/100 |
+
+## ❌ Erreurs à corriger
+
+- **fm-color** — `design/design-brand-guardian.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `design/design-image-prompt-engineer.md` : couleur invalide : "amber" (attendu #RRGGBB)
+- **fm-color** — `design/design-ui-designer.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `design/design-ui-finish-gate-reviewer.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `design/design-ux-architect.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `design/design-ux-researcher.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `design/design-visual-storyteller.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `design/design-whimsy-injector.md` : couleur invalide : "pink" (attendu #RRGGBB)
+- **fm-missing** — `engineering/engineering-agent-evaluation-engineer.md` : frontmatter YAML manquant (le fichier doit commencer par ---)
+- **fm-color** — `engineering/engineering-ai-data-remediation-engineer.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-ai-engineer.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-backend-architect.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-cms-developer.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-code-reviewer.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-codebase-onboarding-engineer.md` : couleur invalide : "teal" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-data-engineer.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-database-optimizer.md` : couleur invalide : "amber" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-devops-automator.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-drupal-performance.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-drupal-shopping-cart.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-email-intelligence-engineer.md` : couleur invalide : "indigo" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-embedded-firmware-engineer.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-feishu-integration-developer.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-filament-optimization-specialist.md` : couleur invalide : "indigo" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-frontend-developer.md` : couleur invalide : "cyan" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-gaussdb-expert.md` : couleur invalide : "amber" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-git-workflow-master.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-it-service-manager.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-knowledge-graph-engineer.md` : couleur invalide : "violet" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-minimal-change-engineer.md` : couleur invalide : "slate" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-mobile-app-builder.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-multi-agent-systems-architect.md` : couleur invalide : "cyan" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-orgscript-engineer.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-prompt-engineer.md` : couleur invalide : "violet" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-rapid-prototyper.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-section-508-specialist.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-senior-developer.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-servicenow-developer-mentor.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-software-architect.md` : couleur invalide : "indigo" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-solidity-smart-contract-engineer.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-technical-writer.md` : couleur invalide : "teal" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-uswds-developer.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-voice-ai-integration-engineer.md` : couleur invalide : "violet" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-wechat-mini-program-developer.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `engineering/engineering-wordpress-performance.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fences** — `engineering/engineering-wordpress-performance.md` : bloc de code non fermé (``` orphelin)
+- **fm-color** — `engineering/engineering-wordpress-shopping-cart.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `finance/finance-bookkeeper-controller.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `finance/finance-financial-analyst.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `finance/finance-fpa-analyst.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `finance/finance-investment-researcher.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-missing** — `finance/finance-ohada-compliance-agent.md` : frontmatter YAML manquant (le fichier doit commencer par ---)
+- **fm-color** — `finance/finance-tax-strategist.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `game-development/blender/blender-addon-engineer.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `game-development/economy-designer.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `game-development/game-audio-engineer.md` : couleur invalide : "indigo" (attendu #RRGGBB)
+- **fm-color** — `game-development/game-designer.md` : couleur invalide : "yellow" (attendu #RRGGBB)
+- **fm-color** — `game-development/godot/godot-gameplay-scripter.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `game-development/godot/godot-multiplayer-engineer.md` : couleur invalide : "violet" (attendu #RRGGBB)
+- **fm-color** — `game-development/godot/godot-shader-developer.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `game-development/level-designer.md` : couleur invalide : "teal" (attendu #RRGGBB)
+- **fm-color** — `game-development/narrative-designer.md` : couleur invalide : "red" (attendu #RRGGBB)
+- **fm-color** — `game-development/roblox-studio/roblox-avatar-creator.md` : couleur invalide : "fuchsia" (attendu #RRGGBB)
+- **fm-color** — `game-development/roblox-studio/roblox-experience-designer.md` : couleur invalide : "lime" (attendu #RRGGBB)
+- **fm-color** — `game-development/roblox-studio/roblox-systems-scripter.md` : couleur invalide : "rose" (attendu #RRGGBB)
+- **fm-color** — `game-development/technical-artist.md` : couleur invalide : "pink" (attendu #RRGGBB)
+- **fm-color** — `game-development/unity/unity-architect.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `game-development/unity/unity-editor-tool-developer.md` : couleur invalide : "gray" (attendu #RRGGBB)
+- **fm-color** — `game-development/unity/unity-multiplayer-engineer.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `game-development/unity/unity-shader-graph-artist.md` : couleur invalide : "cyan" (attendu #RRGGBB)
+- **fm-color** — `game-development/unreal-engine/unreal-multiplayer-architect.md` : couleur invalide : "red" (attendu #RRGGBB)
+- **fm-color** — `game-development/unreal-engine/unreal-systems-engineer.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `game-development/unreal-engine/unreal-technical-artist.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `game-development/unreal-engine/unreal-world-builder.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `gis/gis-3d-scene-developer.md` : couleur invalide : "cyan" (attendu #RRGGBB)
+- **fm-color** — `gis/gis-analyst.md` : couleur invalide : "teal" (attendu #RRGGBB)
+- **fm-color** — `gis/gis-bim-specialist.md` : couleur invalide : "gold" (attendu #RRGGBB)
+- **fm-color** — `gis/gis-cartography-designer.md` : couleur invalide : "pink" (attendu #RRGGBB)
+- **fm-color** — `gis/gis-drone-reality-mapping.md` : couleur invalide : "amber" (attendu #RRGGBB)
+- **fm-color** — `gis/gis-geoai-ml-engineer.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `gis/gis-geoprocessing-specialist.md` : couleur invalide : "red" (attendu #RRGGBB)
+- **fm-color** — `gis/gis-qa-engineer.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `gis/gis-solution-engineer.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `gis/gis-spatial-data-engineer.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `gis/gis-spatial-data-scientist.md` : couleur invalide : "indigo" (attendu #RRGGBB)
+- **fm-color** — `gis/gis-technical-consultant.md` : couleur invalide : "navy" (attendu #RRGGBB)
+- **fm-color** — `gis/gis-web-gis-developer.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-missing** — `healthcare/healthcare-regulatory-affairs-agent.md` : frontmatter YAML manquant (le fichier doit commencer par ---)
+- **fm-color** — `marketing/marketing-app-store-optimizer.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `marketing/marketing-baidu-seo-specialist.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `marketing/marketing-bilibili-content-strategist.md` : couleur invalide : "pink" (attendu #RRGGBB)
+- **fm-color** — `marketing/marketing-china-ecommerce-operator.md` : couleur invalide : "red" (attendu #RRGGBB)
+- **fm-color** — `marketing/marketing-content-creator.md` : couleur invalide : "teal" (attendu #RRGGBB)
+- **fm-color** — `marketing/marketing-cross-border-ecommerce.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `marketing/marketing-developer-community-builder.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `marketing/marketing-email-strategist.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-missing** — `marketing/marketing-emerging-markets-growth-agent.md` : frontmatter YAML manquant (le fichier doit commencer par ---)
+- **fm-color** — `marketing/marketing-global-podcast-strategist.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `marketing/marketing-growth-hacker.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `marketing/marketing-kuaishou-strategist.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fences** — `marketing/marketing-livestream-commerce-coach.md` : bloc de code non fermé (``` orphelin)
+- **fm-color** — `marketing/marketing-podcast-strategist.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `marketing/marketing-pr-communications-manager.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `marketing/marketing-social-media-strategist.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `marketing/marketing-video-optimization-specialist.md` : couleur invalide : "red" (attendu #RRGGBB)
+- **fm-color** — `paid-media/paid-media-auditor.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `paid-media/paid-media-creative-strategist.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `paid-media/paid-media-paid-social-strategist.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `paid-media/paid-media-ppc-strategist.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `paid-media/paid-media-programmatic-buyer.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `paid-media/paid-media-search-query-analyst.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `paid-media/paid-media-tracking-specialist.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `product/product-dx-engineer.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `product/product-feedback-synthesizer.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `product/product-manager.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `product/product-sprint-prioritizer.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `product/product-trend-researcher.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `project-management/project-management-experiment-tracker.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `project-management/project-management-jira-workflow-steward.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `project-management/project-management-meeting-notes-specialist.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `project-management/project-management-project-shepherd.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `project-management/project-management-studio-operations.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `project-management/project-management-studio-producer.md` : couleur invalide : "gold" (attendu #RRGGBB)
+- **fm-color** — `project-management/project-manager-senior.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-missing** — `research/research-systematic-review-agent.md` : frontmatter YAML manquant (le fichier doit commencer par ---)
+- **fm-color** — `security/security-architect.md` : couleur invalide : "red" (attendu #RRGGBB)
+- **fm-color** — `security/security-blockchain-security-auditor.md` : couleur invalide : "red" (attendu #RRGGBB)
+- **fm-color** — `security/security-compliance-auditor.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-missing** — `security/security-llm-red-team-agent.md` : frontmatter YAML manquant (le fichier doit commencer par ---)
+- **secret** — `security/security-senior-secops.md` : clé privée exposée
+- **fm-color** — `spatial-computing/macos-spatial-metal-engineer.md` : couleur invalide : "metallic-blue" (attendu #RRGGBB)
+- **fm-color** — `spatial-computing/terminal-integration-specialist.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `spatial-computing/visionos-spatial-engineer.md` : couleur invalide : "indigo" (attendu #RRGGBB)
+- **fm-color** — `spatial-computing/xr-cockpit-interaction-specialist.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `spatial-computing/xr-immersive-developer.md` : couleur invalide : "neon-cyan" (attendu #RRGGBB)
+- **fm-color** — `spatial-computing/xr-interface-architect.md` : couleur invalide : "neon-green" (attendu #RRGGBB)
+- **fm-color** — `specialized/accounts-payable-agent.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `specialized/agents-orchestrator.md` : couleur invalide : "cyan" (attendu #RRGGBB)
+- **fm-color** — `specialized/automation-governance-architect.md` : couleur invalide : "cyan" (attendu #RRGGBB)
+- **fm-color** — `specialized/business-strategist.md` : couleur invalide : "indigo" (attendu #RRGGBB)
+- **fm-color** — `specialized/change-management-consultant.md` : couleur invalide : "amber" (attendu #RRGGBB)
+- **fm-color** — `specialized/chief-financial-officer.md` : couleur invalide : "navy" (attendu #RRGGBB)
+- **fm-color** — `specialized/corporate-training-designer.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `specialized/customer-service.md` : couleur invalide : "teal" (attendu #RRGGBB)
+- **fm-color** — `specialized/customer-success-manager.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `specialized/data-privacy-officer.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `specialized/esg-sustainability-officer.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `specialized/grant-writer.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `specialized/healthcare-customer-service.md` : couleur invalide : "teal" (attendu #RRGGBB)
+- **fm-color** — `specialized/hospitality-guest-services.md` : couleur invalide : "teal" (attendu #RRGGBB)
+- **fm-color** — `specialized/hr-onboarding.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `specialized/language-translator.md` : couleur invalide : "teal" (attendu #RRGGBB)
+- **fm-color** — `specialized/legal-billing-time-tracking.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `specialized/legal-client-intake.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `specialized/legal-document-review.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `specialized/loan-officer-assistant.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `specialized/lsp-index-engineer.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `specialized/ma-integration-manager.md` : couleur invalide : "indigo" (attendu #RRGGBB)
+- **fm-color** — `specialized/medical-billing-coding-specialist.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `specialized/omniroute-orchestrator.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `specialized/operations-manager.md` : couleur invalide : "slate" (attendu #RRGGBB)
+- **fm-color** — `specialized/organizational-psychologist.md` : couleur invalide : "teal" (attendu #RRGGBB)
+- **fm-color** — `specialized/personal-growth-mentor.md` : couleur invalide : "teal" (attendu #RRGGBB)
+- **fm-color** — `specialized/real-estate-buyer-seller.md` : couleur invalide : "teal" (attendu #RRGGBB)
+- **fm-color** — `specialized/recruitment-specialist.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `specialized/resume-tailor.md` : couleur invalide : "teal" (attendu #RRGGBB)
+- **fm-color** — `specialized/retail-customer-returns.md` : couleur invalide : "amber" (attendu #RRGGBB)
+- **fm-color** — `specialized/sales-outreach.md` : couleur invalide : "amber" (attendu #RRGGBB)
+- **fm-color** — `specialized/specialized-civil-engineer.md` : couleur invalide : "yellow" (attendu #RRGGBB)
+- **fm-color** — `specialized/specialized-codebase-archaeologist.md` : couleur invalide : "amber" (attendu #RRGGBB)
+- **fm-color** — `specialized/specialized-developer-advocate.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `specialized/specialized-document-generator.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `specialized/specialized-fedramp-rmf-compliance.md` : couleur invalide : "red" (attendu #RRGGBB)
+- **fm-color** — `specialized/specialized-focus-music-architect.md` : couleur invalide : "indigo" (attendu #RRGGBB)
+- **fm-color** — `specialized/specialized-master-plan-architect.md` : couleur invalide : "indigo" (attendu #RRGGBB)
+- **fm-color** — `specialized/specialized-mcp-builder.md` : couleur invalide : "indigo" (attendu #RRGGBB)
+- **fm-color** — `specialized/specialized-pricing-analyst.md` : couleur invalide : "gold" (attendu #RRGGBB)
+- **fm-color** — `specialized/specialized-workflow-architect.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `specialized/supply-chain-strategist.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `specialized/zk-steward.md` : couleur invalide : "teal" (attendu #RRGGBB)
+- **fm-color** — `support/support-analytics-reporter.md` : couleur invalide : "teal" (attendu #RRGGBB)
+- **fm-color** — `support/support-executive-summary-generator.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `support/support-finance-tracker.md` : couleur invalide : "green" (attendu #RRGGBB)
+- **fm-color** — `support/support-infrastructure-maintainer.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `support/support-legal-compliance-checker.md` : couleur invalide : "red" (attendu #RRGGBB)
+- **fm-color** — `support/support-support-responder.md` : couleur invalide : "blue" (attendu #RRGGBB)
+- **fm-color** — `testing/testing-api-tester.md` : couleur invalide : "purple" (attendu #RRGGBB)
+- **fm-color** — `testing/testing-evidence-collector.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `testing/testing-performance-benchmarker.md` : couleur invalide : "orange" (attendu #RRGGBB)
+- **fm-color** — `testing/testing-reality-checker.md` : couleur invalide : "red" (attendu #RRGGBB)
+- **fm-color** — `testing/testing-test-results-analyzer.md` : couleur invalide : "indigo" (attendu #RRGGBB)
+- **fm-color** — `testing/testing-tool-evaluator.md` : couleur invalide : "teal" (attendu #RRGGBB)
+- **fm-color** — `testing/testing-workflow-optimizer.md` : couleur invalide : "green" (attendu #RRGGBB)
+
+## ⚠️ Avertissements
+
+- **fm-line** — `design/design-ui-finish-gate-reviewer.md` : ligne frontmatter non parsée : - name: UIZZE reference catalogue
+- **fm-line** — `design/design-ui-finish-gate-reviewer.md` : ligne frontmatter non parsée : url: https://uizze.com
+- **fm-line** — `design/design-ui-finish-gate-reviewer.md` : ligne frontmatter non parsée : tier: free
+- **fm-vibe** — `engineering/engineering-cms-developer.md` : champ "vibe" absent (recommandé)
+- **placeholder** — `engineering/engineering-minimal-change-engineer.md` : texte placeholder détecté (TODO / FIXME / lorem ipsum…)
+- **naming** — `game-development/blender/blender-addon-engineer.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/economy-designer.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/game-audio-engineer.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/game-designer.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/godot/godot-gameplay-scripter.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/godot/godot-multiplayer-engineer.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/godot/godot-shader-developer.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/level-designer.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/narrative-designer.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/roblox-studio/roblox-avatar-creator.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/roblox-studio/roblox-experience-designer.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/roblox-studio/roblox-systems-scripter.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/technical-artist.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/unity/unity-architect.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/unity/unity-editor-tool-developer.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/unity/unity-multiplayer-engineer.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/unity/unity-shader-graph-artist.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/unreal-engine/unreal-multiplayer-architect.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/unreal-engine/unreal-systems-engineer.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/unreal-engine/unreal-technical-artist.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **naming** — `game-development/unreal-engine/unreal-world-builder.md` : nom de fichier non conventionnel : attendu « game-development-<nom>.md »
+- **fm-line** — `healthcare/healthcare-clinical-evidence-agent.md` : ligne frontmatter non parsée : operating in healthcare contexts. Defines how to distinguish validated
+- **fm-line** — `healthcare/healthcare-clinical-evidence-agent.md` : ligne frontmatter non parsée : from unvalidated clinical claims, how to write for both peer review and
+- **fm-line** — `healthcare/healthcare-clinical-evidence-agent.md` : ligne frontmatter non parsée : investor audiences from the same evidence base, and how to frame
+- **fm-line** — `healthcare/healthcare-clinical-evidence-agent.md` : ligne frontmatter non parsée : clinical decision support without claiming diagnostic authority.
+- **fm-line** — `healthcare/healthcare-innovation-strategist.md` : ligne frontmatter non parsée : the intersection of clinical credibility, healthcare finance, and
+- **fm-line** — `healthcare/healthcare-innovation-strategist.md` : ligne frontmatter non parsée : complex deployment contexts. Maintains narrative coherence across
+- **fm-line** — `healthcare/healthcare-innovation-strategist.md` : ligne frontmatter non parsée : investor, regulatory, sovereign, and clinical audiences. Built for
+- **fm-line** — `healthcare/healthcare-innovation-strategist.md` : ligne frontmatter non parsée : founders who need to translate complex clinical and financial
+- **fm-line** — `healthcare/healthcare-innovation-strategist.md` : ligne frontmatter non parsée : realities into language that moves capital, changes policy, and
+- **fm-line** — `healthcare/healthcare-innovation-strategist.md` : ligne frontmatter non parsée : builds trust with doctors and patients simultaneously.
+- **fm-line** — `healthcare/healthcare-sovereign-health-systems-agent.md` : ligne frontmatter non parsée : operating at the intersection of national health infrastructure,
+- **fm-line** — `healthcare/healthcare-sovereign-health-systems-agent.md` : ligne frontmatter non parsée : UHC policy, and emerging market deployment. Defines how to navigate
+- **fm-line** — `healthcare/healthcare-sovereign-health-systems-agent.md` : ligne frontmatter non parsée : sovereign health ministry engagement, frame health technology for
+- **fm-line** — `healthcare/healthcare-sovereign-health-systems-agent.md` : ligne frontmatter non parsée : mandate alignment, and sequence a dual-market launch across regulated
+- **fm-line** — `healthcare/healthcare-sovereign-health-systems-agent.md` : ligne frontmatter non parsée : and sovereign contexts.
+- **fm-line** — `healthcare/healthcare-sovereign-health-systems-agent.md` : ligne frontmatter non parsée : Someone has to build it first.
+- **fm-line** — `marketing/marketing-carousel-growth-engine.md` : ligne frontmatter non parsée : - name: Gemini API
+- **fm-line** — `marketing/marketing-carousel-growth-engine.md` : ligne frontmatter non parsée : url: https://aistudio.google.com/app/apikey
+- **fm-line** — `marketing/marketing-carousel-growth-engine.md` : ligne frontmatter non parsée : tier: free
+- **fm-line** — `marketing/marketing-carousel-growth-engine.md` : ligne frontmatter non parsée : - name: Upload-Post
+- **fm-line** — `marketing/marketing-carousel-growth-engine.md` : ligne frontmatter non parsée : url: https://upload-post.com
+- **fm-line** — `marketing/marketing-carousel-growth-engine.md` : ligne frontmatter non parsée : tier: free
+- **placeholder** — `marketing/marketing-livestream-commerce-coach.md` : texte placeholder détecté (TODO / FIXME / lorem ipsum…)
+- **fm-line** — `marketing/marketing-multi-platform-publisher.md` : ligne frontmatter non parsée : - name: Wechatsync
+- **fm-line** — `marketing/marketing-multi-platform-publisher.md` : ligne frontmatter non parsée : url: https://github.com/wechatsync/Wechatsync
+- **fm-line** — `marketing/marketing-multi-platform-publisher.md` : ligne frontmatter non parsée : tier: free
+- **fm-line** — `marketing/marketing-multi-platform-publisher.md` : ligne frontmatter non parsée : - name: xiaohongshu-mcp
+- **fm-line** — `marketing/marketing-multi-platform-publisher.md` : ligne frontmatter non parsée : url: https://github.com/xpzouying/xiaohongshu-mcp
+- **fm-line** — `marketing/marketing-multi-platform-publisher.md` : ligne frontmatter non parsée : tier: free
+- **fm-line** — `marketing/marketing-multi-platform-publisher.md` : ligne frontmatter non parsée : - name: biliup
+- **fm-line** — `marketing/marketing-multi-platform-publisher.md` : ligne frontmatter non parsée : url: https://github.com/biliup/biliup
+- **fm-line** — `marketing/marketing-multi-platform-publisher.md` : ligne frontmatter non parsée : tier: free
+- **fm-line** — `marketing/marketing-x-twitter-intelligence-analyst.md` : ligne frontmatter non parsée : - name: Xquik
+- **fm-line** — `marketing/marketing-x-twitter-intelligence-analyst.md` : ligne frontmatter non parsée : url: https://xquik.com
+- **fm-line** — `marketing/marketing-x-twitter-intelligence-analyst.md` : ligne frontmatter non parsée : tier: paid
+- **naming** — `project-management/project-manager-senior.md` : nom de fichier non conventionnel : attendu « project-management-<nom>.md »
+- **naming** — `spatial-computing/macos-spatial-metal-engineer.md` : nom de fichier non conventionnel : attendu « spatial-computing-<nom>.md »
+- **naming** — `spatial-computing/terminal-integration-specialist.md` : nom de fichier non conventionnel : attendu « spatial-computing-<nom>.md »
+- **naming** — `spatial-computing/visionos-spatial-engineer.md` : nom de fichier non conventionnel : attendu « spatial-computing-<nom>.md »
+- **naming** — `spatial-computing/xr-cockpit-interaction-specialist.md` : nom de fichier non conventionnel : attendu « spatial-computing-<nom>.md »
+- **naming** — `spatial-computing/xr-immersive-developer.md` : nom de fichier non conventionnel : attendu « spatial-computing-<nom>.md »
+- **naming** — `spatial-computing/xr-interface-architect.md` : nom de fichier non conventionnel : attendu « spatial-computing-<nom>.md »
+- **naming** — `specialized/accounts-payable-agent.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/agentic-identity-trust.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/agents-orchestrator.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/automation-governance-architect.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/business-strategist.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/change-management-consultant.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/chief-financial-officer.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/corporate-training-designer.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/customer-service.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/customer-success-manager.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/data-consolidation-agent.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/data-privacy-officer.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/esg-sustainability-officer.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/government-digital-presales-consultant.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/grant-writer.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/healthcare-aging-parent-care-companion.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/healthcare-customer-service.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/healthcare-marketing-compliance.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/hospitality-guest-services.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/hr-onboarding.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/identity-graph-operator.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/language-translator.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/legal-billing-time-tracking.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/legal-client-intake.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/legal-document-review.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/loan-officer-assistant.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/lsp-index-engineer.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/ma-integration-manager.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/medical-billing-coding-specialist.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/omniroute-orchestrator.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/operations-manager.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/organizational-psychologist.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/personal-growth-mentor.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/real-estate-buyer-seller.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/recruitment-specialist.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/report-distribution-agent.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/resume-tailor.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/retail-customer-returns.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/sales-data-extraction-agent.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/sales-outreach.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **fm-line** — `specialized/specialized-omniroute-commander.md` : ligne frontmatter non parsée : decomposes it into workstreams, dispatches each workstream in parallel to
+- **fm-line** — `specialized/specialized-omniroute-commander.md` : ligne frontmatter non parsée : the most qualified specialized agents of the agency, supervises execution,
+- **fm-line** — `specialized/specialized-omniroute-commander.md` : ligne frontmatter non parsée : aggregates results, and ships a verified deliverable with proof. Inspired
+- **fm-line** — `specialized/specialized-omniroute-commander.md` : ligne frontmatter non parsée : by OmniRoute's multi-provider routing: one entry point, the best executor
+- **fm-line** — `specialized/specialized-omniroute-commander.md` : ligne frontmatter non parsée : for every subtask, parallel lanes, zero wasted tokens.
+- **naming** — `specialized/study-abroad-advisor.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/supply-chain-strategist.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **naming** — `specialized/zk-steward.md` : nom de fichier non conventionnel : attendu « specialized-<nom>.md »
+- **placeholder** — `specialized/zk-steward.md` : texte placeholder détecté (TODO / FIXME / lorem ipsum…)
+- **fm-line** — `orchestration/omniroute-commander.md` : ligne frontmatter non parsée : request, decomposes it, and commands the specialized agents of the
+- **fm-line** — `orchestration/omniroute-commander.md` : ligne frontmatter non parsée : collection in parallel, each in its domain. It routes work like a
+- **fm-line** — `orchestration/omniroute-commander.md` : ligne frontmatter non parsée : nervous system: one brain, many hands. Covers task decomposition,
+- **fm-line** — `orchestration/omniroute-commander.md` : ligne frontmatter non parsée : parallel agent dispatch, progress supervision, adversarial review,
+- **fm-line** — `orchestration/omniroute-commander.md` : ligne frontmatter non parsée : integration of results, and verified delivery.
+- **naming** — `orchestration/omniroute-commander.md` : nom de fichier non conventionnel : attendu « orchestration-<nom>.md »
+- **fm-line** — `orchestration/omniroute-orchestrator-agent.md` : ligne frontmatter non parsée : decomposes it into parallel workstreams, routes each stream to the
+- **fm-line** — `orchestration/omniroute-orchestrator-agent.md` : ligne frontmatter non parsée : right specialized agents across all 18 divisions, supervises
+- **fm-line** — `orchestration/omniroute-orchestrator-agent.md` : ligne frontmatter non parsée : execution, resolves conflicts, assembles deliverables, and verifies
+- **fm-line** — `orchestration/omniroute-orchestrator-agent.md` : ligne frontmatter non parsée : the final output with proof. One command, an entire agency at work.
+- **naming** — `orchestration/omniroute-orchestrator-agent.md` : nom de fichier non conventionnel : attendu « orchestration-<nom>.md »
+- **fm-line** — `orchestration/orchestrator-commander.md` : ligne frontmatter non parsée : request, decomposes it into work packages, dispatches them in parallel
+- **fm-line** — `orchestration/orchestrator-commander.md` : ligne frontmatter non parsée : to the specialized agents best suited for each domain, supervises
+- **fm-line** — `orchestration/orchestrator-commander.md` : ligne frontmatter non parsée : execution, resolves conflicts, and assembles the verified final
+- **fm-line** — `orchestration/orchestrator-commander.md` : ligne frontmatter non parsée : deliverable. Inspired by OmniRoute: one brain, a whole body of experts.
+- **fm-line** — `orchestration/orchestrator-commander.md` : ligne frontmatter non parsée : parallel and ships with proof.
+- **naming** — `orchestration/orchestrator-commander.md` : nom de fichier non conventionnel : attendu « orchestration-<nom>.md »
+
+## 🔧 Correctifs automatiques appliqués
+
+- `academic/academic-historian.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `academic/academic-psychologist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `academic/academic-statistician.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `design/design-brand-guardian.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `design/design-inclusive-visuals-specialist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `design/design-persona-walkthrough.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `design/design-ui-designer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `design/design-ux-architect.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `design/design-whimsy-injector.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-agent-evaluation-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-ai-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-api-platform-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-ats-validator-architect.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-autonomous-optimization-architect.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-backend-architect.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-china-network-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-cms-developer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-codebase-onboarding-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-data-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-data-visualization-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-database-optimizer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-developer-tooling-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-devops-automator.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-drupal-shopping-cart.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-email-intelligence-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-filament-optimization-specialist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-finops-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-frontend-developer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-gaussdb-expert.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-git-workflow-master.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-i18n-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-identity-access-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-incident-response-commander.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-iot-fleet-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-it-service-manager.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-llm-post-training-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-mobile-app-builder.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-mobile-release-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-multi-agent-systems-architect.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-network-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-pdf-engine-architect.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-platform-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-rag-pipeline-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-rapid-prototyper.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-realtime-collaboration-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-search-relevance-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-section-508-specialist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-senior-developer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-solidity-smart-contract-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-technical-writer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-universal-document-compiler.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-uswds-developer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-video-streaming-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-voice-ai-integration-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-wechat-mini-program-developer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-wordpress-performance.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `engineering/engineering-wordpress-shopping-cart.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `finance/finance-bookkeeper-controller.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `finance/finance-fpa-analyst.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `finance/finance-ohada-compliance-agent.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `finance/finance-tax-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `game-development/blender/blender-addon-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `game-development/economy-designer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `game-development/game-audio-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `game-development/game-designer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `game-development/level-designer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `game-development/roblox-studio/roblox-experience-designer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `game-development/roblox-studio/roblox-systems-scripter.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `game-development/technical-artist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `game-development/unity/unity-architect.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `game-development/unity/unity-shader-graph-artist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `gis/gis-3d-scene-developer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `gis/gis-cartography-designer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `gis/gis-geoai-ml-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `gis/gis-solution-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `gis/gis-web-gis-developer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `healthcare/healthcare-regulatory-affairs-agent.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `healthcare/healthcare-sovereign-health-systems-agent.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-agentic-search-optimizer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-app-store-optimizer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-bilibili-content-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-book-co-author.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-carousel-growth-engine.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-china-ecommerce-operator.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-china-market-localization-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-cross-border-ecommerce.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-developer-community-builder.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-douyin-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-email-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-emerging-markets-growth-agent.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-global-podcast-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-kuaishou-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-multi-platform-publisher.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-podcast-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-pr-communications-manager.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-reddit-community-builder.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-seo-specialist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-short-video-editing-coach.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-tiktok-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-twitter-engager.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-video-optimization-specialist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-wechat-official-account.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-x-twitter-intelligence-analyst.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `marketing/marketing-zhihu-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `paid-media/paid-media-creative-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `product/product-behavioral-nudge-engine.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `product/product-dx-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `product/product-manager.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `product/product-sprint-prioritizer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `product/product-trend-researcher.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `project-management/project-management-experiment-tracker.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `project-management/project-management-jira-workflow-steward.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `project-management/project-management-studio-operations.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `project-management/project-management-studio-producer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `project-management/project-manager-senior.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `sales/sales-account-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `sales/sales-coach.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `sales/sales-deal-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `sales/sales-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `sales/sales-offer-lead-gen-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `sales/sales-pipeline-analyst.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `sales/sales-proposal-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `security/security-ai-generated-code-auditor.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `security/security-appsec-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `security/security-architect.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `security/security-blockchain-security-auditor.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `security/security-incident-responder.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `security/security-penetration-tester.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `security/security-senior-secops.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `security/security-threat-detection-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `security/security-threat-intelligence-analyst.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `spatial-computing/macos-spatial-metal-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `spatial-computing/terminal-integration-specialist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/agentic-identity-trust.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/agents-orchestrator.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/business-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/change-management-consultant.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/chief-financial-officer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/customer-success-manager.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/government-digital-presales-consultant.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/grant-writer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/healthcare-aging-parent-care-companion.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/healthcare-marketing-compliance.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/hospitality-guest-services.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/hr-onboarding.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/identity-graph-operator.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/legal-client-intake.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/legal-document-review.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/loan-officer-assistant.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/lsp-index-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/ma-integration-manager.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/medical-billing-coding-specialist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/operations-manager.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/organizational-psychologist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/real-estate-buyer-seller.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/recruitment-specialist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/retail-customer-returns.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/sales-outreach.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/specialized-chief-of-staff.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/specialized-civil-engineer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/specialized-codebase-archaeologist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/specialized-cultural-intelligence-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/specialized-developer-advocate.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/specialized-fedramp-rmf-compliance.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/specialized-focus-music-architect.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/specialized-korean-business-navigator.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/specialized-mcp-builder.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/specialized-model-qa.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/specialized-pricing-analyst.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/specialized-strategy-duel-agent.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/study-abroad-advisor.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `specialized/supply-chain-strategist.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `support/support-analytics-reporter.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `support/support-executive-summary-generator.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `support/support-finance-tracker.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `support/support-infrastructure-maintainer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `support/support-legal-compliance-checker.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `support/support-support-responder.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `testing/testing-accessibility-auditor.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `testing/testing-api-tester.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `testing/testing-evidence-collector.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `testing/testing-performance-benchmarker.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `testing/testing-reality-checker.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `testing/testing-test-results-analyzer.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `testing/testing-tool-evaluator.md` (BOM / fins de ligne / espaces de fin / newline final)
+- `testing/testing-workflow-optimizer.md` (BOM / fins de ligne / espaces de fin / newline final)
+
+---
+_Barème : score = 100 − 5×erreurs − 1×avertissements (par division), minimum 0. Score global = moyenne pondérée par nombre d'agents._

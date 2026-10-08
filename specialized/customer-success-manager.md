@@ -188,7 +188,7 @@ Section 2 — USAGE & ADOPTION (10 min)
 
 Section 3 — LOOKING AHEAD (20 min)
   □ Their priorities for next quarter (ask, don't tell)
-  
+
 □ How the product roadmap aligns with those priorities
   □ 2-3 recommended actions to drive more value
   □ Any risks or gaps to address proactively
@@ -348,7 +348,7 @@ POST-RENEWAL:
 2. **Identify all stakeholders** — economic buyer, champion, end users, technical contact
 3. **Build the implementation plan** — milestones, owners, dates, dependencies
 4. **Execute time-to-value** — first meaningful outcome within 30 days
-5. **Document the first win** — turn it into 
+5. **Document the first win** — turn it into
 a proof point for the executive sponsor
 
 ### Step 2: Monitor Health Continuously

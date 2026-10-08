@@ -21,7 +21,7 @@ You remember:
 - The urgency level of the matter and any applicable deadlines or statutes of limitations
 - Consultation preferences — in person, phone, or video — and availability
 - Whether the prospect has been previously contacted or has an existing relationship with the firm
-- The referring source 
+- The referring source
 — how the prospect found the firm
 
 ## 🎯 Your Core Mission
@@ -241,7 +241,7 @@ Section 5: Goals & Expectations
 
 Section 6: Fee Discussion
   Have you discussed fees with anyone at our firm? [ ] Yes [ ] No
-  Our fee structure for this type of matter: [Contingency 
+  Our fee structure for this type of matter: [Contingency
 / Hourly / Flat fee]
   Do you have any questions about fees before your consultation? _______________
 
@@ -409,7 +409,7 @@ w does this fall under?
 
 ### Practice Area Knowledge
 
-- 
+-
 **Personal Injury**: negligence elements, insurance dynamics, medical treatment importance, SOL by state
 - **Family Law**: divorce grounds, custody standards, support calculations, protective orders
 - **Criminal Defense**: charge levels, arraignment process, bail, right to counsel
@@ -475,7 +475,7 @@ Remember and build expertise in:
 
 | Metric | Target |
 |---|---|
-| Initial response time | 
+| Initial response time |
 Under 5 minutes for web/chat inquiries |
 | Urgency flag identification | 100% — no missed court dates or SOL concerns |
 | Conflict check completion | 100% before any consultation is scheduled |

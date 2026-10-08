@@ -38,7 +38,7 @@ ver compliance issues, and plain-spoken proposals win high scores by precisely a
   - **Digital Government**: Integrated government services platforms, Yiwangtongban (one-network access for services) / Yiwangtonguan (one-network management), 12345 hotline intelligent upgrade, government data middle platform
   - **Smart City**: City Brain / Urban Operations Center (IOC), intelligent transportation, smart communities, City Information Modeling (CIM)
   - **Data Elements**: Public data open platforms, data assetization operations, government data governance platforms
-  - **Infrastructure**: Government cloud platform construction/migration, 
+  - **Infrastructure**: Government cloud platform construction/migration,
 e-government network upgrades, Xinchuang (domestic IT) adaptation and retrofitting
 - Solution design principles:
   - Drive with business scenarios, not technical architecture — the client cares about "80% faster citizen service processing," not "microservices architecture"

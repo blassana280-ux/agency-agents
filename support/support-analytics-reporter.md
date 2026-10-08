@@ -58,13 +58,13 @@ You are **Analytics Reporter**, an expert data analyst and reporting specialist 
 ```sql
 -- PostgreSQL: Key Business Metrics Dashboard
 WITH monthly_metrics AS (
-  SELECT 
+  SELECT
     DATE_TRUNC('month', date) as month,
     SUM(revenue) as monthly_revenue,
     COUNT(DISTINCT customer_id) as active_customers,
     AVG(order_value) as avg_order_value,
     SUM(revenue) * 1.0 / NULLIF(COUNT(DISTINCT customer_id), 0) as revenue_per_customer
-  FROM transactions 
+  FROM transactions
   WHERE date >= CURRENT_DATE - INTERVAL '12 months'
   GROUP BY DATE_TRUNC('month', date)
 ),
@@ -75,14 +75,14 @@ growth_calculations AS (
      NULLIF(LAG(monthly_revenue, 1) OVER (ORDER BY month), 0) as revenue_growth_rate
   FROM monthly_metrics
 )
-SELECT 
+SELECT
   month,
   monthly_revenue,
   active_customers,
   avg_order_value,
   revenue_per_customer,
   revenue_growth_rate,
-  CASE 
+  CASE
     WHEN revenue_growth_rate IS NULL THEN 'No Comparable Baseline'
     WHEN revenue_growth_rate > 10 THEN 'High Growth'
     WHEN revenue_growth_
@@ -114,10 +114,10 @@ def customer_segmentation_analysis(df):
         'revenue': 'sum'                                   # Monetary
     }).rename(columns={
         'date': 'recency',
-        'order_id': 'frequency', 
+        'order_id': 'frequency',
         'revenue': 'monetary'
     })
-    
+
     # Percentile bands tolerate sparse cohorts and keep identical values together.
     # These are relative scores within this cohort, not absolute value thresholds.
     def score(values, higher_is_better=True):
@@ -128,10 +128,10 @@ def customer_segmentation_analysis(df):
     rfm['r_score'] = score(rfm['recency'], higher_is_better=False)
     rfm['f_score'] = score(rfm['frequency'])
     rfm['m_score'] = score(rfm['monetary'])
-    
+
     # Customer segments
     rfm['rfm_score'] = rfm['r_score'].astype(str) + rfm['f_score'].astype(str) + rfm['m_score'].astype(str)
-    
+
     def segment_customers(row):
         if row['rfm_score'] in ['555', '554', '544', '545', '454', '455', '445']:
             return 'Champions'
@@ -148,9 +148,9 @@ def customer_segmentation_analysis(df):
             return 'Cannot Lose Them'
         else:
             return 'Others'
-    
+
     rfm['segment'] = rfm.apply(segment_customers, axis=1)
-    
+
     return rfm
 
 # Generate insights and recommendations
@@ -178,7 +178,7 @@ const marketingDashboard = {
   // Each conversion has its own journey; two touches split revenue equally.
   attributionAnalysis: `
     WITH customer_touchpoints AS (
-      SELECT 
+      SELECT
         c.conversion_id,
         mt.customer_id,
         mt.channel,
@@ -196,7 +196,7 @@ const marketingDashboard = {
     ),
     attribution_weights AS (
       SELECT *,
-        CASE 
+        CASE
           WHEN total_touches = 1 THEN 1.0                        -- Single touch
           WHEN total_touches = 2 THEN 0.5                        -- Two-touch journey
           WHEN touch_sequence = 1 THEN 0.4                       -- First touch
@@ -206,7 +206,7 @@ const marketingDashboard = {
       FROM cust
 omer_touchpoints
     )
-    SELECT 
+    SELECT
       channel,
       campaign,
       SUM(revenue * attribution_weight) as attributed_revenue,
@@ -216,10 +216,10 @@ omer_touchpoints
     GROUP BY channel, campaign
     ORDER BY attributed_revenue DESC;
   `,
-  
+
   // PostgreSQL campaign ROI: conversions is the per-row numeric total.
   campaignROI: `
-    SELECT 
+    SELECT
       campaign_name,
       SUM(spend) as total_spend,
       SUM(attributed_revenue) as total_revenue,

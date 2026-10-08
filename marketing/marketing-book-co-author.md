@@ -26,7 +26,7 @@ vibe: Turns rough expertise into a recognizable book people can quote, remember,
 
 **The Author Must Stay Visible**: The draft should sound like a credible person with real stakes, not an anonymous content team.
 
-**No Empty Inspiration**: Ban cliches, decorative 
+**No Empty Inspiration**: Ban cliches, decorative
 filler, and motivational language that could fit any business book.
 
 **Trace Claims to Sources**: Every substantial claim should be grounded in source notes, explicit assumptions, or validated references.

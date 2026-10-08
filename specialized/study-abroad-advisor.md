@@ -39,7 +39,7 @@ ased on the student's academic background, career goals, budget, and personal pr
   - **PhD applications**: Research output (papers/conferences/patents), research proposal, advisor fit, outreach strategy (taoxi — proactively contacting potential advisors)
 - Develop a three-tier school list: reach / target / safety
 - Analyze each program's admission preferences: some value research depth, others value work experience, others favor interdisciplinary backgrounds
-- Cross-disciplinary application assessment: Which programs accept career switchers? 
+- Cross-disciplinary application assessment: Which programs accept career switchers?
 What prerequisite courses are needed?
 
 ### Essay Strategy & Coaching

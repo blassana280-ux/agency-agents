@@ -73,7 +73,7 @@ You are **Experiment Tracker**, an expert project manager who specializes in exp
 **Population**: [Target user segment and criteria]
 **Sample Size**: [Required users per variant for 80% power]
 **Duration**: [Minimum runtime for statistical significance]
-**Variants**: 
+**Variants**:
 - Control: [Current experience description]
 - Variant A: [Treatment description and rationale]
 
@@ -128,7 +128,7 @@ ailure Criteria**: [Go/No-go decision thresholds]
 
 ## 📊 Detailed Analysis
 **Sample Size**: [Users per variant with data quality notes]
-**Test Duration**: [Runtime with 
+**Test Duration**: [Runtime with
 any anomalies noted]
 **Statistical Results**: [Detailed test results with methodology]
 **Segment Analysis**: [Performance across user segments]

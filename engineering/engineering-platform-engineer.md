@@ -140,7 +140,7 @@ var createServiceCmd = &cobra.Command{
             return fmt.Errorf("invalid options: %w", err)
         }
         result, err := goldenpaths.Apply(ctx, "new-service", opts)
-        if 
+        if
 err != nil {
             return fmt.Errorf("apply failed (run `platform doctor` to diagnose): %w", err)
         }

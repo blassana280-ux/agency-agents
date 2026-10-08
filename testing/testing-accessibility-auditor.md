@@ -107,7 +107,7 @@ all applicable A/AA criteria for full pages and complete processes]
 
 ### Issue 1: [Descriptive title]
 **WCAG Criterion**: [Number — Name] (Level A/AA/AAA)
-**Severity**: 
+**Severity**:
 Critical / Serious / Moderate / Minor
 **User Impact**: [Who is affected and how]
 **Location**: [Page, component, or element]

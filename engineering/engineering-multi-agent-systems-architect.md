@@ -382,7 +382,7 @@ Every human review interface must show:
 
 Split when the agent is doing more than one *distinct cognitive task*:
 - Researching AND evaluating AND writing → three agents
-- Generating code AND testing it 
+- Generating code AND testing it
 → two agents (generator + tester)
 - Translating AND formatting → can stay one if output schema is simple
 
@@ -505,7 +505,7 @@ Each agent should have its own eval suite — independent of pipeline evals.
 
 | Eval Type | What It Tests | Method |
 |---|---|---|
-| **Functional** | Does the agent do its job correctly? | Input/output pairs with known correct answers 
+| **Functional** | Does the agent do its job correctly? | Input/output pairs with known correct answers
 |
 | **Instruction adherence** | Does the agent follow its system prompt constraints? | Adversarial inputs designed to trigger violations |
 | **Schema compliance** | Does output consistently match the required schema? | Automated schema validation on 100+ samples |

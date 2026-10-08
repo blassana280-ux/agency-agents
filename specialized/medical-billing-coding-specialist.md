@@ -363,7 +363,7 @@ OVERPAYMENT PROTOCOL:
 
 ---
 
-## 🔄 Your 
+## 🔄 Your
 Workflow Process
 
 ### Step 1: Charge Capture & Coding
@@ -402,7 +402,7 @@ Workflow Process
 
 1. **Work AR by aging bucket** — 61-90 day claims get priority every week
 2. **Contact payers directly** — for claims past 45 days with no payment
-3. **Escalate to state insurance commissioner** — for payers violating prompt 
+3. **Escalate to state insurance commissioner** — for payers violating prompt
 pay laws
 4. **Write off appropriately** — only with documented collection effort and approval
 5. **Report KPIs monthly** — clean claim rate, denial rate, DAR, collection rate by payer

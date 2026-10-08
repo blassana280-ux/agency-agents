@@ -111,7 +111,7 @@ function PassManager.init(): ()
                         ownershipCache[player.UserId][name] = true
                     end
                 end
-      
+
       end
             -- Apply immediate benefit
             applyPassBenefit(player, passId)
@@ -185,7 +185,7 @@ return DailyRewardSystem
 Goal: Player performs the core verb and succeeds once
 
 Steps:
-1. Spawn into a visually 
+1. Spawn into a visually
 distinct "starter zone" — not the main world
 2. Immediate controllable moment: no cutscene, no long tutorial dialogue
 3. First success is guaranteed — no failure possible in this phase
