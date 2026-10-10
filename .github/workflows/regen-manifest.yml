@@ -14,6 +14,11 @@ name: "🧾 Regen convert-outputs manifest (one-shot)"
 # REFUSE d'écrire si la sortie générée est invalide), (4) commite le tout.
 # Dormant ensuite : ne se re-déclenche que si ce fichier ou le marqueur
 # change, ou via l'onglet Actions.
+#
+# Diagnostic (2026-10-10) : les échecs de validation sont invisibles depuis
+# l'extérieur (logs Actions inaccessibles). Le run capture désormais le log
+# complet dans docs/reports/regen-debug.log si la validation échoue, puis
+# échoue explicitement — le log est lisible depuis le dépôt.
 
 on:
   push:
@@ -43,11 +48,11 @@ jobs:
           node-version: "20"
 
       - name: "1. Correctifs automatiques agent-health (couleurs frontmatter)"
-        run: node scripts/agent-health.mjs --fix || true
+        run: node scripts/agent-health.mjs --fix 2>&1 | tee /tmp/regen-run.log || true
 
       - name: "2. Normalisation des couleurs frontmatter résiduelles"
         run: |
-          python3 - <<'PY'
+          python3 - <<'PY' 2>&1 | tee -a /tmp/regen-run.log
           import json, os, re
 
           root = os.getcwd()
@@ -99,9 +104,27 @@ jobs:
           PY
 
       - name: "3. Régénération du manifest (valide la sortie générée avant d'écrire)"
-        run: bash scripts/test-convert-outputs.sh --update
+        id: regen
+        run: |
+          set +e
+          bash scripts/test-convert-outputs.sh --update 2>&1 | tee -a /tmp/regen-run.log
+          code=${PIPESTATUS[0]}
+          echo "code=$code" >> "$GITHUB_OUTPUT"
 
-      - name: "4. Commit correctifs + manifest si changé"
+      - name: "4a. Commit du log de diagnostic (uniquement si échec de la validation)"
+        if: steps.regen.outputs.code != '0'
+        run: |
+          mkdir -p docs/reports
+          cp /tmp/regen-run.log docs/reports/regen-debug.log
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/reports/regen-debug.log
+          git commit -m "🛡️ ci(diag): capture du log complet de l'échec de régénération du manifest (logs Actions inaccessibles ; diagnostic depuis le dépôt)"
+          git pull --rebase origin main
+          git push origin main
+
+      - name: "4b. Commit correctifs + manifest si changé (uniquement si succès)"
+        if: steps.regen.outputs.code == '0'
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
             git config user.name "github-actions[bot]"
@@ -113,3 +136,10 @@ jobs:
           else
             echo "Rien à committer — manifest déjà à jour."
           fi
+
+      - name: "5. Échec explicite si la régénération a échoué"
+        if: steps.regen.outputs.code != '0'
+        run: |
+          echo "Régénération échouée (exit ${{ steps.regen.outputs.code }}) — log complet committé dans docs/reports/regen-debug.log ; extrait :"
+          tail -n 60 docs/reports/regen-debug.log
+          exit 1
