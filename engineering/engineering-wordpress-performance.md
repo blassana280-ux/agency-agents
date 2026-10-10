@@ -98,8 +98,7 @@ FRONT END
 
 ### Caching Architecture Specification
 
-`
-``
+```
 WORDPRESS CACHING ARCHITECTURE
 ───────────────────────────────────────
 LAYER 1 — OBJECT CACHE (Redis / Memcached):

@@ -159,8 +159,7 @@ Alright, the next product
 
 ### Live Room Data Review Dashboard
 
-`
-``markdown
+```markdown
 # Livestream Daily Data Report Template
 
 ## Core Metrics
