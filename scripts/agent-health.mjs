@@ -6,7 +6,8 @@
 //   node scripts/agent-health.mjs [--fix] [--report] [--ci]
 //
 //   --fix     applique les correctifs sûrs : BOM, CRLF -> LF, espaces de fin
-//             de ligne, newline final manquant.
+//             de ligne, newline final manquant, noms de couleurs frontmatter
+//             -> #RRGGBB.
 //   --report  écrit docs/reports/maintenance/<date>.md et LATEST.md.
 //   --ci      émet des annotations GitHub ::error / ::warning.
 //
@@ -144,6 +145,9 @@ function auditAgent(rel, text, division, existCheck) {
   }
 
   const bodyTrim = body.trim();
+  if (/^404: Not Found\b/.test(bodyTrim)) {
+    add('ERROR', 'corrupted', 'fichier corrompu : le corps commence par « 404: Not Found » (une lecture automatisée a écrit une réponse HTTP à la place du contenu)');
+  }
   if (bodyTrim.length === 0) add('ERROR', 'body-empty', 'corps du fichier vide');
   else if (bodyTrim.length < 300) add('WARN', 'body-short', 'corps très court (< 300 caractères)');
 
@@ -153,8 +157,11 @@ function auditAgent(rel, text, division, existCheck) {
     add('WARN', 'placeholder', 'texte placeholder détecté (TODO / FIXME / lorem ipsum…)');
   }
 
+  // Secrets testés HORS des blocs de code : un bloc ``` documentant les
+  // patterns de détection (ex. -----BEGIN RSA PRIVATE KEY-----) n'est pas un
+  // secret réel. Correctif du 2026-10-10 (faux positif sur security-senior-secops).
   for (const [re, msg] of SECRET_PATTERNS) {
-    if (re.test(text)) add('ERROR', 'secret', msg);
+    if (re.test(outside)) add('ERROR', 'secret', msg);
   }
   const softSecret = /(api[_-]?key|secret|password|token)\s*[:=]\s*["'][^"']{8,}["']/i;
   if (softSecret.test(outside)) add('WARN', 'secret-soft', 'valeur ressemblant à un secret en clair (à vérifier)');
@@ -172,11 +179,44 @@ function auditAgent(rel, text, division, existCheck) {
   return { issues, name: fm.name || null, stem };
 }
 
+// Noms de couleurs du frontmatter -> hex (correctif sûr appliqué par --fix).
+const COLOR_NAME_TO_HEX = {
+  blue: '#3B82F6', amber: '#F59E0B', purple: '#8B5CF6', orange: '#F97316',
+  green: '#22C55E', pink: '#EC4899', teal: '#14B8A6', red: '#EF4444',
+  yellow: '#EAB308', fuchsia: '#D946EF', lime: '#84CC16', rose: '#F43F5E',
+  cyan: '#06B6D4', violet: '#7C3AED', indigo: '#6366F1', gray: '#6B7280',
+  grey: '#6B7280', navy: '#1E3A8A', gold: '#D4AF37', slate: '#64748B',
+  'metallic-blue': '#1E88E5', 'neon-cyan': '#00E5FF', 'neon-green': '#39FF14',
+};
+
+// Corrige les noms de couleurs du frontmatter en #RRGGBB (zone frontmatter
+// uniquement ; noms inconnus laissés intacts pour rester signalés par l'audit).
+function fixColorNames(text) {
+  if (!text.startsWith('---\n')) return text;
+  const lines = text.split('\n');
+  let end = -1;
+  for (let i = 1; i < lines.length; i++) {
+    if (lines[i].trim() === '---') { end = i; break; }
+  }
+  if (end === -1) return text;
+  let changed = false;
+  for (let i = 1; i < end; i++) {
+    const m = /^(\s*color\s*:\s*)(["']?)([A-Za-z][A-Za-z -]*?)\2\s*$/.exec(lines[i]);
+    if (!m) continue;
+    const hex = COLOR_NAME_TO_HEX[m[3].toLowerCase().trim()];
+    if (!hex) continue;
+    lines[i] = m[1] + '"' + hex + '"';
+    changed = true;
+  }
+  return changed ? lines.join('\n') : text;
+}
+
 function fixText(text) {
   let t = text;
   if (t.charCodeAt(0) === 0xfeff) t = t.slice(1);
   t = t.replace(/\r\n/g, '\n');
   t = t.replace(/[ \t]+$/gm, '');
+  t = fixColorNames(t);
   if (t && !t.endsWith('\n')) t += '\n';
   return t;
 }
@@ -241,7 +281,7 @@ function main() {
           preIssues.push({
             severity: 'INFO',
             code: 'fixed',
-            msg: 'correctif automatique appliqué (BOM / fins de ligne / espaces de fin / newline final)',
+            msg: 'correctif automatique appliqué (BOM / fins de ligne / espaces de fin / newline final / couleurs frontmatter)',
             file: rel,
           });
           text = fixed;
@@ -381,7 +421,7 @@ function buildReport(date, stats, globalScore, allIssues, errors, warns, fixes, 
   if (fixes.length > 0) {
     lines.push('## 🔧 Correctifs automatiques appliqués');
     lines.push('');
-    for (const f of fixes) lines.push('- `' + f + '` (BOM / fins de ligne / espaces de fin / newline final)');
+    for (const f of fixes) lines.push('- `' + f + '` (BOM / fins de ligne / espaces de fin / newline final / couleurs frontmatter)');
     lines.push('');
   }
   if (errors.length === 0 && warns.length === 0) {
