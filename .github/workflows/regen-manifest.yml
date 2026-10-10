@@ -1,0 +1,115 @@
+name: "🧾 Regen convert-outputs manifest (one-shot)"
+
+# Correctif post-audit du 2026-10-10 : la restauration des 6 agents corrompus,
+# la réparation des fences et les correctifs de couleurs ont modifié des
+# fichiers agents directement sur main. Check Tools Consistency vérifie le
+# drift du manifest en mode STRICT sur les pushes main (advisory sur les PR) :
+# chaque édition d'agent doit être accompagnée d'une régénération de
+# scripts/convert-outputs.sha256 (procédure « maintainers regenerate at
+# landing » de test-convert-outputs.sh).
+#
+# Ce one-shot : (1) applique les correctifs automatiques de agent-health.mjs
+# (couleurs frontmatter -> #RRGGBB), (2) normalise toute couleur résiduelle
+# non-hex (carte CSS + repli gris), (3) régénère le manifest --update (qui
+# REFUSE d'écrire si la sortie générée est invalide), (4) commite le tout.
+# Dormant ensuite : ne se re-déclenche que si ce fichier ou le marqueur
+# change, ou via l'onglet Actions.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/regen-manifest.yml"
+      - "REGEN-MANIFEST-ONCE.txt"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: regen-manifest
+  cancel-in-progress: false
+
+jobs:
+  regen:
+    name: Correctifs couleurs + régénération manifest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: "1. Correctifs automatiques agent-health (couleurs frontmatter)"
+        run: node scripts/agent-health.mjs --fix || true
+
+      - name: "2. Normalisation des couleurs frontmatter résiduelles"
+        run: |
+          python3 - <<'PY'
+          import json, os, re
+
+          root = os.getcwd()
+          divisions = list(json.load(open("divisions.json"))["divisions"].keys())
+          CSS = {
+            "navy": "#000080", "gold": "#FFD700", "slate": "#708090",
+            "slategray": "#708090", "silver": "#C0C0C0", "maroon": "#800000",
+            "olive": "#808000", "brown": "#A52A2A", "beige": "#F5F5DC",
+            "coral": "#FF7F50", "crimson": "#DC143C", "salmon": "#FA8072",
+            "turquoise": "#40E0D0", "skyblue": "#87CEEB", "steelblue": "#4682B4",
+            "darkblue": "#00008B", "lightblue": "#ADD8E6", "forestgreen": "#228B22",
+            "darkgreen": "#006400", "seagreen": "2E8B57".join(["#", ""]),
+            "magenta": "#FF00FF", "plum": "#DDA0DD", "aqua": "#00FFFF",
+            "aquamarine": "#7FFFD4", "chocolate": "#D2691E", "orangered": "#FF4500",
+            "blueviolet": "#8A2BE2", "royalblue": "#4169E1", "mediumpurple": "#9370DB",
+            "khaki": "#F0E68C", "lavender": "#E6E6FA", "ivory": "#FFFFF0",
+          }
+          hex_re = re.compile(r"^#[0-9A-Fa-f]{6}$")
+          field_re = re.compile(r"^(\s*color\s*:\s*)(['\"]?)(.*?)\2\s*$")
+          changed = 0
+          for div in divisions:
+            for dirpath, _dirs, files in os.walk(os.path.join(root, div)):
+                for fn in sorted(files):
+                    if not fn.endswith(".md"):
+                        continue
+                    p = os.path.join(dirpath, fn)
+                    text = open(p, encoding="utf-8").read()
+                    if not text.startswith("---\n"):
+                        continue
+                    lines = text.split("\n")
+                    end = next((i for i in range(1, len(lines)) if lines[i].strip() == "---"), -1)
+                    if end == -1:
+                        continue
+                    dirty = False
+                    for i in range(1, end):
+                        m = field_re.match(lines[i])
+                        if not m:
+                            continue
+                        val = m.group(3).strip()
+                        if hex_re.match(val):
+                            continue
+                        newv = CSS.get(val.lower().replace(" ", "-"), "#6B7280")
+                        lines[i] = m.group(1) + '"' + newv + '"'
+                        dirty = True
+                        changed += 1
+                    if dirty:
+                        open(p, "w", encoding="utf-8", newline="\n").write("\n".join(lines))
+          print(f"Couleurs normalisées : {changed}")
+          PY
+
+      - name: "3. Régénération du manifest (valide la sortie générée avant d'écrire)"
+        run: bash scripts/test-convert-outputs.sh --update
+
+      - name: "4. Commit correctifs + manifest si changé"
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "🛡️ fix: correctifs couleurs frontmatter + régénération convert-outputs.sha256 (atterrissage de la restauration du 2026-10-10)"
+            git pull --rebase origin main
+            git push origin main
+          else
+            echo "Rien à committer — manifest déjà à jour."
+          fi

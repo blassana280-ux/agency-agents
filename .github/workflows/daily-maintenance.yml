@@ -89,6 +89,15 @@ jobs:
           if [[ -n "$(git status --porcelain)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            # Les correctifs qui touchent des fichiers agents déplacent leur
+            # ligne dans scripts/convert-outputs.sha256 : sans régénération,
+            # Check Tools Consistency (drift strict sur main) échoue. On
+            # régénère donc le manifest AVANT de commiter (procédure
+            # « maintainers regenerate at landing » de test-convert-outputs.sh).
+            if git status --porcelain | grep -qE '(^|/)(academic|design|engineering|finance|game-development|gis|healthcare|marketing|paid-media|sales|security|product|project-management|research|testing|support|spatial-computing|orchestration|specialized)/'; then
+              echo "Fichiers agents modifiés — régénération du manifest convert-outputs."
+              bash scripts/test-convert-outputs.sh --update
+            fi
             git add -A
             git commit -m "🛡️ maintenance quotidienne: correctifs automatiques + rapport du $(date -u +%F)"
             git pull --rebase origin "$GITHUB_REF_NAME"
