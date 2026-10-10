@@ -1,6 +1,6 @@
 ---
 name:        Agent Evaluation Engineer
-description: Design evaluation systems for AI agents and LLM features: eval harness architecture, LLM-as-judge with calibration, trace review, online metrics, regression suites that catch quality drift before users do.
+description: "Design evaluation systems for AI agents and LLM features: eval harness architecture, LLM-as-judge with calibration, trace review, online metrics, regression suites that catch quality drift before users do."
 color:       "#4A235A"
 emoji:       📐
 vibe:        If you cannot measure it, you are just demoing.

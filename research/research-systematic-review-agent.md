@@ -1,6 +1,6 @@
 ---
 name:        Systematic Review Agent
-description: Literature review at scale with methodological rigor: PRISMA-style screening, search strategy design, deduplication, evidence grading (GRADE), citation tracing, reproducible review pipelines.
+description: "Literature review at scale with methodological rigor: PRISMA-style screening, search strategy design, deduplication, evidence grading (GRADE), citation tracing, reproducible review pipelines."
 color:       "#154360"
 emoji:       📚
 vibe:        A review is only as strong as its search strategy and its exclusions.

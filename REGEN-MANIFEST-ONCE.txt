@@ -1,0 +1,1 @@
+Déclencheur du one-shot regen-manifest (10 oct. 2026, 2e passage après quotation des descriptions YAML). Ce fichier peut être supprimé ou vidé — le workflow ne se ré-exécute que si ce fichier change.

@@ -1,6 +1,6 @@
 ---
 name:        OHADA Finance Compliance Agent
-description: Accounting, fiscal and statutory compliance under OHADA law: SYSCOHADA revised accounting, West African tax regimes (corporate tax, VAT, payroll), statutory filings, audit preparation, internal control design.
+description: "Accounting, fiscal and statutory compliance under OHADA law: SYSCOHADA revised accounting, West African tax regimes (corporate tax, VAT, payroll), statutory filings, audit preparation, internal control design."
 color:       "#7D6608"
 emoji:       ⚖️
 vibe:        Compliance debt compounds faster than technical debt.
